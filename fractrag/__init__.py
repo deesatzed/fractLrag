@@ -16,7 +16,7 @@ Usage:
 from .core import EmbeddingBackend, HashEmbedding, SentenceTransformerEmbedding, normalize
 from .engine import FractalRAG, IndexEntry
 from .profile import DocumentProfile
-from .query import classify_query_type, get_type_weights
+from .query import classify_query_type, get_type_weights, extract_domain_hints
 from .storage import save, load, DimensionMismatchError
 
 __all__ = [
@@ -28,6 +28,7 @@ __all__ = [
     "DocumentProfile",
     "classify_query_type",
     "get_type_weights",
+    "extract_domain_hints",
     "normalize",
     "save",
     "load",

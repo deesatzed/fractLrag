@@ -11,6 +11,7 @@ from fractrag import FractalRAG, HashEmbedding
 from fractrag.benchmarks.cross_validation import (
     create_stratified_folds,
     tune_boost_params,
+    tune_boost_params_per_type,
     evaluate_per_query,
     paired_t_test,
     bootstrap_ci,
@@ -145,7 +146,7 @@ class TestTuneBoostParams:
 
     def test_grid_size(self):
         expected = len(PARA_GRID) * len(SENT_GRID) * len(DERIV_GRID)
-        assert expected == 36
+        assert expected == 150
 
 
 # ============================================================
@@ -262,3 +263,16 @@ class TestCrossValidationIntegration:
 
         total_test = sum(fr.test_size for fr in fold_results)
         assert total_test == 40  # All 40 queries evaluated once
+
+    def test_per_type_tuning_in_cv(self):
+        """CV now produces per-type params and per-type scores."""
+        rag = _make_rag_with_docs(20)
+        queries = _make_queries(10)
+        fold_results = run_cross_validation(rag, queries, n_folds=5, k=5)
+
+        for fr in fold_results:
+            assert fr.per_type_params is not None
+            assert len(fr.per_type_params) == 4  # 4 query types
+            assert fr.fractal_per_type_scores is not None
+            assert len(fr.fractal_per_type_scores) == fr.test_size
+            assert all(0.0 <= s <= 1.0 for s in fr.fractal_per_type_scores)

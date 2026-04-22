@@ -13,7 +13,7 @@ from dataclasses import dataclass
 
 from .core import EmbeddingBackend, HashEmbedding, normalize, chunk_fractal
 from .profile import DocumentProfile
-from .query import classify_query_type, get_type_weights, BASE_DERIV_WEIGHT
+from .query import classify_query_type, get_type_weights, BASE_DERIV_WEIGHT, extract_domain_hints
 
 
 @dataclass
@@ -106,7 +106,7 @@ class FractalRAG:
 
         # Level 1: Paragraphs
         adapter = self.adapters.get(doc_id, np.zeros(self.dim))
-        para_mean = np.zeros(self.dim)
+        para_vecs = []
         for i, para in enumerate(paragraphs):
             embed_text = f"{title}: {para}" if title else para
             pvec = normalize(self._embed(embed_text) + adapter * 0.8)
@@ -115,8 +115,15 @@ class FractalRAG:
                 text=para[:160] if len(para) > 160 else para,
                 parent=doc_id,
             ))
-            para_mean += pvec
-        para_mean /= max(1, len(paragraphs))
+            para_vecs.append(pvec)
+
+        # Weighted paragraph mean: weight by similarity to doc_vec
+        if para_vecs:
+            weights = np.array([max(0.1, float(np.dot(pv, doc_vec))) for pv in para_vecs])
+            weights = weights / weights.sum()
+            para_mean = sum(w * pv for w, pv in zip(weights, para_vecs))
+        else:
+            para_mean = np.zeros(self.dim)
 
         # Level 0: Sentences + Derivatives
         sent_list = sentences[:max_sentences] if max_sentences else sentences
@@ -319,6 +326,7 @@ class FractalRAG:
         deriv_boost: float = 0.05,
         metadata_filters: Optional[Dict] = None,
         metadata_boost: Optional[Dict] = None,
+        diversity_boost: float = 0.0,
     ) -> Tuple[Dict[int, List[Tuple[IndexEntry, float]]], str]:
         """Reranked fractal retrieval: doc-level primary, sub-doc boosts.
 
@@ -419,6 +427,10 @@ class FractalRAG:
 
         combined.sort(key=lambda x: x[1], reverse=True)
 
+        # Domain-based MMR for diversity (synthesis queries)
+        if diversity_boost > 0 and len(combined) > k:
+            combined = self._apply_domain_diversity(combined, k, diversity_boost)
+
         # Step 5: Build results in the standard format
         results: Dict[int, List[Tuple[IndexEntry, float]]] = {2: [], 1: [], 0: []}
         seen_docs = set()
@@ -440,12 +452,61 @@ class FractalRAG:
 
         return results, qtype
 
+    def _apply_domain_diversity(
+        self,
+        scored_docs: List[Tuple[str, float]],
+        k: int,
+        lambda_diversity: float,
+    ) -> List[Tuple[str, float]]:
+        """Greedy domain-aware MMR reranking.
+
+        At each step, select the doc that maximizes:
+            score = (1 - lambda) * relevance + lambda * domain_novelty
+
+        domain_novelty = 1.0 if doc's domain not yet in selected set, else 0.0
+        """
+        selected: List[Tuple[str, float]] = []
+        selected_domains: set = set()
+        remaining = list(scored_docs)
+
+        # Normalize relevance scores to [0, 1] for fair combination
+        if remaining:
+            max_score = remaining[0][1]
+            min_score = remaining[-1][1]
+            score_range = max_score - min_score if max_score > min_score else 1.0
+
+        while len(selected) < k and remaining:
+            best_idx = 0
+            best_mmr = -float('inf')
+            for i, (doc_id, raw_score) in enumerate(remaining):
+                # Normalize relevance
+                rel = (raw_score - min_score) / score_range if score_range > 0 else 1.0
+
+                # Domain novelty
+                doc_domain = self.doc_metadata.get(doc_id, {}).get("domain")
+                novelty = 1.0 if doc_domain and doc_domain not in selected_domains else 0.0
+
+                mmr = (1.0 - lambda_diversity) * rel + lambda_diversity * novelty
+                if mmr > best_mmr:
+                    best_mmr = mmr
+                    best_idx = i
+
+            doc_id, score = remaining.pop(best_idx)
+            selected.append((doc_id, score))
+            doc_domain = self.doc_metadata.get(doc_id, {}).get("domain")
+            if doc_domain:
+                selected_domains.add(doc_domain)
+
+        return selected
+
     # Default boost parameters per query type (tuned on medical corpus benchmark)
+    # Post-3A: title-prefix absorbed sentence signal (sent_boost → 0),
+    # deriv_boost increased in importance. Per-type tuning from Phase 3B.
     _TYPE_BOOSTS = {
-        "specification": {"para_boost": 0.0, "sent_boost": 0.0, "deriv_boost": 0.0},
-        "summary":       {"para_boost": 0.05, "sent_boost": 0.20, "deriv_boost": 0.05},
-        "logic":         {"para_boost": 0.05, "sent_boost": 0.20, "deriv_boost": 0.05},
-        "synthesis":     {"para_boost": 0.05, "sent_boost": 0.20, "deriv_boost": 0.05},
+        "specification": {"para_boost": 0.0,  "sent_boost": 0.0,  "deriv_boost": 0.0,  "diversity_boost": 0.0},
+        "summary":       {"para_boost": 0.05, "sent_boost": 0.0,  "deriv_boost": 0.10, "diversity_boost": 0.0},
+        "logic":         {"para_boost": 0.0,  "sent_boost": 0.0,  "deriv_boost": 0.15, "diversity_boost": 0.0},
+        "synthesis":     {"para_boost": 0.05, "sent_boost": 0.0,  "deriv_boost": 0.10, "diversity_boost": 0.3},
     }
 
     def retrieve_adaptive(
@@ -472,7 +533,17 @@ class FractalRAG:
                      which is more robust to score scale differences.
         """
         qtype = query_type or classify_query_type(query, profile)
-        boosts = self._TYPE_BOOSTS.get(qtype, self._TYPE_BOOSTS["synthesis"])
+        boosts = dict(self._TYPE_BOOSTS.get(qtype, self._TYPE_BOOSTS["synthesis"]))
+
+        # Auto-detect domain hints if no explicit metadata_boost provided
+        effective_metadata_boost = metadata_boost
+        if effective_metadata_boost is None:
+            hints = extract_domain_hints(query)
+            if hints:
+                effective_metadata_boost = hints
+
+        # Extract diversity_boost from boosts (not a retrieve_reranked kwarg via **)
+        diversity = boosts.pop("diversity_boost", 0.0)
 
         if boosts["sent_boost"] == 0 and boosts["para_boost"] == 0 and boosts["deriv_boost"] == 0:
             # Pure flat retrieval for this query type
@@ -487,7 +558,7 @@ class FractalRAG:
                 query, k=k,
                 use_derivatives=(boosts["deriv_boost"] > 0),
                 metadata_filters=metadata_filters,
-                metadata_boost=metadata_boost,
+                metadata_boost=effective_metadata_boost,
             )
         else:
             return self.retrieve_reranked(
@@ -495,7 +566,8 @@ class FractalRAG:
                 query_type=qtype, profile=profile, focus_doc=focus_doc,
                 use_derivatives=(boosts["deriv_boost"] > 0),
                 metadata_filters=metadata_filters,
-                metadata_boost=metadata_boost,
+                metadata_boost=effective_metadata_boost,
+                diversity_boost=diversity,
                 **boosts,
             )
 

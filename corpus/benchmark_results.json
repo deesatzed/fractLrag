@@ -4,7 +4,7 @@
     "query_count": 40,
     "embedding_model": "BAAI/bge-m3",
     "embedding_dim": 1024,
-    "indexing_time_seconds": 50.3,
+    "indexing_time_seconds": 51.5,
     "index_stats": {
       "documents": 77,
       "entries_level_0": 809,
@@ -196,10 +196,10 @@
     {
       "config": "ADAPTIVE FRACTAL",
       "overall": {
-        "mrr": 0.7921,
+        "mrr": 0.7952,
         "precision_at_1": 0.7,
-        "precision_at_3": 0.3417,
-        "recall_at_10": 0.7833
+        "precision_at_3": 0.35,
+        "recall_at_10": 0.7917
       },
       "by_type": {
         "specification": {
@@ -209,22 +209,22 @@
           "recall_at_10": 0.9
         },
         "summary": {
-          "mrr": 0.77,
+          "mrr": 0.756,
           "precision_at_1": 0.7,
           "precision_at_3": 0.4,
-          "recall_at_10": 0.6333
+          "recall_at_10": 0.7
         },
         "logic": {
-          "mrr": 0.95,
-          "precision_at_1": 0.9,
+          "mrr": 1.0,
+          "precision_at_1": 1.0,
           "precision_at_3": 0.3333,
           "recall_at_10": 1.0
         },
         "synthesis": {
-          "mrr": 0.69,
-          "precision_at_1": 0.5,
-          "precision_at_3": 0.3667,
-          "recall_at_10": 0.6
+          "mrr": 0.6667,
+          "precision_at_1": 0.4,
+          "precision_at_3": 0.4,
+          "recall_at_10": 0.5667
         }
       }
     },
@@ -301,7 +301,7 @@
     {
       "config": "OPTIMAL FRACTAL",
       "overall": {
-        "mrr": 0.8412,
+        "mrr": 0.8425,
         "precision_at_1": 0.775,
         "precision_at_3": 0.35,
         "recall_at_10": 0.7917
@@ -326,7 +326,7 @@
           "recall_at_10": 1.0
         },
         "synthesis": {
-          "mrr": 0.69,
+          "mrr": 0.695,
           "precision_at_1": 0.5,
           "precision_at_3": 0.3333,
           "recall_at_10": 0.6333
@@ -465,8 +465,8 @@
       "para_boost": 0.0,
       "sent_boost": 0.05,
       "deriv_boost": 0.05,
-      "mrr": 0.83,
-      "p1": 0.75,
+      "mrr": 0.8425,
+      "p1": 0.775,
       "p3": 0.35,
       "r10": 0.7917
     },
@@ -495,7 +495,7 @@
       "mrr": 0.8357,
       "p1": 0.775,
       "p3": 0.35,
-      "r10": 0.775
+      "r10": 0.7833
     },
     {
       "para_boost": 0.0,
@@ -531,7 +531,7 @@
       "mrr": 0.8092,
       "p1": 0.725,
       "p3": 0.3583,
-      "r10": 0.775
+      "r10": 0.7833
     },
     {
       "para_boost": 0.0,
@@ -566,7 +566,7 @@
       "deriv_boost": 0.03,
       "mrr": 0.8079,
       "p1": 0.725,
-      "p3": 0.3583,
+      "p3": 0.35,
       "r10": 0.775
     },
     {
@@ -645,7 +645,7 @@
       "para_boost": 0.0,
       "sent_boost": 0.2,
       "deriv_boost": 0.15,
-      "mrr": 0.7886,
+      "mrr": 0.7892,
       "p1": 0.7,
       "p3": 0.35,
       "r10": 0.7667
@@ -810,7 +810,7 @@
       "mrr": 0.8092,
       "p1": 0.725,
       "p3": 0.3583,
-      "r10": 0.775
+      "r10": 0.7833
     },
     {
       "para_boost": 0.03,
@@ -852,7 +852,7 @@
       "para_boost": 0.03,
       "sent_boost": 0.1,
       "deriv_boost": 0.1,
-      "mrr": 0.8038,
+      "mrr": 0.8079,
       "p1": 0.725,
       "p3": 0.35,
       "r10": 0.775
@@ -872,7 +872,7 @@
       "deriv_boost": 0.2,
       "mrr": 0.8023,
       "p1": 0.725,
-      "p3": 0.3583,
+      "p3": 0.35,
       "r10": 0.7667
     },
     {
@@ -951,8 +951,8 @@
       "para_boost": 0.03,
       "sent_boost": 0.2,
       "deriv_boost": 0.05,
-      "mrr": 0.7942,
-      "p1": 0.7,
+      "mrr": 0.8067,
+      "p1": 0.725,
       "p3": 0.35,
       "r10": 0.7833
     },
@@ -1187,7 +1187,7 @@
       "deriv_boost": 0.15,
       "mrr": 0.8023,
       "p1": 0.725,
-      "p3": 0.3583,
+      "p3": 0.35,
       "r10": 0.775
     },
     {
@@ -1446,7 +1446,7 @@
       "para_boost": 0.1,
       "sent_boost": 0.05,
       "deriv_boost": 0.1,
-      "mrr": 0.8038,
+      "mrr": 0.8079,
       "p1": 0.725,
       "p3": 0.35,
       "r10": 0.775
@@ -1455,7 +1455,7 @@
       "para_boost": 0.1,
       "sent_boost": 0.05,
       "deriv_boost": 0.15,
-      "mrr": 0.8029,
+      "mrr": 0.8038,
       "p1": 0.725,
       "p3": 0.35,
       "r10": 0.775
@@ -1536,8 +1536,8 @@
       "para_boost": 0.1,
       "sent_boost": 0.15,
       "deriv_boost": 0.03,
-      "mrr": 0.7996,
-      "p1": 0.7,
+      "mrr": 0.8121,
+      "p1": 0.725,
       "p3": 0.3583,
       "r10": 0.7833
     },
@@ -1554,7 +1554,7 @@
       "para_boost": 0.1,
       "sent_boost": 0.15,
       "deriv_boost": 0.1,
-      "mrr": 0.8067,
+      "mrr": 0.8079,
       "p1": 0.725,
       "p3": 0.3583,
       "r10": 0.7833
@@ -1662,7 +1662,7 @@
       "para_boost": 0.15,
       "sent_boost": 0.0,
       "deriv_boost": 0.1,
-      "mrr": 0.805,
+      "mrr": 0.8092,
       "p1": 0.725,
       "p3": 0.35,
       "r10": 0.775
@@ -1788,7 +1788,7 @@
       "para_boost": 0.15,
       "sent_boost": 0.05,
       "deriv_boost": 0.2,
-      "mrr": 0.8023,
+      "mrr": 0.8029,
       "p1": 0.725,
       "p3": 0.3583,
       "r10": 0.775
@@ -1914,9 +1914,9 @@
       "para_boost": 0.15,
       "sent_boost": 0.2,
       "deriv_boost": 0.03,
-      "mrr": 0.7921,
+      "mrr": 0.7942,
       "p1": 0.7,
-      "p3": 0.3417,
+      "p3": 0.35,
       "r10": 0.7833
     },
     {
@@ -2166,7 +2166,7 @@
       "para_boost": 0.2,
       "sent_boost": 0.1,
       "deriv_boost": 0.2,
-      "mrr": 0.8038,
+      "mrr": 0.805,
       "p1": 0.725,
       "p3": 0.35,
       "r10": 0.7833
@@ -2331,7 +2331,7 @@
       "mrr": 0.8058,
       "p1": 0.725,
       "p3": 0.3417,
-      "r10": 0.775
+      "r10": 0.7833
     },
     {
       "para_boost": 0.3,
@@ -2598,21 +2598,47 @@
       "para_boost": 0.3,
       "sent_boost": 0.2,
       "deriv_boost": 0.2,
-      "mrr": 0.7912,
-      "p1": 0.7,
+      "mrr": 0.8038,
+      "p1": 0.725,
       "p3": 0.3333,
       "r10": 0.7917
     }
   ],
   "best_params": {
-    "para_boost": 0.03,
-    "sent_boost": 0.03,
-    "deriv_boost": 0.1
+    "para_boost": 0.0,
+    "sent_boost": 0.05,
+    "deriv_boost": 0.05
+  },
+  "per_type_best": {
+    "specification": {
+      "para_boost": 0.0,
+      "sent_boost": 0.0,
+      "deriv_boost": 0.0,
+      "mrr": 0.9
+    },
+    "summary": {
+      "para_boost": 0.0,
+      "sent_boost": 0.2,
+      "deriv_boost": 0.0,
+      "mrr": 0.82
+    },
+    "logic": {
+      "para_boost": 0.0,
+      "sent_boost": 0.0,
+      "deriv_boost": 0.0,
+      "mrr": 1.0
+    },
+    "synthesis": {
+      "para_boost": 0.0,
+      "sent_boost": 0.05,
+      "deriv_boost": 0.05,
+      "mrr": 0.695
+    }
   },
   "verdict": {
     "flat_mrr": 0.7517,
-    "fractal_mrr": 0.8412,
-    "improvement_pct": 11.91,
+    "fractal_mrr": 0.8425,
+    "improvement_pct": 12.08,
     "go_decision": "GO"
   }
 }

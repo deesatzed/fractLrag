@@ -5,7 +5,7 @@ Merged from v2 (comprehensive keywords + positional checks)
 and v3 (profile fallback for ambiguous queries).
 """
 
-from typing import Optional, Dict
+from typing import Optional, Dict, List
 from .profile import DocumentProfile
 
 BASE_DERIV_WEIGHT = 0.12
@@ -198,3 +198,75 @@ def get_type_weights(query_type: str, profile: Optional[DocumentProfile] = None)
         base["k_per_level"] = {"low": 2, "medium": 3, "high": 4}[profile.complexity_level]
 
     return base
+
+
+# Domain keyword mapping (from corpus domain names)
+_DOMAIN_KEYWORDS: Dict[str, List[str]] = {
+    "ai_radiology_pathology": [
+        "radiology", "imaging", "radiograph", "ct scan", "mri", "x-ray",
+        "pathology", "histopathology", "scan", "retinal", "fundus",
+        "medical imaging", "diagnostic imaging", "computer vision",
+    ],
+    "ai_clinical_decision": [
+        "clinical decision", "clinical support", "triage", "diagnosis",
+        "patient outcome", "ehr", "electronic health record", "emr",
+        "clinical workflow", "patient safety",
+    ],
+    "ai_drug_discovery_pharma": [
+        "drug", "pharmaceutical", "pharmacovigilance", "medication",
+        "drug discovery", "adverse drug", "pharmacogenomics",
+        "drug metabolism", "cytochrome", "therapeutic drug",
+    ],
+    "nlp_medical": [
+        "nlp", "natural language", "text mining", "clinical notes",
+        "named entity", "medical text", "information extraction",
+        "clinical text", "language model", "bert",
+    ],
+    "ai_surgery_robotics": [
+        "surgery", "surgical", "robotic", "robot-assisted",
+        "laparoscopic", "teleoperation", "haptic", "operative",
+    ],
+    "ai_public_health_tic": [
+        "public health", "telemedicine", "telehealth", "remote monitoring",
+        "epidemic", "pandemic", "surveillance", "health informatics",
+        "population health", "wearable",
+    ],
+}
+
+
+def extract_domain_hints(query: str) -> Optional[Dict]:
+    """Detect domain keywords in query and return metadata boost config.
+
+    Returns None if no domain signal detected (no boost applied).
+    If one or two domains detected, returns a domain_boost config.
+    """
+    q = query.lower()
+    domain_scores: Dict[str, int] = {}
+
+    for domain, keywords in _DOMAIN_KEYWORDS.items():
+        score = sum(1 for kw in keywords if kw in q)
+        if score > 0:
+            domain_scores[domain] = score
+
+    if not domain_scores:
+        return None
+
+    # Sort by score descending
+    sorted_domains = sorted(domain_scores.items(), key=lambda x: x[1], reverse=True)
+    top_domain, top_score = sorted_domains[0]
+
+    if top_score >= 2 or (top_score >= 1 and len(sorted_domains) == 1):
+        return {
+            "domain_boost": 0.05,
+            "domain_target": top_domain,
+        }
+
+    # If 2+ domains detected (synthesis-like), boost all detected
+    if len(sorted_domains) >= 2:
+        targets = [d for d, _ in sorted_domains]
+        return {
+            "domain_boost": 0.03,
+            "domain_target": targets,
+        }
+
+    return None

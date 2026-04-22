@@ -33,10 +33,10 @@ from fractrag.benchmarks.flat_vs_fractal import (
 
 RESULTS_PATH = Path(__file__).resolve().parents[2] / "corpus" / "cv_results.json"
 
-# Reduced grid for CV tuning (3x4x3 = 36 combos vs 252 in full sweep)
-PARA_GRID = [0.0, 0.05, 0.15]
-SENT_GRID = [0.0, 0.10, 0.20, 0.30]
-DERIV_GRID = [0.0, 0.03, 0.10]
+# Expanded grid for CV tuning (5x6x5 = 150 combos, covers post-3A landscape)
+PARA_GRID = [0.0, 0.02, 0.05, 0.10, 0.15]
+SENT_GRID = [0.0, 0.05, 0.10, 0.15, 0.20, 0.30]
+DERIV_GRID = [0.0, 0.03, 0.05, 0.10, 0.15]
 
 
 @dataclass
@@ -50,6 +50,8 @@ class FoldResult:
     flat_scores: List[float]       # per-query MRR on test set (flat)
     fractal_scores: List[float]    # per-query MRR on test set (fractal with tuned params)
     test_query_types: List[str]    # query type for each test query
+    per_type_params: Optional[Dict[str, Dict[str, float]]] = None  # per-type tuned params
+    fractal_per_type_scores: Optional[List[float]] = None  # per-query MRR with per-type tuning
 
 
 def create_stratified_folds(queries: List[Dict], n_folds: int = 5) -> List[Tuple[List[Dict], List[Dict]]]:
@@ -161,6 +163,35 @@ def tune_boost_params(
     return best_params, best_mrr
 
 
+def tune_boost_params_per_type(
+    rag: FractalRAG,
+    train_queries: List[Dict],
+    k: int = 10,
+) -> Dict[str, Dict[str, float]]:
+    """Tune boost params separately per query type on training queries."""
+    type_queries: Dict[str, List[Dict]] = {}
+    for q in train_queries:
+        type_queries.setdefault(q["query_type"], []).append(q)
+
+    type_params: Dict[str, Dict[str, float]] = {}
+    for qtype, qs in type_queries.items():
+        best_mrr = -1.0
+        best: Dict[str, float] = {"para_boost": 0.0, "sent_boost": 0.0, "deriv_boost": 0.0}
+        for pb in PARA_GRID:
+            for sb in SENT_GRID:
+                for db in DERIV_GRID:
+                    scores = evaluate_per_query(
+                        rag, qs, use_flat=False,
+                        para_boost=pb, sent_boost=sb, deriv_boost=db, k=k,
+                    )
+                    mean = float(np.mean(scores))
+                    if mean > best_mrr:
+                        best_mrr = mean
+                        best = {"para_boost": pb, "sent_boost": sb, "deriv_boost": db}
+        type_params[qtype] = best
+    return type_params
+
+
 def paired_t_test(scores_a: List[float], scores_b: List[float]) -> Tuple[float, float, float]:
     """Paired t-test on per-query scores.
 
@@ -237,8 +268,11 @@ def run_cross_validation(
     results = []
 
     for fold_idx, (train_qs, test_qs) in enumerate(folds):
-        # Tune on training set
+        # Tune on training set (uniform params)
         best_params, best_train_mrr = tune_boost_params(rag, train_qs, k=k)
+
+        # Tune on training set (per-type params)
+        per_type_params = tune_boost_params_per_type(rag, train_qs, k=k)
 
         # Evaluate on test set
         flat_scores = evaluate_per_query(rag, test_qs, use_flat=True, k=k)
@@ -249,6 +283,20 @@ def run_cross_validation(
             deriv_boost=best_params["deriv_boost"],
             k=k,
         )
+
+        # Evaluate per-type tuned: each test query uses its type's optimal params
+        per_type_scores = []
+        for q in test_qs:
+            qtype = q["query_type"]
+            tp = per_type_params.get(qtype, best_params)
+            score = _evaluate_query_mrr(
+                rag, q, use_flat=False,
+                para_boost=tp["para_boost"],
+                sent_boost=tp["sent_boost"],
+                deriv_boost=tp["deriv_boost"],
+                k=k,
+            )
+            per_type_scores.append(score)
 
         test_types = [q["query_type"] for q in test_qs]
 
@@ -261,6 +309,8 @@ def run_cross_validation(
             flat_scores=flat_scores,
             fractal_scores=fractal_scores,
             test_query_types=test_types,
+            per_type_params=per_type_params,
+            fractal_per_type_scores=per_type_scores,
         ))
 
     return results
@@ -344,6 +394,41 @@ def print_cv_report(fold_results: List[FoldResult]) -> Dict:
                 "delta": round(delta, 4), "p_value": round(tp, 4),
             }
 
+    # Per-type tuned results (if available)
+    all_per_type_fractal = []
+    has_per_type = all(fr.fractal_per_type_scores is not None for fr in fold_results)
+    per_type_tuned_summary = {}
+    if has_per_type:
+        for fr in fold_results:
+            all_per_type_fractal.extend(fr.fractal_per_type_scores)
+        mean_per_type = float(np.mean(all_per_type_fractal))
+        pt_improvement = ((mean_per_type - mean_flat) / mean_flat * 100) if mean_flat > 0 else 0.0
+        pt_t, pt_p, pt_diff = paired_t_test(all_per_type_fractal, all_flat)
+        pt_ci_lower, pt_ci_upper, _ = bootstrap_ci(all_per_type_fractal, all_flat, seed=42)
+
+        print(f"\nPER-TYPE TUNED FRACTAL (each type uses its own optimal params):")
+        print(f"  MRR:          {mean_per_type:.4f} ({pt_improvement:+.1f}% vs flat)")
+        print(f"  p-value:      {pt_p:.4f}")
+        print(f"  95% CI:       [{pt_ci_lower:+.4f}, {pt_ci_upper:+.4f}]")
+
+        # Show per-type params from each fold
+        print(f"\n  Per-type params (per fold):")
+        for fr in fold_results:
+            if fr.per_type_params:
+                params_str = ", ".join(
+                    f"{t}: p={p['para_boost']:.2f} s={p['sent_boost']:.2f} d={p['deriv_boost']:.2f}"
+                    for t, p in sorted(fr.per_type_params.items())
+                )
+                print(f"    Fold {fr.fold_idx}: {params_str}")
+
+        per_type_tuned_summary = {
+            "mrr": round(mean_per_type, 4),
+            "improvement_pct": round(pt_improvement, 2),
+            "p_value": round(pt_p, 4),
+            "ci_lower": round(pt_ci_lower, 4),
+            "ci_upper": round(pt_ci_upper, 4),
+        }
+
     # Verdict
     print(f"\n{'='*80}")
     if p_val < 0.05 and improvement_pct >= 5:
@@ -374,13 +459,16 @@ def print_cv_report(fold_results: List[FoldResult]) -> Dict:
             "verdict": verdict,
         },
         "per_type": type_results,
+        "per_type_tuned": per_type_tuned_summary,
         "folds": [
             {
                 "fold_idx": fr.fold_idx,
                 "best_params": fr.best_params,
+                "per_type_params": fr.per_type_params,
                 "best_train_mrr": round(fr.best_train_mrr, 4),
                 "test_flat_mrr": round(float(np.mean(fr.flat_scores)), 4),
                 "test_fractal_mrr": round(float(np.mean(fr.fractal_scores)), 4),
+                "test_per_type_mrr": round(float(np.mean(fr.fractal_per_type_scores)), 4) if fr.fractal_per_type_scores else None,
             }
             for fr in fold_results
         ],
@@ -404,7 +492,8 @@ def main():
     print(f"  Indexed in {time.time()-t0:.1f}s")
     print(f"  Sentences: {stats['entries_level_0']}, Paragraphs: {stats['entries_level_1']}, Documents: {stats['entries_level_2']}")
 
-    print(f"\nRunning 5-fold cross-validation (36 param combos per fold)...")
+    grid_size = len(PARA_GRID) * len(SENT_GRID) * len(DERIV_GRID)
+    print(f"\nRunning 5-fold cross-validation ({grid_size} param combos per fold)...")
     t0 = time.time()
     fold_results = run_cross_validation(rag, queries, n_folds=5, k=10)
     cv_time = time.time() - t0

@@ -318,6 +318,40 @@ def print_results_table(all_configs: List[Dict]):
     return improvement
 
 
+def run_per_type_sweep(
+    rag: FractalRAG,
+    queries: List[Dict],
+    k: int = 10,
+) -> Dict[str, Dict[str, float]]:
+    """Find optimal boost parameters per query type.
+
+    Runs a parameter grid separately per query type, finding the best
+    params for each type independently.
+    """
+    type_queries: Dict[str, List[Dict]] = {}
+    for q in queries:
+        type_queries.setdefault(q["query_type"], []).append(q)
+
+    type_best: Dict[str, Dict[str, float]] = {}
+    for qtype, qs in type_queries.items():
+        best_mrr = -1.0
+        best_params = {"para_boost": 0.0, "sent_boost": 0.0, "deriv_boost": 0.0}
+        for pb in [0.0, 0.03, 0.05, 0.10, 0.15]:
+            for sb in [0.0, 0.05, 0.10, 0.20]:
+                for db in [0.0, 0.03, 0.05, 0.10, 0.15]:
+                    r = run_reranked_configuration(
+                        rag, qs,
+                        f"TYPE_SWEEP_{qtype}",
+                        use_derivatives=(db > 0),
+                        para_boost=pb, sent_boost=sb, deriv_boost=db, k=k,
+                    )
+                    if r["overall"]["mrr"] > best_mrr:
+                        best_mrr = r["overall"]["mrr"]
+                        best_params = {"para_boost": pb, "sent_boost": sb, "deriv_boost": db}
+        type_best[qtype] = {**best_params, "mrr": best_mrr}
+    return type_best
+
+
 def main():
     print("Loading corpus...")
     documents, queries = load_corpus()
@@ -531,6 +565,17 @@ def main():
         print(f"  Done in {time.time()-t0:.1f}s — MRR={balanced['overall']['mrr']:.4f} R@10={balanced['overall']['recall_at_10']:.4f}")
         configs.append(balanced)
 
+    # --- PER-TYPE SWEEP ---
+    print("\n--- Per-Type Boost Parameter Sweep ---")
+    t0 = time.time()
+    per_type_best = run_per_type_sweep(rag, queries, k=10)
+    print(f"  Sweep completed in {time.time()-t0:.1f}s")
+    print(f"\n  {'TYPE':<18} {'PARA':>6} {'SENT':>6} {'DERIV':>6} {'MRR':>8}")
+    for qtype in ["specification", "summary", "logic", "synthesis"]:
+        if qtype in per_type_best:
+            p = per_type_best[qtype]
+            print(f"  {qtype:<18} {p['para_boost']:>6.2f} {p['sent_boost']:>6.2f} {p['deriv_boost']:>6.2f} {p['mrr']:>8.4f}")
+
     # Print results and get go/no-go
     improvement = print_results_table(configs)
 
@@ -547,6 +592,7 @@ def main():
         "configurations": configs,
         "sweep_results": sweep_results,
         "best_params": best_params,
+        "per_type_best": per_type_best,
         "verdict": {
             "flat_mrr": flat["overall"]["mrr"],
             "fractal_mrr": optimal["overall"]["mrr"],
