@@ -1,0 +1,376 @@
+{
+  "metadata": {
+    "created": "2026-04-21",
+    "total_queries": 40,
+    "annotation_method": "content_grounded",
+    "annotation_note": "Queries crafted from actual abstract content. Relevance based on topical match to specific paper content, not embedding distance.",
+    "types": {
+      "specification": 10,
+      "summary": 10,
+      "logic": 10,
+      "synthesis": 10
+    }
+  },
+  "queries": [
+    {
+      "query_text": "What retinal condition does deep learning help screen for in diabetes patients?",
+      "query_type": "specification",
+      "relevant_pmids": [
+        "36246896"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How many studies were included in the systematic review of machine learning for sleep disorders?",
+      "query_type": "specification",
+      "relevant_pmids": [
+        "36856067"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What is the systematic review about regarding AI algorithms for hip fracture detection?",
+      "query_type": "specification",
+      "relevant_pmids": [
+        "36930153"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What types of fractures does the overview of AI diagnostic products focus on?",
+      "query_type": "specification",
+      "relevant_pmids": [
+        "35731103"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What clinical setting does the paper discuss AI transformation for?",
+      "query_type": "specification",
+      "relevant_pmids": [
+        "38663302"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What type of therapy does the randomized trial compare using AI and mobile health?",
+      "query_type": "specification",
+      "relevant_pmids": [
+        "35939288"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What specific type of drug interactions does the AI prediction review examine?",
+      "query_type": "specification",
+      "relevant_pmids": [
+        "37458400"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What data mining approach is used for pharmacovigilance of drug interactions?",
+      "query_type": "specification",
+      "relevant_pmids": [
+        "36732152"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "In what medical specialty is artificial intelligence being applied for diagnosis and research?",
+      "query_type": "specification",
+      "relevant_pmids": [
+        "33421167"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What brain tumor type does the AI-based MRI radiomics study focus on?",
+      "query_type": "specification",
+      "relevant_pmids": [
+        "38486342"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What approaches have been used for AI-based clinical diagnosis in medical imaging and pathology?",
+      "query_type": "summary",
+      "relevant_pmids": [
+        "36246896",
+        "34957756",
+        "36930153"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What is the current evidence on machine learning for cardiovascular and respiratory disease detection?",
+      "query_type": "summary",
+      "relevant_pmids": [
+        "34957756",
+        "36856067",
+        "38114983"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How are AI clinical decision support systems being developed for physician practice?",
+      "query_type": "summary",
+      "relevant_pmids": [
+        "36315554",
+        "37543707",
+        "40036494"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What are the perspectives on ethical implications of AI in healthcare decision making?",
+      "query_type": "summary",
+      "relevant_pmids": [
+        "39707327",
+        "40775927",
+        "38920162"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What is the evidence on AI applications in emergency department triage?",
+      "query_type": "summary",
+      "relevant_pmids": [
+        "39944197",
+        "39262027",
+        "39965433"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How is AI being applied to triage patients with acute conditions in emergencies?",
+      "query_type": "summary",
+      "relevant_pmids": [
+        "41795351",
+        "33243898",
+        "39558305"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What role does AI play in improving patient care delivery and treatment management?",
+      "query_type": "summary",
+      "relevant_pmids": [
+        "38589940",
+        "32325045",
+        "34272911"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How is AI being used for medication management and clinical pharmacy applications?",
+      "query_type": "summary",
+      "relevant_pmids": [
+        "38049066",
+        "32572267",
+        "35939288"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What are recent advances in using AI for drug safety and pharmacovigilance?",
+      "query_type": "summary",
+      "relevant_pmids": [
+        "35904529",
+        "31383376",
+        "39961738"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How is AI being applied in radiology and pathology for cancer diagnosis?",
+      "query_type": "summary",
+      "relevant_pmids": [
+        "36220072",
+        "37493248",
+        "37099398"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "Why is deep learning considered effective for large-scale retinal disease screening?",
+      "query_type": "logic",
+      "relevant_pmids": [
+        "36246896"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "Why is explainability important for trust in AI clinical decision support?",
+      "query_type": "logic",
+      "relevant_pmids": [
+        "36199569"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What are the obstacles preventing wider adoption of AI in critical care settings?",
+      "query_type": "logic",
+      "relevant_pmids": [
+        "38589940"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How does human-computer collaboration improve skin cancer recognition?",
+      "query_type": "logic",
+      "relevant_pmids": [
+        "32572267"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How do AI models predict drug-drug interactions in clinical pharmacy?",
+      "query_type": "logic",
+      "relevant_pmids": [
+        "37458400"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How are machine learning methods applied to improve emergency medicine outcomes?",
+      "query_type": "logic",
+      "relevant_pmids": [
+        "39944197"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How does multimodal data integration enhance AI performance in oncology?",
+      "query_type": "logic",
+      "relevant_pmids": [
+        "36220072"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "Why is interpretability crucial for AI models used in radiology and radiation oncology?",
+      "query_type": "logic",
+      "relevant_pmids": [
+        "37493248"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What are the benefits and challenges of AI-driven triage in emergency departments?",
+      "query_type": "logic",
+      "relevant_pmids": [
+        "39965433"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How does artificial intelligence assist in detecting drug toxicity and ensuring safety?",
+      "query_type": "logic",
+      "relevant_pmids": [
+        "31383376"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How do AI diagnostic tools and AI-driven triage systems work together to improve patient outcomes?",
+      "query_type": "synthesis",
+      "relevant_pmids": [
+        "34957756",
+        "39944197",
+        "38589940"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "Compare the challenges of implementing AI in radiology versus emergency triage settings.",
+      "query_type": "synthesis",
+      "relevant_pmids": [
+        "37099398",
+        "39262027",
+        "37493248"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What are the common barriers to clinical adoption of AI across diagnosis, triage, and treatment?",
+      "query_type": "synthesis",
+      "relevant_pmids": [
+        "38920162",
+        "39707327",
+        "38589940"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How does AI impact both drug safety monitoring and clinical decision support for physicians?",
+      "query_type": "synthesis",
+      "relevant_pmids": [
+        "35904529",
+        "37543707",
+        "38049066"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What evidence exists for AI improving accuracy in both medical imaging and emergency triage?",
+      "query_type": "synthesis",
+      "relevant_pmids": [
+        "32941736",
+        "39965433",
+        "36930153"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How are deep learning and machine learning being applied across different medical specialties?",
+      "query_type": "synthesis",
+      "relevant_pmids": [
+        "36246896",
+        "36220072",
+        "33243898"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What role does data integration play in advancing AI for both oncology and pharmacovigilance?",
+      "query_type": "synthesis",
+      "relevant_pmids": [
+        "36220072",
+        "36732152",
+        "39961738"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "Compare AI's effectiveness in detecting skin conditions versus cardiac conditions.",
+      "query_type": "synthesis",
+      "relevant_pmids": [
+        "32572267",
+        "34957756",
+        "33421167"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "How do ethical concerns about AI differ between resource allocation and clinical diagnosis?",
+      "query_type": "synthesis",
+      "relevant_pmids": [
+        "39707327",
+        "38920162",
+        "36315554"
+      ],
+      "grounding": "content-based"
+    },
+    {
+      "query_text": "What can emergency medicine learn from AI advances in both radiology and pharmacovigilance?",
+      "query_type": "synthesis",
+      "relevant_pmids": [
+        "35933269",
+        "35904529",
+        "39944197"
+      ],
+      "grounding": "content-based"
+    }
+  ]
+}

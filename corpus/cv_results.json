@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "corpus_size": 78,
+    "query_count": 40,
+    "n_folds": 5,
+    "grid_size": 36,
+    "embedding_model": "BAAI/bge-m3",
+    "cv_time_seconds": 118.0
+  },
+  "summary": {
+    "overall": {
+      "flat_mrr": 0.7517,
+      "fractal_mrr": 0.7827,
+      "improvement_pct": 4.13,
+      "mean_diff": 0.0311,
+      "t_statistic": 1.936,
+      "p_value": 0.0602,
+      "ci_lower": 0.0042,
+      "ci_upper": 0.0657,
+      "significant": false,
+      "verdict": "NOT_VALIDATED"
+    },
+    "per_type": {
+      "specification": {
+        "n": 10,
+        "flat_mrr": 0.7583,
+        "fractal_mrr": 0.775,
+        "delta": 0.0167,
+        "p_value": 0.3434
+      },
+      "summary": {
+        "n": 10,
+        "flat_mrr": 0.7033,
+        "fractal_mrr": 0.7833,
+        "delta": 0.08,
+        "p_value": 0.1825
+      },
+      "logic": {
+        "n": 10,
+        "flat_mrr": 0.925,
+        "fractal_mrr": 0.9333,
+        "delta": 0.0083,
+        "p_value": 0.3434
+      },
+      "synthesis": {
+        "n": 10,
+        "flat_mrr": 0.62,
+        "fractal_mrr": 0.6393,
+        "delta": 0.0193,
+        "p_value": 0.4813
+      }
+    },
+    "folds": [
+      {
+        "fold_idx": 0,
+        "best_params": {
+          "para_boost": 0.0,
+          "sent_boost": 0.2,
+          "deriv_boost": 0.1
+        },
+        "best_train_mrr": 0.7995,
+        "test_flat_mrr": 0.775,
+        "test_fractal_mrr": 0.8304
+      },
+      {
+        "fold_idx": 1,
+        "best_params": {
+          "para_boost": 0.05,
+          "sent_boost": 0.2,
+          "deriv_boost": 0.03
+        },
+        "best_train_mrr": 0.7734,
+        "test_flat_mrr": 0.9062,
+        "test_fractal_mrr": 0.9375
+      },
+      {
+        "fold_idx": 2,
+        "best_params": {
+          "para_boost": 0.05,
+          "sent_boost": 0.2,
+          "deriv_boost": 0.03
+        },
+        "best_train_mrr": 0.7969,
+        "test_flat_mrr": 0.8438,
+        "test_fractal_mrr": 0.8438
+      },
+      {
+        "fold_idx": 3,
+        "best_params": {
+          "para_boost": 0.0,
+          "sent_boost": 0.1,
+          "deriv_boost": 0.1
+        },
+        "best_train_mrr": 0.8057,
+        "test_flat_mrr": 0.6604,
+        "test_fractal_mrr": 0.6979
+      },
+      {
+        "fold_idx": 4,
+        "best_params": {
+          "para_boost": 0.05,
+          "sent_boost": 0.2,
+          "deriv_boost": 0.03
+        },
+        "best_train_mrr": 0.8568,
+        "test_flat_mrr": 0.5729,
+        "test_fractal_mrr": 0.6042
+      }
+    ]
+  }
+}

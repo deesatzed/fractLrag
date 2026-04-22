@@ -1,0 +1,1878 @@
+{
+  "metadata": {
+    "created": "2026-04-21",
+    "source": "PubMed E-utilities API (real data, not mock)",
+    "total_documents": 78,
+    "domains": [
+      "ai_diagnosis",
+      "ai_physician",
+      "ai_triage",
+      "ai_care",
+      "ai_drug_safety",
+      "ai_radiology_pathology"
+    ],
+    "purpose": "Fractal RAG validation + Doctronic AI-medicine domain knowledge"
+  },
+  "documents": [
+    {
+      "pmid": "36246896",
+      "title": "Artificial intelligence promotes the diagnosis and screening of diabetic retinopathy.",
+      "abstract": "Deep learning evolves into a new form of machine learning technology that is classified under artificial intelligence (AI), which has substantial potential for large-scale healthcare screening and may allow the determination of the most appropriate specific treatment for individual patients. Recent developments in diagnostic technologies facilitated studies on retinal conditions and ocular disease in metabolism and endocrinology. Globally, diabetic retinopathy (DR) is regarded as a major cause of vision loss. Deep learning systems are effective and accurate in the detection of DR from digital fundus photographs or optical coherence tomography. Thus, using AI techniques, systems with high accuracy and efficiency can be developed for diagnosing and screening DR at an early stage and without the resources that are only accessible in special clinics. Deep learning enables early diagnosis with high specificity and sensitivity, which makes decisions based on minimally handcrafted features paving the way for personalized DR progression real-time monitoring and in-time ophthalmic or endocrine therapies. This review will discuss cutting-edge AI algorithms, the automated detecting systems of DR stage grading and feature segmentation, the prediction of DR outcomes and therapeutics, and the ophthalmic indications of other systemic diseases revealed by AI.",
+      "authors": [
+        "Xuan Huang",
+        "Hui Wang",
+        "Chongyang She",
+        "Jing Feng",
+        "Xuhui Liu"
+      ],
+      "journal": "Frontiers in endocrinology",
+      "year": 2022,
+      "mesh_terms": [
+        "Algorithms",
+        "Artificial Intelligence",
+        "Diabetes Mellitus",
+        "Diabetic Retinopathy",
+        "Diagnostic Techniques, Ophthalmological",
+        "Humans",
+        "Machine Learning",
+        "Retinal Diseases"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_36246896"
+    },
+    {
+      "pmid": "36856067",
+      "title": "Application of artificial intelligence in the diagnosis of sleep apnea.",
+      "abstract": "STUDY OBJECTIVES: Machine learning (ML) models have been employed in the setting of sleep disorders. This review aims to summarize the existing data about the role of ML techniques in the diagnosis, classification, and treatment of sleep-related breathing disorders.\n\nMETHODS: A systematic search in Medline, EMBASE, and Cochrane databases through January 2022 was performed.\n\nRESULTS: Our search strategy revealed 132 studies that were included in the systematic review. Existing data show that ML models have been successfully used for diagnostic purposes. Specifically, ML models showed good performance in diagnosing sleep apnea using easily obtained features from the electrocardiogram, pulse oximetry, and sound signals. Similarly, ML showed good performance for the classification of sleep apnea into obstructive and central categories, as well as predicting apnea severity. Existing data show promising results for the ML-based guided treatment of sleep apnea. Specifically, the prediction of outcomes following surgical treatment and optimization of continuous positive airway pressure therapy can be guided by ML models.\n\nCONCLUSIONS: The adoption and implementation of ML in the field of sleep-related breathing disorders is promising. Advancements in wearable sensor technology and ML models can help clinicians predict, diagnose, and classify sleep apnea more accurately and efficiently.\n\nCITATION: Bazoukis G, Bollepalli SC, Chung CT, et al. Application of artificial intelligence in the diagnosis of sleep apnea. J Clin Sleep Med. 2023;19(7):1337-1363.",
+      "authors": [
+        "George Bazoukis",
+        "Sandeep Chandra Bollepalli",
+        "Cheuk To Chung",
+        "Xinmu Li",
+        "Gary Tse"
+      ],
+      "journal": "Journal of clinical sleep medicine : JCSM : official publication of the American Academy of Sleep Medicine",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Sleep Apnea, Obstructive",
+        "Artificial Intelligence",
+        "Polysomnography",
+        "Sleep Apnea Syndromes",
+        "Sleep"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_36856067"
+    },
+    {
+      "pmid": "34957756",
+      "title": "Artificial intelligence in the diagnosis and detection of heart failure: the past, present, and future.",
+      "abstract": "Artificial Intelligence (AI) performs human intelligence-dependant tasks using tools such as Machine Learning, and its subtype Deep Learning. AI has incorporated itself in the field of cardiovascular medicine, and increasingly employed to revolutionize diagnosis, treatment, risk prediction, clinical care, and drug discovery. Heart failure has a high prevalence, and mortality rate following hospitalization being 10.4% at 30-days, 22% at 1-year, and 42.3% at 5-years. Early detection of heart failure is of vital importance in shaping the medical, and surgical interventions specific to HF patients. This has been accomplished with the advent of Neural Network (NN) model, the accuracy of which has proven to be 85%. AI can be of tremendous help in analyzing raw image data from cardiac imaging techniques (such as echocardiography, computed tomography, cardiac MRI amongst others) and electrocardiogram recordings through incorporation of an algorithm. The use of decision trees by Rough Sets (RS), and logistic regression (LR) methods utilized to construct decision-making model to diagnose congestive heart failure, and role of AI in early detection of future mortality and destabilization episodes has played a vital role in optimizing cardiovascular disease outcomes. The review highlights the major achievements of AI in recent years that has radically changed nearly all areas of HF prevention, diagnosis, and management.",
+      "authors": [
+        "Farah Yasmin",
+        "Syed Muhammad Ismail Shah",
+        "Aisha Naeem",
+        "Syed Muhammad Shujauddin",
+        "Adina Jabeen"
+      ],
+      "journal": "Reviews in cardiovascular medicine",
+      "year": 2021,
+      "mesh_terms": [
+        "Algorithms",
+        "Artificial Intelligence",
+        "Echocardiography",
+        "Heart Failure",
+        "Humans",
+        "Machine Learning"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_34957756"
+    },
+    {
+      "pmid": "36930153",
+      "title": "Artificial Intelligence for Hip Fracture Detection and Outcome Prediction: A Systematic Review and Meta-analysis.",
+      "abstract": "IMPORTANCE: Artificial intelligence (AI) enables powerful models for establishment of clinical diagnostic and prognostic tools for hip fractures; however the performance and potential impact of these newly developed algorithms are currently unknown.\n\nOBJECTIVE: To evaluate the performance of AI algorithms designed to diagnose hip fractures on radiographs and predict postoperative clinical outcomes following hip fracture surgery relative to current practices.\n\nDATA SOURCES: A systematic review of the literature was performed using the MEDLINE, Embase, and Cochrane Library databases for all articles published from database inception to January 23, 2023. A manual reference search of included articles was also undertaken to identify any additional relevant articles.\n\nSTUDY SELECTION: Studies developing machine learning (ML) models for the diagnosis of hip fractures from hip or pelvic radiographs or to predict any postoperative patient outcome following hip fracture surgery were included.\n\nDATA EXTRACTION AND SYNTHESIS: This study followed the Preferred Reporting Items for Systematic Reviews and Meta-analyses and was registered with PROSPERO. Eligible full-text articles were evaluated and relevant data extracted independently using a template data extraction form. For studies that predicted postoperative outcomes, the performance of traditional predictive statistical models, either multivariable logistic or linear regression, was recorded and compared with the performance of the best ML model on the same out-of-sample data set.\n\nMAIN OUTCOMES AND MEASURES: Diagnostic accuracy of AI models was compared with the diagnostic accuracy of expert clinicians using odds ratios (ORs) with 95% CIs. Areas under the curve for postoperative outcome prediction between traditional statistical models (multivariable linear or logistic regression) and ML models were compared.\n\nRESULTS: Of 39 studies that met all criteria and were included in this analysis, 18 (46.2%) used AI models to diagnose hip fractures on plain radiographs and 21 (53.8%) used AI models to predict patient outcomes following hip fracture surgery. A total of 39 598 plain radiographs and 714 939 hip fractures were used for training, validating, and testing ML models specific to diagnosis and postoperative outcome prediction, respectively. Mortality and length of hospital stay were the most predicted outcomes. On pooled data analysis, compared with clinicians, the OR for diagnostic error of ML models was 0.79 (95% CI, 0.48-1.31; P = .36; I2 = 60%) for hip fracture radiographs. For the ML models, the mean (SD) sensitivity was 89.3% (8.5%), specificity was 87.5% (9.9%), and F1 score was 0.90 (0.06). The mean area under the curve for mortality prediction was 0.84 with ML models compared with 0.79 for alternative controls (P = .09).\n\nCONCLUSIONS AND RELEVANCE: The findings of this systematic review and meta-analysis suggest that the potential applications of AI to aid with diagnosis from hip radiographs are promising. The performance of AI in diagnosing hip fractures was comparable with that of expert radiologists and surgeons. However, current implementations of AI for outcome prediction do not seem to provide substantial benefit over traditional multivariable predictive statistics.",
+      "authors": [
+        "Johnathan R Lex",
+        "Joseph Di Michele",
+        "Robert Koucheki",
+        "Daniel Pincus",
+        "Cari Whyne"
+      ],
+      "journal": "JAMA network open",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Hip Fractures",
+        "Prognosis",
+        "Algorithms",
+        "Length of Stay"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_36930153"
+    },
+    {
+      "pmid": "35300850",
+      "title": "Artificial intelligence models for diagnosing gingivitis and periodontal disease: A systematic review.",
+      "abstract": "STATEMENT OF PROBLEM: Artificial intelligence (AI) models have been developed for periodontal applications, including diagnosing gingivitis and periodontal disease, but their accuracy and maturity of the technology remain unclear.\n\nPURPOSE: The purpose of this systematic review was to evaluate the performance of the AI models for detecting dental plaque and diagnosing gingivitis and periodontal disease.\n\nMATERIAL AND METHODS: A review was performed in 4 databases: MEDLINE/PubMed, World of Science, Cochrane, and Scopus. A manual search was also conducted. Studies were classified into 4 groups: detecting dental plaque, diagnosis of gingivitis, diagnosis of periodontal disease from intraoral images, and diagnosis of alveolar bone loss from periapical, bitewing, and panoramic radiographs. Two investigators evaluated the studies independently by applying the Joanna Briggs Institute critical appraisal. A third examiner was consulted to resolve any lack of consensus.\n\nRESULTS: Twenty-four articles were included: 2 studies developed AI models for detecting plaque, resulting in accuracy ranging from 73.6% to 99%; 7 studies assessed the ability to diagnose gingivitis from intraoral photographs reporting an accuracy between 74% and 78.20%; 1 study used fluorescent intraoral images to diagnose gingivitis reporting 67.7% to 73.72% accuracy; 3 studies assessed the ability to diagnose periodontal disease from intraoral photographs with an accuracy between 47% and 81%, and 11 studies evaluated the performance of AI models for detecting alveolar bone loss from radiographic images reporting an accuracy between 73.4% and 99%.\n\nCONCLUSIONS: AI models for periodontology applications are still in development but might provide a powerful diagnostic tool.",
+      "authors": [
+        "Marta Revilla-León",
+        "Miguel Gómez-Polo",
+        "Abdul B Barmak",
+        "Wardah Inam",
+        "Joseph Y K Kan"
+      ],
+      "journal": "The Journal of prosthetic dentistry",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Dental Plaque",
+        "Alveolar Bone Loss",
+        "Artificial Intelligence",
+        "Periodontal Diseases",
+        "Gingivitis"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_35300850"
+    },
+    {
+      "pmid": "38486342",
+      "title": "Artificial intelligence-based MRI radiomics and radiogenomics in glioma.",
+      "abstract": "The specific genetic subtypes that gliomas exhibit result in variable clinical courses and the need to involve multidisciplinary teams of neurologists, epileptologists, neurooncologists and neurosurgeons. Currently, the diagnosis of gliomas pivots mainly around the preliminary radiological findings and the subsequent definitive surgical diagnosis (via surgical sampling). Radiomics and radiogenomics present a potential to precisely diagnose and predict survival and treatment responses, via morphological, textural, and functional features derived from MRI data, as well as genomic data. In spite of their advantages, it is still lacking standardized processes of feature extraction and analysis methodology among different research groups, which have made external validations infeasible. Radiomics and radiogenomics can be used to better understand the genomic basis of gliomas, such as tumor spatial heterogeneity, treatment response, molecular classifications and tumor microenvironment immune infiltration. These novel techniques have also been used to predict histological features, grade or even overall survival in gliomas. In this review, workflows of radiomics and radiogenomics are elucidated, with recent research on machine learning or artificial intelligence in glioma.",
+      "authors": [
+        "Haiqing Fan",
+        "Yilin Luo",
+        "Fang Gu",
+        "Bin Tian",
+        "Yongqin Xiong"
+      ],
+      "journal": "Cancer imaging : the official publication of the International Cancer Imaging Society",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Radiomics",
+        "Glioma",
+        "Machine Learning",
+        "Magnetic Resonance Imaging",
+        "Tumor Microenvironment"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_38486342"
+    },
+    {
+      "pmid": "41437780",
+      "title": "Artificial intelligence in breast cancer: clinical applications in diagnosis, prognosis, and therapeutics.",
+      "abstract": "Breast cancer (BC) presents a considerable global health challenge and is characterized by increasing mortality and morbidity rates. Prompt screening and accurate diagnosis are crucial for improving patient outcomes. For the assessment of BC, radiographic imaging modalities such as digital breast tomosynthesis (DBT), ultrasound, digital mammography (DM), magnetic resonance imaging (MRI), and nuclear medicine procedures are commonly used. The gold standard for confirming cancer is histopathology. To effectively support the segmentation, diagnosis, and prognosis of BC. Artificial intelligence (AI) technologies show great promise for the quantitative depiction of medical images.This review explores recent strides in AI applications for BC. The literature search from 2018 to 2025 was performed with the PubMed database. It includes rapid breast lesion detection, segmentation, cancer diagnosis and enhanced imaging quality through data augmentation. It also discusses the biological characterization of BC via AI-based classification tools, including subtyping and staging. Furthermore, this review also explores the use of multiomics data to predict clinical outcomes such as survival, treatment response, and metastasis in BC. Additionally, we recognized the challenges faced by AI in BC in real-world applications, including organizing data, model interpretability, and regulatory compliance.",
+      "authors": [
+        "Janhvi Singh",
+        "Omar Awad Alsaidan",
+        "Alhussain Aodah",
+        "Majed Alrobaian",
+        "Waleed H Almalki"
+      ],
+      "journal": "Future oncology (London, England)",
+      "year": 2026,
+      "mesh_terms": [
+        "Humans",
+        "Breast Neoplasms",
+        "Artificial Intelligence",
+        "Female",
+        "Prognosis",
+        "Mammography"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_41437780"
+    },
+    {
+      "pmid": "35731103",
+      "title": "Artificial Intelligence (AI) for Fracture Diagnosis: An Overview of Current Products and Considerations for Clinical Adoption, From the ",
+      "abstract": "Fractures are common injuries that can be difficult to diagnose, with missed fractures accounting for most misdiagnoses in the emergency department. Artificial intelligence (AI) and, specifically, deep learning have shown a strong ability to accurately detect fractures and augment the performance of radiologists in proof-of-concept research settings. Although the number of real-world AI products available for clinical use continues to increase, guidance for practicing radiologists in the adoption of this new technology is limited. This review describes how AI and deep learning algorithms can help radiologists to better diagnose fractures. The article also provides an overview of commercially available U.S. FDA-cleared AI tools for fracture detection as well as considerations for the clinical adoption of these tools by radiology practices.",
+      "authors": [
+        "John R Zech",
+        "Samantha M Santomartino",
+        "Paul H Yi"
+      ],
+      "journal": "AJR. American journal of roentgenology",
+      "year": 2022,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Radiologists",
+        "Radiology",
+        "Algorithms",
+        "Radiography",
+        "Fractures, Bone"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_35731103"
+    },
+    {
+      "pmid": "40205603",
+      "title": "Application of artificial intelligence in the diagnosis of malignant digestive tract tumors: focusing on opportunities and challenges in endoscopy and pathology.",
+      "abstract": "BACKGROUND: Malignant digestive tract tumors are highly prevalent and fatal tumor types globally, often diagnosed at advanced stages due to atypical early symptoms, causing patients to miss optimal treatment opportunities. Traditional endoscopic and pathological diagnostic processes are highly dependent on expert experience, facing problems such as high misdiagnosis rates and significant inter-observer variations. With the development of artificial intelligence (AI) technologies such as deep learning, real-time lesion detection with endoscopic assistance and automated pathological image analysis have shown potential in improving diagnostic accuracy and efficiency. However, relevant applications still face challenges including insufficient data standardization, inadequate interpretability, and weak clinical validation.\n\nOBJECTIVE: This study aims to systematically review the current applications of artificial intelligence in diagnosing malignant digestive tract tumors, focusing on the progress and bottlenecks in two key areas: endoscopic examination and pathological diagnosis, and to provide feasible ideas and suggestions for subsequent research and clinical translation.\n\nMETHODS: A systematic literature search strategy was adopted to screen relevant studies published between 2017 and 2024 from databases including PubMed, Web of Science, Scopus, and IEEE Xplore, supplemented with searches of early classical literature. Inclusion criteria included studies on malignant digestive tract tumors such as esophageal cancer, gastric cancer, or colorectal cancer, involving the application of artificial intelligence technology in endoscopic diagnosis or pathological analysis. The effects and main limitations of AI diagnosis were summarized through comprehensive analysis of research design, algorithmic methods, and experimental results from relevant literature.\n\nRESULTS: In the field of endoscopy, multiple deep learning models have significantly improved detection rates in real-time polyp detection, early gastric cancer, and esophageal cancer screening, with some commercialized systems successfully entering clinical trials. However, the scale and quality of data across different studies vary widely, and the generalizability of models to multi-center, multi-device environments remains to be verified. In pathological analysis, using convolutional neural networks, multimodal pre-training models, etc., automatic tissue segmentation, tumor grading, and assisted diagnosis can be achieved, showing good scalability in interactive question-answering. Nevertheless, clinical implementation still faces obstacles such as non-uniform data standards, lack of large-scale prospective validation, and insufficient model interpretability and continuous learning mechanisms.\n\nCONCLUSION: Artificial intelligence provides new technological opportunities for endoscopic and pathological diagnosis of malignant digestive tract tumors, achieving positive results in early lesion identification and assisted decision-making. However, to achieve the transition from research to widespread clinical application, data standardization, model reliability, and interpretability still need to be improved through multi-center joint research, and a complete regulatory and ethical system needs to be established. In the future, artificial intelligence will play a more important role in the standardization and precision management of diagnosis and treatment of digestive tract tumors.",
+      "authors": [
+        "Yinhu Gao",
+        "Peizhen Wen",
+        "Yuan Liu",
+        "Yahuang Sun",
+        "Hui Qian"
+      ],
+      "journal": "Journal of translational medicine",
+      "year": 2025,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Endoscopy",
+        "Gastrointestinal Neoplasms",
+        "Digestive System Neoplasms",
+        "Deep Learning"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_40205603"
+    },
+    {
+      "pmid": "38114983",
+      "title": "Artificial Intelligence and Acute Appendicitis: A Systematic Review of Diagnostic and Prognostic Models.",
+      "abstract": "BACKGROUND: To assess the efficacy of artificial intelligence (AI) models in diagnosing and prognosticating acute appendicitis (AA) in adult patients compared to traditional methods. AA is a common cause of emergency department visits and abdominal surgeries. It is typically diagnosed through clinical assessments, laboratory tests, and imaging studies. However, traditional diagnostic methods can be time-consuming and inaccurate. Machine learning models have shown promise in improving diagnostic accuracy and predicting outcomes.\n\nMAIN BODY: A systematic review following the PRISMA guidelines was conducted, searching PubMed, Embase, Scopus, and Web of Science databases. Studies were evaluated for risk of bias using the Prediction Model Risk of Bias Assessment Tool. Data points extracted included model type, input features, validation strategies, and key performance metrics.\n\nRESULTS: In total, 29 studies were analyzed, out of which 21 focused on diagnosis, seven on prognosis, and one on both. Artificial neural networks (ANNs) were the most commonly employed algorithm for diagnosis. Both ANN and logistic regression were also widely used for categorizing types of AA. ANNs showed high performance in most cases, with accuracy rates often exceeding 80% and AUC values peaking at 0.985. The models also demonstrated promising results in predicting postoperative outcomes such as sepsis risk and ICU admission. Risk of bias was identified in a majority of studies, with selection bias and lack of internal validation being the most common issues.\n\nCONCLUSION: AI algorithms demonstrate significant promise in diagnosing and prognosticating AA, often surpassing traditional methods and clinical scores such as the Alvarado scoring system in terms of speed and accuracy.",
+      "authors": [
+        "Mahbod Issaiy",
+        "Diana Zarei",
+        "Amene Saghazadeh"
+      ],
+      "journal": "World journal of emergency surgery : WJES",
+      "year": 2023,
+      "mesh_terms": [
+        "Adult",
+        "Humans",
+        "Artificial Intelligence",
+        "Appendicitis",
+        "Prognosis",
+        "Algorithms",
+        "Machine Learning",
+        "Acute Disease"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_38114983"
+    },
+    {
+      "pmid": "39702597",
+      "title": "Artificial intelligence in risk prediction and diagnosis of vertebral fractures.",
+      "abstract": "With the increasing prevalence of vertebral fractures, accurate diagnosis and prognostication are essential. This study assesses the effectiveness of AI in diagnosing and predicting vertebral fractures through a systematic review and meta-analysis. A comprehensive search across major databases selected studies utilizing AI for vertebral fracture diagnosis or prognosis. Out of 14,161 studies initially identified, 79 were included, with 40 undergoing meta-analysis. Diagnostic models were stratified by pathology: non-pathological vertebral fractures, osteoporotic vertebral fractures, and vertebral compression fractures. The primary outcome measure was AUROC. AI showed high accuracy in diagnosing and predicting vertebral fractures: predictive AUROC = 0.82, osteoporotic vertebral fracture diagnosis AUROC = 0.92, non-pathological vertebral fracture diagnosis AUROC = 0.85, and vertebral compression fracture diagnosis AUROC = 0.87, all significant (p < 0.001). Traditional models had the highest median AUROC (0.90) for fracture prediction, while deep learning models excelled in diagnosing all fracture types. High heterogeneity (I² > 99%, p < 0.001) indicated significant variation in model design and performance. AI technologies show considerable promise in improving the diagnosis and prognostication of vertebral fractures, with high accuracy. However, observed heterogeneity and study biases necessitate further research. Future efforts should focus on standardizing AI models and validating them across diverse datasets to ensure clinical utility.",
+      "authors": [
+        "Srikar R Namireddy",
+        "Saran S Gill",
+        "Amaan Peerbhai",
+        "Abith G Kamath",
+        "Daniele S C Ramsay"
+      ],
+      "journal": "Scientific reports",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Spinal Fractures",
+        "Artificial Intelligence",
+        "Osteoporotic Fractures",
+        "Prognosis",
+        "Risk Assessment",
+        "Fractures, Compression"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_39702597"
+    },
+    {
+      "pmid": "33421167",
+      "title": "Artificial intelligence in dermatopathology: Diagnosis, education, and research.",
+      "abstract": "Artificial intelligence (AI) utilizes computer algorithms to carry out tasks with human-like intelligence. Convolutional neural networks, a type of deep learning AI, can classify basal cell carcinoma, seborrheic keratosis, and conventional nevi, highlighting the potential for deep learning algorithms to improve diagnostic workflow in dermatopathology of highly routine diagnoses. Additionally, convolutional neural networks can support the diagnosis of melanoma and may help predict disease outcomes. Capabilities of machine learning in dermatopathology can extend beyond clinical diagnosis to education and research. Intelligent tutoring systems can teach visual diagnoses in inflammatory dermatoses, with measurable cognitive effects on learners. Natural language interfaces can instruct dermatopathology trainees to produce diagnostic reports that capture relevant detail for diagnosis in compliance with guidelines. Furthermore, deep learning can power computation- and population-based research. However, there are many limitations of deep learning that need to be addressed before broad incorporation into clinical practice. The current potential of AI in dermatopathology is to supplement diagnosis, and dermatopathologist guidance is essential for the development of useful deep learning algorithms. Herein, the recent progress of AI in dermatopathology is reviewed with emphasis on how deep learning can influence diagnosis, education, and research.",
+      "authors": [
+        "Amy Wells",
+        "Shaan Patel",
+        "Jason B Lee",
+        "Kiran Motaparthi"
+      ],
+      "journal": "Journal of cutaneous pathology",
+      "year": 2021,
+      "mesh_terms": [
+        "Algorithms",
+        "Artificial Intelligence",
+        "Basal Cell Carcinoma",
+        "Deep Learning",
+        "Dermatology",
+        "Diagnosis, Differential",
+        "Diagnostic Tests, Routine",
+        "Humans",
+        "Keratosis, Seborrheic",
+        "Machine Learning",
+        "Melanoma",
+        "Neural Networks, Computer",
+        "Nevus",
+        "Observer Variation",
+        "Pathology",
+        "Research",
+        "Skin Neoplasms"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_33421167"
+    },
+    {
+      "pmid": "38234043",
+      "title": "Evaluation of an artificial intelligence-based decision support for the detection of cutaneous melanoma in primary care: a prospective real-life clinical trial.",
+      "abstract": "BACKGROUND: Use of artificial intelligence (AI), or machine learning, to assess dermoscopic images of skin lesions to detect melanoma has, in several retrospective studies, shown high levels of diagnostic accuracy on par with - or even outperforming - experienced dermatologists. However, the enthusiasm around these algorithms has not yet been matched by prospective clinical trials performed in authentic clinical settings. In several European countries, including Sweden, the initial clinical assessment of suspected skin cancer is principally conducted in the primary healthcare setting by primary care physicians, with or without access to teledermoscopic support from dermatology clinics.\n\nOBJECTIVES: To determine the diagnostic performance of an AI-based clinical decision support tool for cutaneous melanoma detection, operated by a smartphone application (app), when used prospectively by primary care physicians to assess skin lesions of concern due to some degree of melanoma suspicion.\n\nMETHODS: This prospective multicentre clinical trial was conducted at 36 primary care centres in Sweden. Physicians used the smartphone app on skin lesions of concern by photographing them dermoscopically, which resulted in a dichotomous decision support text regarding evidence for melanoma. Regardless of the app outcome, all lesions underwent standard diagnostic procedures (surgical excision or referral to a dermatologist). After investigations were complete, lesion diagnoses were collected from the patients' medical records and compared with the app's outcome and other lesion data.\n\nRESULTS: In total, 253 lesions of concern in 228 patients were included, of which 21 proved to be melanomas, with 11 thin invasive melanomas and 10 melanomas in situ. The app's accuracy in identifying melanomas was reflected in an area under the receiver operating characteristic (AUROC) curve of 0.960 [95% confidence interval (CI) 0.928-0.980], corresponding to a maximum sensitivity and specificity of 95.2% and 84.5%, respectively. For invasive melanomas alone, the AUROC was 0.988 (95% CI 0.965-0.997), corresponding to a maximum sensitivity and specificity of 100% and 92.6%, respectively.\n\nCONCLUSIONS: The clinical decision support tool evaluated in this investigation showed high diagnostic accuracy when used prospectively in primary care patients, which could add significant clinical value for primary care physicians assessing skin lesions for melanoma.",
+      "authors": [
+        "Panagiotis Papachristou",
+        "My Söderholm",
+        "Jon Pallon",
+        "Marina Taloyan",
+        "Sam Polesie"
+      ],
+      "journal": "The British journal of dermatology",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Melanoma",
+        "Skin Neoplasms",
+        "Prospective Studies",
+        "Female",
+        "Male",
+        "Middle Aged",
+        "Primary Health Care",
+        "Dermoscopy",
+        "Artificial Intelligence",
+        "Smartphone",
+        "Aged",
+        "Mobile Applications",
+        "Adult",
+        "Decision Support Systems, Clinical",
+        "Sweden",
+        "Sensitivity and Specificity"
+      ],
+      "domain": "ai_diagnosis",
+      "doc_id": "pmid_38234043"
+    },
+    {
+      "pmid": "37543707",
+      "title": "Collaborative strategies for deploying AI-based physician decision support systems: challenges and deployment approaches.",
+      "abstract": "AI-based prediction models demonstrate equal or surpassing performance compared to experienced physicians in various research settings. However, only a few have made it into clinical practice. Further, there is no standardized protocol for integrating AI-based physician support systems into the daily clinical routine to improve healthcare delivery. Generally, AI/physician collaboration strategies have not been extensively investigated. A recent study compared four potential strategies for AI model deployment and physician collaboration to investigate the performance of an AI model trained to identify signs of acute respiratory distress syndrome (ARDS) on chest X-ray images. Here we discuss strategies and challenges with AI/physician collaboration when AI-based decision support systems are implemented in the clinical routine.",
+      "authors": [
+        "Mirja Mittermaier",
+        "Marium Raza",
+        "Joseph C Kvedar"
+      ],
+      "journal": "NPJ digital medicine",
+      "year": 2023,
+      "mesh_terms": [],
+      "domain": "ai_physician",
+      "doc_id": "pmid_37543707"
+    },
+    {
+      "pmid": "29389679",
+      "title": "Artificial Intelligence in Surgery: Promises and Perils.",
+      "abstract": "OBJECTIVE: The aim of this review was to summarize major topics in artificial intelligence (AI), including their applications and limitations in surgery. This paper reviews the key capabilities of AI to help surgeons understand and critically evaluate new AI applications and to contribute to new developments.\n\nSUMMARY BACKGROUND DATA: AI is composed of various subfields that each provide potential solutions to clinical problems. Each of the core subfields of AI reviewed in this piece has also been used in other industries such as the autonomous car, social networks, and deep learning computers.\n\nMETHODS: A review of AI papers across computer science, statistics, and medical sources was conducted to identify key concepts and techniques within AI that are driving innovation across industries, including surgery. Limitations and challenges of working with AI were also reviewed.\n\nRESULTS: Four main subfields of AI were defined: (1) machine learning, (2) artificial neural networks, (3) natural language processing, and (4) computer vision. Their current and future applications to surgical practice were introduced, including big data analytics and clinical decision support systems. The implications of AI for surgeons and the role of surgeons in advancing the technology to optimize clinical effectiveness were discussed.\n\nCONCLUSIONS: Surgeons are well positioned to help integrate AI into modern practice. Surgeons should partner with data scientists to capture data across phases of care and to provide clinical context, for AI has the potential to revolutionize the way surgery is taught and practiced with the promise of a future optimized for the highest quality patient care.",
+      "authors": [
+        "Daniel A Hashimoto",
+        "Guy Rosman",
+        "Daniela Rus",
+        "Ozanan R Meireles"
+      ],
+      "journal": "Annals of surgery",
+      "year": 2018,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Humans",
+        "Physician's Role",
+        "Surgeons",
+        "Surgical Procedures, Operative"
+      ],
+      "domain": "ai_physician",
+      "doc_id": "pmid_29389679"
+    },
+    {
+      "pmid": "40036494",
+      "title": "An AI-Based Clinical Decision Support System for Antibiotic Therapy in Sepsis (KINBIOTICS): Use Case Analysis.",
+      "abstract": "BACKGROUND: Antimicrobial resistances pose significant challenges in health care systems. Clinical decision support systems (CDSSs) represent a potential strategy for promoting a more targeted and guideline-based use of antibiotics. The integration of artificial intelligence (AI) into these systems has the potential to support physicians in selecting the most effective drug therapy for a given patient.\n\nOBJECTIVE: This study aimed to analyze the feasibility of an AI-based CDSS pilot version for antibiotic therapy in sepsis patients and identify facilitating and inhibiting conditions for its implementation in intensive care medicine.\n\nMETHODS: The evaluation was conducted in 2 steps, using a qualitative methodology. Initially, expert interviews were conducted, in which intensive care physicians were asked to assess the AI-based recommendations for antibiotic therapy in terms of plausibility, layout, and design. Subsequently, focus group interviews were conducted to examine the technology acceptance of the AI-based CDSS. The interviews were anonymized and evaluated using content analysis.\n\nRESULTS: In terms of the feasibility, barriers included variability in previous antibiotic administration practices, which affected the predictive ability of AI recommendations, and the increased effort required to justify deviations from these recommendations. Physicians' confidence in accepting or rejecting recommendations depended on their level of professional experience. The ability to re-evaluate CDSS recommendations and an intuitive, user-friendly system design were identified as factors that enhanced acceptance and usability. Overall, barriers included low levels of digitization in clinical practice, limited availability of cross-sectoral data, and negative previous experiences with CDSSs. Conversely, facilitators to CDSS implementation were potential time savings, physicians' openness to adopting new technologies, and positive previous experiences.\n\nCONCLUSIONS: Early integration of users is beneficial for both the identification of relevant context factors and the further development of an effective CDSS. Overall, the potential of AI-based CDSSs is offset by inhibiting contextual conditions that impede its acceptance and implementation. The advancement of AI-based CDSSs and the mitigation of these inhibiting conditions are crucial for the realization of its full potential.",
+      "authors": [
+        "Juliane Andrea Düvel",
+        "David Lampe",
+        "Maren Kirchner",
+        "Svenja Elkenkamp",
+        "Philipp Cimiano"
+      ],
+      "journal": "JMIR human factors",
+      "year": 2025,
+      "mesh_terms": [
+        "Decision Support Systems, Clinical",
+        "Humans",
+        "Artificial Intelligence",
+        "Anti-Bacterial Agents",
+        "Sepsis",
+        "Qualitative Research",
+        "Focus Groups"
+      ],
+      "domain": "ai_physician",
+      "doc_id": "pmid_40036494"
+    },
+    {
+      "pmid": "36611439",
+      "title": "An AI-Powered Clinical Decision Support System to Predict Flares in Rheumatoid Arthritis: A Pilot Study.",
+      "abstract": "Treat-to-target (T2T) is a main therapeutic strategy in rheumatology; however, patients and rheumatologists currently have little support in making the best treatment decision. Clinical decision support systems (CDSSs) could offer this support. The aim of this study was to investigate the accuracy, effectiveness, usability, and acceptance of such a CDSS-Rheuma Care Manager (RCM)-including an artificial intelligence (AI)-powered flare risk prediction tool to support the management of rheumatoid arthritis (RA). Longitudinal clinical routine data of RA patients were used to develop and test the RCM. Based on ten real-world patient vignettes, five physicians were asked to assess patients' flare risk, provide a treatment decision, and assess their decision confidence without and with access to the RCM for predicting flare risk. RCM usability and acceptance were assessed using the system usability scale (SUS) and net promoter score (NPS). The flare prediction tool reached a sensitivity of 72%, a specificity of 76%, and an AUROC of 0.80. Perceived flare risk and treatment decisions varied largely between physicians. Having access to the flare risk prediction feature numerically increased decision confidence (3.5/5 to 3.7/5), reduced deviations between physicians and the prediction tool (20% to 12% for half dosage flare prediction), and resulted in more treatment reductions (42% to 50% vs. 20%). RCM usability (SUS) was rated as good (82/100) and was well accepted (mean NPS score 7/10). CDSS usage could support physicians by decreasing assessment deviations and increasing treatment decision confidence.",
+      "authors": [
+        "Hannah Labinsky",
+        "Dubravka Ukalovic",
+        "Fabian Hartmann",
+        "Vanessa Runft",
+        "André Wichmann"
+      ],
+      "journal": "Diagnostics (Basel, Switzerland)",
+      "year": 2023,
+      "mesh_terms": [],
+      "domain": "ai_physician",
+      "doc_id": "pmid_36611439"
+    },
+    {
+      "pmid": "38234043",
+      "title": "Evaluation of an artificial intelligence-based decision support for the detection of cutaneous melanoma in primary care: a prospective real-life clinical trial.",
+      "abstract": "BACKGROUND: Use of artificial intelligence (AI), or machine learning, to assess dermoscopic images of skin lesions to detect melanoma has, in several retrospective studies, shown high levels of diagnostic accuracy on par with - or even outperforming - experienced dermatologists. However, the enthusiasm around these algorithms has not yet been matched by prospective clinical trials performed in authentic clinical settings. In several European countries, including Sweden, the initial clinical assessment of suspected skin cancer is principally conducted in the primary healthcare setting by primary care physicians, with or without access to teledermoscopic support from dermatology clinics.\n\nOBJECTIVES: To determine the diagnostic performance of an AI-based clinical decision support tool for cutaneous melanoma detection, operated by a smartphone application (app), when used prospectively by primary care physicians to assess skin lesions of concern due to some degree of melanoma suspicion.\n\nMETHODS: This prospective multicentre clinical trial was conducted at 36 primary care centres in Sweden. Physicians used the smartphone app on skin lesions of concern by photographing them dermoscopically, which resulted in a dichotomous decision support text regarding evidence for melanoma. Regardless of the app outcome, all lesions underwent standard diagnostic procedures (surgical excision or referral to a dermatologist). After investigations were complete, lesion diagnoses were collected from the patients' medical records and compared with the app's outcome and other lesion data.\n\nRESULTS: In total, 253 lesions of concern in 228 patients were included, of which 21 proved to be melanomas, with 11 thin invasive melanomas and 10 melanomas in situ. The app's accuracy in identifying melanomas was reflected in an area under the receiver operating characteristic (AUROC) curve of 0.960 [95% confidence interval (CI) 0.928-0.980], corresponding to a maximum sensitivity and specificity of 95.2% and 84.5%, respectively. For invasive melanomas alone, the AUROC was 0.988 (95% CI 0.965-0.997), corresponding to a maximum sensitivity and specificity of 100% and 92.6%, respectively.\n\nCONCLUSIONS: The clinical decision support tool evaluated in this investigation showed high diagnostic accuracy when used prospectively in primary care patients, which could add significant clinical value for primary care physicians assessing skin lesions for melanoma.",
+      "authors": [
+        "Panagiotis Papachristou",
+        "My Söderholm",
+        "Jon Pallon",
+        "Marina Taloyan",
+        "Sam Polesie"
+      ],
+      "journal": "The British journal of dermatology",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Melanoma",
+        "Skin Neoplasms",
+        "Prospective Studies",
+        "Female",
+        "Male",
+        "Middle Aged",
+        "Primary Health Care",
+        "Dermoscopy",
+        "Artificial Intelligence",
+        "Smartphone",
+        "Aged",
+        "Mobile Applications",
+        "Adult",
+        "Decision Support Systems, Clinical",
+        "Sweden",
+        "Sensitivity and Specificity"
+      ],
+      "domain": "ai_physician",
+      "doc_id": "pmid_38234043"
+    },
+    {
+      "pmid": "36315554",
+      "title": "Developing an AI-assisted clinical decision support system to enhance in-patient holistic health care.",
+      "abstract": "Holistic health care (HHC) is a synonym for complete patient care, and as such an efficient clinical decision support system (CDSS) for HHC is critical to support the judgement of physician's decision in response of patient's physical, emotional, social, economic, and spiritual needs. The field of artificial intelligence (AI) has evolved considerably in the past decades and many AI applications have been deployed in various contexts. Therefore, this study aims to propose an AI-assisted CDSS model that predicts patients in need of HHC and applies an improved recurrent neural network (RNN) model, long short-term memory (LSTM) for the prediction. The data sources include in-patient's comorbidity status and daily vital sign attributes such as blood pressure, heart rate, oxygen prescription, etc. A two-year dataset consisting of 121 thousand anonymized patient cases with 890 thousand physiological medical records was obtained from a medical center in Taiwan for system evaluation. Comparing with the rule-based expert system, the proposed AI-assisted CDSS improves sensitivity from 26.44% to 80.84% and specificity from 99.23% to 99.95%. The experimental results demonstrate that an AI-assisted CDSS could efficiently predict HHC patients.",
+      "authors": [
+        "Wang-Chuan Juang",
+        "Ming-Hsia Hsu",
+        "Zheng-Xun Cai",
+        "Chia-Mei Chen"
+      ],
+      "journal": "PloS one",
+      "year": 2022,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Decision Support Systems, Clinical",
+        "Holistic Health",
+        "Expert Systems",
+        "Patient Care"
+      ],
+      "domain": "ai_physician",
+      "doc_id": "pmid_36315554"
+    },
+    {
+      "pmid": "32572267",
+      "title": "Human-computer collaboration for skin cancer recognition.",
+      "abstract": "The rapid increase in telemedicine coupled with recent advances in diagnostic artificial intelligence (AI) create the imperative to consider the opportunities and risks of inserting AI-based support into new paradigms of care. Here we build on recent achievements in the accuracy of image-based AI for skin cancer diagnosis to address the effects of varied representations of AI-based support across different levels of clinical expertise and multiple clinical workflows. We find that good quality AI-based support of clinical decision-making improves diagnostic accuracy over that of either AI or physicians alone, and that the least experienced clinicians gain the most from AI-based support. We further find that AI-based multiclass probabilities outperformed content-based image retrieval (CBIR) representations of AI in the mobile technology environment, and AI-based support had utility in simulations of second opinions and of telemedicine triage. In addition to demonstrating the potential benefits associated with good quality AI in the hands of non-expert clinicians, we find that faulty AI can mislead the entire spectrum of clinicians, including experts. Lastly, we show that insights derived from AI class-activation maps can inform improvements in human diagnosis. Together, our approach and findings offer a framework for future studies across the spectrum of image-based diagnostics to improve human-computer collaboration in clinical practice.",
+      "authors": [
+        "Philipp Tschandl",
+        "Christoph Rinner",
+        "Zoe Apalla",
+        "Giuseppe Argenziano",
+        "Noel Codella"
+      ],
+      "journal": "Nature medicine",
+      "year": 2020,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Clinical Decision-Making",
+        "Humans",
+        "Neural Networks, Computer",
+        "Physicians",
+        "Skin Neoplasms",
+        "Telemedicine",
+        "User-Computer Interface"
+      ],
+      "domain": "ai_physician",
+      "doc_id": "pmid_32572267"
+    },
+    {
+      "pmid": "41448698",
+      "title": "Evaluating AI-based comprehensive clinical decision support for sepsis and ARDS: protocol for a Clinician Turing Test.",
+      "abstract": "INTRODUCTION: Few artificial intelligence (AI) clinical decision support systems (CDSSs) are ever evaluated in practice. Although some signal of clinical effectiveness may be needed to justify AI deployment and testing, such data are typically unavailable in early-stage research. This conundrum is especially relevant in the intensive care unit (ICU), where conditions like sepsis and acute respiratory distress syndrome (ARDS) require high-stakes decisions. Our group developed the AI ventilator assistant (AVA), a novel AI CDSS for patients with sepsis ARDS receiving invasive mechanical ventilation. But the promising results of predictive performance estimates are not sufficient to assess AVA's clinical safety and appropriateness prior to future evaluation and deployment. Therefore, we propose a Clinician Turing Test as a novel validation approach to determine whether clinicians can distinguish AVA-generated treatment recommendations from those enacted by real human clinicians. If AVA's recommendations are consistently indistinguishable from those of real clinicians, thereby 'passing' this Turing test, this would provide a strong preclinical signal of safety and appropriateness.\n\nMETHODS AND ANALYSIS: This multisite, randomised, electronic, vignette-based Phase 1b study will use a Clinician Turing Test design. We aim to recruit 350 critical care clinicians, including physicians and advanced practice providers from six US hospitals. Participants will review nine clinical vignettes of patients with sepsis and ARDS derived from the Molecular Epidemiology of Severe Sepsis in the ICU cohort and an associated profile of a suggested treatment plan. For each participant-vignette combination, the source of the treatment profile will be randomly assigned (AI-generated by AVA vs the actually enacted treatment from real human clinicians) in a 1:1 allocation. The primary endpoint is the participants' accuracy in identifying whether a treatment profile was AI-generated or human-generated, assessed using equivalence testing through a mixed-effects logistic regression model with random effects for participants and vignettes. Secondarily, a fitted binary classifier will assess discrimination ability using the C-statistic. Secondary endpoints include clinicians' perceptions of the safety and appropriateness of the treatment profiles, confidence in distinguishing AI-generated and human-generated recommendations, interest in AI CDSSs for sepsis and ventilator management and the time to complete the survey. This novel Phase 1b design provides preliminary but essential information about an AI CDSS's clinical appropriateness without the risk or cost of actual deployment, thereby informing decisions about future clinical implementation and evaluation in real clinical environments.\n\nETHICS AND DISSEMINATION: This protocol was approved by the Institutional Review Board of the University of Pennsylvania (Protocol #858201). Results are expected in 2026 and will be submitted for publication in peer-reviewed journals and presented at scientific conferences.\n\nTRIAL REGISTRATION NUMBER: NCT07025096.",
+      "authors": [
+        "Antonia Angeli Gazola",
+        "Nicholas S Bishop",
+        "Benjamin E Schmid",
+        "Romain Pirracchio",
+        "Thomas S Valley"
+      ],
+      "journal": "BMJ open",
+      "year": 2025,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Decision Support Systems, Clinical",
+        "Intensive Care Units",
+        "Respiration, Artificial",
+        "Respiratory Distress Syndrome",
+        "Sepsis",
+        "Randomized Controlled Trials as Topic"
+      ],
+      "domain": "ai_physician",
+      "doc_id": "pmid_41448698"
+    },
+    {
+      "pmid": "40623684",
+      "title": "Improving AI-Based Clinical Decision Support Systems and Their Integration Into Care From the Perspective of Experts: Interview Study Among Different Stakeholders.",
+      "abstract": "BACKGROUND: Artificial intelligence (AI)-based systems are receiving increasing attention in the health care sector. While the use of AI is well advanced in some medical applications, such as image recognition, it is still in its infancy in others, such as clinical decision support systems (CDSS). Examples of AI-based CDSS can be found in the context of sepsis prediction or antibiotic prescription. Scientific literature indicates that such systems can support physicians in their daily work and lead to improved patient outcomes. Nevertheless, there are various problems and barriers in this context that should be considered.\n\nOBJECTIVE: This study aimed to identify opportunities to optimize AI-based CDSS and their integration into care from the perspective of experts.\n\nMETHODS: Semistructured web-based expert interviews were conducted. Experts representing the perspectives of patients; physicians; caregivers; developers; health insurance representatives; researchers (especially in law and IT); and experts in regulation, market admission and quality management or assurance, and ethics were included. The conversations were recorded and transcribed. Subsequently, a qualitative content analysis was performed. The different approaches to improvement were categorized into groups (\"technology,\" \"data,\" \"users,\" \"studies,\" \"law,\" and \"general\"). These also served as deductive codes. Inductive codes were determined within an internal project workshop.\n\nRESULTS: In total, 13 individual and 2 double interviews were conducted with 17 experts. A total of 227 expert statements were included in the analysis. Suggestions were heterogeneous and concerned improvements: (1) in the systems themselves (eg, implementing comprehensive system training involving [future] users; using a comprehensive and high-quality database; considering usability, transparency, and customizability; preventing automation bias through control mechanisms or intelligent design; conducting studies to demonstrate the benefit of the system), (2) on the user side (eg, training [future] physicians could contribute to a more positive attitude and to greater awareness and questioning decision supports suggested by the system and ensuring that the use of the system does not lead to additional work), and (3) in the environment in which the systems are used (eg, increasing the digitalization of the health care system, especially in hospitals; providing transparent public communication about the benefits and risks of AI; providing research funding; clarifying open legal issues, eg, those related to liability; and standardizing and consolidating various approval processes).\n\nCONCLUSIONS: This study offers several possible strategies for improving AI-based CDSS and their integration into health care. These were found in the areas of \"technology,\" \"data,\" \"users,\" \"studies,\" \"law,\" and \"general.\" Systems, users, and the environment should be taken into account to ensure that the systems are used safely, effectively, and sustainably. Further studies should investigate both the effectiveness of strategies to improve AI-based CDSS and their integration into health care and the accuracy of their match to specific problems.\n\nINTERNATIONAL REGISTERED REPORT IDENTIFIER (IRRID): RR2-10.2196/62704.",
+      "authors": [
+        "Godwin Denk Giebel",
+        "Pascal Raszke",
+        "Hartmuth Nowak",
+        "Lars Palmowski",
+        "Michael Adamzik"
+      ],
+      "journal": "JMIR medical informatics",
+      "year": 2025,
+      "mesh_terms": [
+        "Decision Support Systems, Clinical",
+        "Humans",
+        "Artificial Intelligence",
+        "Interviews as Topic",
+        "Stakeholder Participation",
+        "Qualitative Research"
+      ],
+      "domain": "ai_physician",
+      "doc_id": "pmid_40623684"
+    },
+    {
+      "pmid": "38728687",
+      "title": "The Role of Large Language Models in Transforming Emergency Medicine: Scoping Review.",
+      "abstract": "BACKGROUND: Artificial intelligence (AI), more specifically large language models (LLMs), holds significant potential in revolutionizing emergency care delivery by optimizing clinical workflows and enhancing the quality of decision-making. Although enthusiasm for integrating LLMs into emergency medicine (EM) is growing, the existing literature is characterized by a disparate collection of individual studies, conceptual analyses, and preliminary implementations. Given these complexities and gaps in understanding, a cohesive framework is needed to comprehend the existing body of knowledge on the application of LLMs in EM.\n\nOBJECTIVE: Given the absence of a comprehensive framework for exploring the roles of LLMs in EM, this scoping review aims to systematically map the existing literature on LLMs' potential applications within EM and identify directions for future research. Addressing this gap will allow for informed advancements in the field.\n\nMETHODS: Using PRISMA-ScR (Preferred Reporting Items for Systematic Reviews and Meta-Analyses extension for Scoping Reviews) criteria, we searched Ovid MEDLINE, Embase, Web of Science, and Google Scholar for papers published between January 2018 and August 2023 that discussed LLMs' use in EM. We excluded other forms of AI. A total of 1994 unique titles and abstracts were screened, and each full-text paper was independently reviewed by 2 authors. Data were abstracted independently, and 5 authors performed a collaborative quantitative and qualitative synthesis of the data.\n\nRESULTS: A total of 43 papers were included. Studies were predominantly from 2022 to 2023 and conducted in the United States and China. We uncovered four major themes: (1) clinical decision-making and support was highlighted as a pivotal area, with LLMs playing a substantial role in enhancing patient care, notably through their application in real-time triage, allowing early recognition of patient urgency; (2) efficiency, workflow, and information management demonstrated the capacity of LLMs to significantly boost operational efficiency, particularly through the automation of patient record synthesis, which could reduce administrative burden and enhance patient-centric care; (3) risks, ethics, and transparency were identified as areas of concern, especially regarding the reliability of LLMs' outputs, and specific studies highlighted the challenges of ensuring unbiased decision-making amidst potentially flawed training data sets, stressing the importance of thorough validation and ethical oversight; and (4) education and communication possibilities included LLMs' capacity to enrich medical training, such as through using simulated patient interactions that enhance communication skills.\n\nCONCLUSIONS: LLMs have the potential to fundamentally transform EM, enhancing clinical decision-making, optimizing workflows, and improving patient outcomes. This review sets the stage for future advancements by identifying key research areas: prospective validation of LLM applications, establishing standards for responsible use, understanding provider and patient perceptions, and improving physicians' AI literacy. Effective integration of LLMs into EM will require collaborative efforts and thorough evaluation to ensure these technologies can be safely and effectively applied.",
+      "authors": [
+        "Carl Preiksaitis",
+        "Nicholas Ashenburg",
+        "Gabrielle Bunney",
+        "Andrew Chu",
+        "Rana Kabeer"
+      ],
+      "journal": "JMIR medical informatics",
+      "year": 2024,
+      "mesh_terms": [],
+      "domain": "ai_physician",
+      "doc_id": "pmid_38728687"
+    },
+    {
+      "pmid": "40775927",
+      "title": "Enhancing AI Clinical Decision Support Trust: Design Workshop Insights from General Practitioners.",
+      "abstract": "Artificial Intelligence (AI) predictive models are increasingly integrated into Clinical Decision Support Systems (CDSS). However, real-world implementation is lagging due to a lack of trust and acceptance by healthcare providers. To investigate factors related to trust and acceptance of AI-based CDSS, we conducted a workshop with General Practitioners to explore user, model, and organizational factors that could affect trust and recommendation acceptance. The workshop discussions revealed that while explainability is crucial for understanding AI decisions, current explainable AI (XAI) visualizations appeared to provide limited value to clinicians without technical backgrounds. Participants suggested that transparency in model training information, including data sources and elements, combined with clear alignment between model decisions and established clinical research findings and guidelines, would enhance their trust and acceptance of AI-based recommendations. These insights provide valuable direction for developing user interfaces that enhance clinician trust and acceptance of AI-based CDSS in clinical practice.",
+      "authors": [
+        "R A D L M K Ranwala",
+        "Andre Q Andrade"
+      ],
+      "journal": "Studies in health technology and informatics",
+      "year": 2025,
+      "mesh_terms": [
+        "Decision Support Systems, Clinical",
+        "Artificial Intelligence",
+        "General Practitioners",
+        "Trust",
+        "Humans",
+        "Attitude of Health Personnel"
+      ],
+      "domain": "ai_physician",
+      "doc_id": "pmid_40775927"
+    },
+    {
+      "pmid": "39707327",
+      "title": "Ethical implications of AI-driven clinical decision support systems on healthcare resource allocation: a qualitative study of healthcare professionals' perspectives.",
+      "abstract": "BACKGROUND: Artificial intelligence-driven Clinical Decision Support Systems (AI-CDSS) are increasingly being integrated into healthcare for various purposes, including resource allocation. While these systems promise improved efficiency and decision-making, they also raise significant ethical concerns. This study aims to explore healthcare professionals' perspectives on the ethical implications of using AI-CDSS for healthcare resource allocation.\n\nMETHODS: We conducted semi-structured qualitative interviews with 23 healthcare professionals, including physicians, nurses, administrators, and medical ethicists in Turkey. Interviews focused on participants' views regarding the use of AI-CDSS in resource allocation, potential ethical challenges, and recommendations for responsible implementation. Data were analyzed using thematic analysis.\n\nRESULTS: Participant responses are clustered around five pre-determined thematic areas: (1) balancing efficiency and equity in resource allocation, (2) the importance of transparency and explicability in AI-CDSS, (3) shifting roles and responsibilities in clinical decision-making, (4) ethical considerations in data usage and algorithm development, and (5) balancing cost-effectiveness and patient-centered care. Participants acknowledged the potential of AI-CDSS to optimize resource allocation but expressed concerns about exacerbating healthcare disparities, the need for interpretable AI models, changing professional roles, data privacy, and maintaining individualized care.\n\nCONCLUSIONS: The integration of AI-CDSS into healthcare resource allocation presents both opportunities and significant ethical challenges. Our findings underscore the need for robust ethical frameworks, enhanced AI literacy among healthcare professionals, interdisciplinary collaboration, and rigorous monitoring and evaluation processes. Addressing these challenges proactively is crucial for harnessing the potential of AI-CDSS while preserving the fundamental values of equity, transparency, and patient-centered care in healthcare delivery.",
+      "authors": [
+        "Cansu Yüksel Elgin",
+        "Ceyhun Elgin"
+      ],
+      "journal": "BMC medical ethics",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Qualitative Research",
+        "Artificial Intelligence",
+        "Decision Support Systems, Clinical",
+        "Health Personnel",
+        "Attitude of Health Personnel",
+        "Resource Allocation",
+        "Male",
+        "Female",
+        "Turkey",
+        "Health Care Rationing",
+        "Adult",
+        "Patient-Centered Care",
+        "Clinical Decision-Making",
+        "Middle Aged"
+      ],
+      "domain": "ai_physician",
+      "doc_id": "pmid_39707327"
+    },
+    {
+      "pmid": "36199569",
+      "title": "Explainability in medicine in an era of AI-based clinical decision support systems.",
+      "abstract": "The combination of \"Big Data\" and Artificial Intelligence (AI) is frequently promoted as having the potential to deliver valuable health benefits when applied to medical decision-making. However, the responsible adoption of AI-based clinical decision support systems faces several challenges at both the individual and societal level. One of the features that has given rise to particular concern is the issue of explainability, since, if the way an algorithm arrived at a particular output is not known (or knowable) to a physician, this may lead to multiple challenges, including an inability to evaluate the merits of the output. This \"opacity\" problem has led to questions about whether physicians are justified in relying on the algorithmic output, with some scholars insisting on the centrality of explainability, while others see no reason to require of AI that which is not required of physicians. We consider that there is merit in both views but find that greater nuance is necessary in order to elucidate the underlying function of explainability in clinical practice and, therefore, its relevance in the context of AI for clinical use. In this paper, we explore explainability by examining what it requires in clinical medicine and draw a distinction between the function of explainability for the current patient versus the future patient. This distinction has implications for what explainability requires in the short and long term. We highlight the role of transparency in explainability, and identify semantic transparency as fundamental to the issue of explainability itself. We argue that, in day-to-day clinical practice, accuracy is sufficient as an \"epistemic warrant\" for clinical decision-making, and that the most compelling reason for requiring explainability in the sense of scientific or causal explanation is the potential for improving future care by building a more robust model of the world. We identify the goal of clinical decision-making as being to deliver the best possible outcome as often as possible, and find-that accuracy is sufficient justification for intervention for today's patient, as long as efforts to uncover scientific explanations continue to improve healthcare for future patients.",
+      "authors": [
+        "Robin L Pierce",
+        "Wim Van Biesen",
+        "Daan Van Cauwenberge",
+        "Johan Decruyenaere",
+        "Sigrid Sterckx"
+      ],
+      "journal": "Frontiers in genetics",
+      "year": 2022,
+      "mesh_terms": [],
+      "domain": "ai_physician",
+      "doc_id": "pmid_36199569"
+    },
+    {
+      "pmid": "39944197",
+      "title": "Applications of Artificial Intelligence and Machine Learning in Emergency Medicine Triage - A Systematic Review.",
+      "abstract": "BACKGROUND: Overcrowding in Emergency departments adversely impacts efficiency, patient outcomes, and resource allocation. Accurate triage systems are essential for prioritizing care and optimizing resources. While traditional methods provide a foundation, they often lack precision in addressing modern healthcare complexities. Artificial intelligence (AI) and machine learning (ML) offer advanced capabilities to enhance triage accuracy, improve patient prioritization, and support clinical decision-making, addressing limitations of conventional approaches and paving the way for adaptive triage solutions.\n\nOBJECTIVE: This systematic review aims to assess the use of artificial intelligence (AI) and machine learning (ML) in determining the outcomes of patients presenting in Emergency department (ED) triage.\n\nMETHODS: A systematic search was conducted on April 21, 2023, using electronic databases including PubMed/Medline, Cochrane Library, Ovid, and Google Scholar, without year restrictions. The main outcome of this review was to assess the use of AI and ML in the ED Triage. Articles that used different models of AI and ML to predict various outcomes of patients in the ED setting were included.\n\nRESULTS: A total of 17 studies were included in this systematic review. Fifteen studies assessed the role of machine learning methods in emergency department triage, while two studies evaluated the role of AI and machine learning in prehospital triage. The results of our systematic review favor the use of machine learning methods and artificial intelligence in emergency triage. Machine learning models were found to be superior to conventional emergency severity score methods in determining triage, diagnosis, and early management of patients. Among the machine learning methods, the boosting model was slightly more effective.\n\nCONCLUSION: Our study supports the notion that AI and ML are the future of Emergency departments. They aid in predicting patient outcomes and determining appropriate management strategies more efficiently, thereby enhancing decision making in the ED.",
+      "authors": [
+        "Qasem Ahmed Almulihi",
+        "Abdulaziz Adel Alquraini",
+        "Fatimah Ahmed Ali Almulihi",
+        "Abdullah Abdulaziz Alzahid",
+        "Saleh Saeed Al Jathnan Al Qahtani"
+      ],
+      "journal": "Medical archives (Sarajevo, Bosnia and Herzegovina)",
+      "year": 2024,
+      "mesh_terms": [
+        "Triage",
+        "Humans",
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Emergency Service, Hospital",
+        "Emergency Medicine"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_39944197"
+    },
+    {
+      "pmid": "39262027",
+      "title": "The effects of applying artificial intelligence to triage in the emergency department: A systematic review of prospective studies.",
+      "abstract": "INTRODUCTION: Accurate and rapid triage can reduce undertriage and overtriage, which may improve emergency department flow. This study aimed to identify the effects of a prospective study applying artificial intelligence-based triage in the clinical field.\n\nDESIGN: Systematic review of prospective studies.\n\nMETHODS: CINAHL, Cochrane, Embase, PubMed, ProQuest, KISS, and RISS were searched from March 9 to April 18, 2023. All the data were screened independently by three researchers. The review included prospective studies that measured outcomes related to AI-based triage. Three researchers extracted data and independently assessed the study's quality using the Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) protocol.\n\nRESULTS: Of 1633 studies, seven met the inclusion criteria for this review. Most studies applied machine learning to triage, and only one was based on fuzzy logic. All studies, except one, utilized a five-level triage classification system. Regarding model performance, the feed-forward neural network achieved a precision of 33% in the level 1 classification, whereas the fuzzy clip model achieved a specificity and sensitivity of 99%. The accuracy of the model's triage prediction ranged from 80.5% to 99.1%. Other outcomes included time reduction, overtriage and undertriage checks, mistriage factors, and patient care and prognosis outcomes.\n\nCONCLUSION: Triage nurses in the emergency department can use artificial intelligence as a supportive means for triage. Ultimately, we hope to be a resource that can reduce undertriage and positively affect patient health.\n\nPROTOCOL REGISTRATION: We have registered our review in PROSPERO (registration number: CRD 42023415232).",
+      "authors": [
+        "Nayeon Yi",
+        "Dain Baik",
+        "Gumhee Baek"
+      ],
+      "journal": "Journal of nursing scholarship : an official publication of Sigma Theta Tau International Honor Society of Nursing",
+      "year": 2025,
+      "mesh_terms": [
+        "Humans",
+        "Triage",
+        "Emergency Service, Hospital",
+        "Artificial Intelligence",
+        "Prospective Studies",
+        "Machine Learning"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_39262027"
+    },
+    {
+      "pmid": "38663302",
+      "title": "How artificial intelligence could transform emergency care.",
+      "abstract": "Artificial intelligence (AI) in healthcare is the ability of a computer to perform tasks typically associated with clinical care (e.g. medical decision-making and documentation). AI will soon be integrated into an increasing number of healthcare applications, including elements of emergency department (ED) care. Here, we describe the basics of AI, various categories of its functions (including machine learning and natural language processing) and review emerging and potential future use-cases for emergency care. For example, AI-assisted symptom checkers could help direct patients to the appropriate setting, models could assist in assigning triage levels, and ambient AI systems could document clinical encounters. AI could also help provide focused summaries of charts, summarize encounters for hand-offs, and create discharge instructions with an appropriate language and reading level. Additional use cases include medical decision making for decision rules, real-time models that predict clinical deterioration or sepsis, and efficient extraction of unstructured data for coding, billing, research, and quality initiatives. We discuss the potential transformative benefits of AI, as well as the concerns regarding its use (e.g. privacy, data accuracy, and the potential for changing the doctor-patient relationship).",
+      "authors": [
+        "Marika M Kachman",
+        "Irina Brennan",
+        "Jonathan J Oskvarek",
+        "Tayab Waseem",
+        "Jesse M Pines"
+      ],
+      "journal": "The American journal of emergency medicine",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Emergency Service, Hospital",
+        "Emergency Medical Services",
+        "Natural Language Processing",
+        "Machine Learning",
+        "Clinical Decision-Making",
+        "Triage"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_38663302"
+    },
+    {
+      "pmid": "37944275",
+      "title": "Artificial intelligence in emergency medicine. A systematic literature review.",
+      "abstract": "UNLABELLED: Motivation and objective: Emergency medicine is becoming a popular application area for artificial intelligence methods but remains less investigated than other healthcare branches. The need for time-sensitive decision-making on the basis of high data volumes makes the use of quantitative technologies inevitable. However, the specifics of healthcare regulations impose strict requirements for such applications. Published contributions cover separate parts of emergency medicine and use disparate data and algorithms. This study aims to systematize the relevant contributions, investigate the main obstacles to artificial intelligence applications in emergency medicine, and propose directions for further studies.\n\nMETHODS: The contributions selection process was conducted with systematic electronic databases querying and filtering with respect to established exclusion criteria. Among the 380 papers gathered from IEEE Xplore, ACM Digital Library, Springer Library, ScienceDirect, and Nature databases 116 were considered to be a part of the survey. The main features of the selected papers are the focus on emergency medicine and the use of machine learning or deep learning algorithms.\n\nFINDINGS AND DISCUSSION: The selected papers were classified into two branches: diagnostics-specific and triage-specific. The former ones are focused on either diagnosis prediction or decision support. The latter covers such applications as mortality, outcome, admission prediction, condition severity estimation, and urgent care prediction. The observed contributions are highly specialized within a single disease or medical operation and often use privately collected retrospective data, making them incomparable. These and other issues can be addressed by creating an end-to-end solution based on human-machine interaction.\n\nCONCLUSION: Artificial intelligence applications are finding their place in emergency medicine, while most of the corresponding studies remain isolated and lack higher generalization and more sophisticated methodology, which can be a matter of forthcoming improvements.",
+      "authors": [
+        "Konstantin Piliuk",
+        "Sven Tomforde"
+      ],
+      "journal": "International journal of medical informatics",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Retrospective Studies",
+        "Algorithms",
+        "Emergency Medicine",
+        "Machine Learning"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_37944275"
+    },
+    {
+      "pmid": "33243898",
+      "title": "Artificial Intelligence and Acute Stroke Imaging.",
+      "abstract": "Artificial intelligence technology is a rapidly expanding field with many applications in acute stroke imaging, including ischemic and hemorrhage subtypes. Early identification of acute stroke is critical for initiating prompt intervention to reduce morbidity and mortality. Artificial intelligence can help with various aspects of the stroke treatment paradigm, including infarct or hemorrhage detection, segmentation, classification, large vessel occlusion detection, Alberta Stroke Program Early CT Score grading, and prognostication. In particular, emerging artificial intelligence techniques such as convolutional neural networks show promise in performing these imaging-based tasks efficiently and accurately. The purpose of this review is twofold: first, to describe AI methods and available public and commercial platforms in stroke imaging, and second, to summarize the literature of current artificial intelligence-driven applications for acute stroke triage, surveillance, and prediction.",
+      "authors": [
+        "J E Soun",
+        "D S Chow",
+        "M Nagamine",
+        "R S Takhtawala",
+        "C G Filippi"
+      ],
+      "journal": "AJNR. American journal of neuroradiology",
+      "year": 2021,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Humans",
+        "Neuroimaging",
+        "Stroke",
+        "Triage"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_33243898"
+    },
+    {
+      "pmid": "38525882",
+      "title": "Artificial intelligence to advance acute and intensive care medicine.",
+      "abstract": "PURPOSE OF REVIEW: This review explores recent key advancements in artificial intelligence for acute and intensive care medicine. As artificial intelligence rapidly evolves, this review aims to elucidate its current applications, future possibilities, and the vital challenges that are associated with its integration into emergency medical dispatch, triage, medical consultation and ICUs.\n\nRECENT FINDINGS: The integration of artificial intelligence in emergency medical dispatch (EMD) facilitates swift and accurate assessment. In the emergency department (ED), artificial intelligence driven triage models leverage diverse patient data for improved outcome predictions, surpassing human performance in retrospective studies. Artificial intelligence can streamline medical documentation in the ED and enhances medical imaging interpretation. The introduction of large multimodal generative models showcases the future potential to process varied biomedical data for comprehensive decision support. In the ICU, artificial intelligence applications range from early warning systems to treatment suggestions.\n\nSUMMARY: Despite promising academic strides, widespread artificial intelligence adoption in acute and critical care is hindered by ethical, legal, technical, organizational, and validation challenges. Despite these obstacles, artificial intelligence's potential to streamline clinical workflows is evident. When these barriers are overcome, future advancements in artificial intelligence have the potential to transform the landscape of patient care for acute and intensive care medicine.",
+      "authors": [
+        "Laurens A Biesheuvel",
+        "Dave A Dongelmans",
+        "Paul W G Elbers"
+      ],
+      "journal": "Current opinion in critical care",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Critical Care",
+        "Triage",
+        "Emergency Service, Hospital",
+        "Intensive Care Units"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_38525882"
+    },
+    {
+      "pmid": "39558305",
+      "title": "Application of artificial intelligence in triage in emergencies and disasters: a systematic review.",
+      "abstract": "INTRODUCTION AND OBJECTIVE: Modern and intelligent triage systems are used today due to the growing trend of disasters and emergencies worldwide and the increase in the number of injured people facing the challenge of using traditional triage methods. The main objective of this study is to investigate the application of artificial intelligence and Technology in the triage of patients injured by disasters and emergencies and the challenges of the implementation of intelligent triage systems.\n\nMETHOD: The present study is a systematic review and follows PRISMA guidelines. The protocol of this study was registered in PROSPERO with the code CRD42023471415. To find relevant studies, the databases PubMed, Scopus and Web of Science (ISI) were searched without a time limit until September 2024. The scientific search engine Google Scholar and the references of the final articles were read manually for the final review.\n\nRESULTS: The search identified 2,630 articles, narrowing down to 19 high-quality studies on AI in triage, which improved patient care through optimized resource management and real-time data transmission. AI algorithms like OpenPose and YOLO enhanced efficiency in mass casualty incidents, while e-triage systems allowed for continuous vital sign monitoring and faster triaging. AI tools demonstrated high accuracy in diagnosing COVID-19 (94.57%). Implementing intelligent triage systems faced challenges such as trust issues, training needs, equipment shortages, and data privacy concerns.\n\nCONCLUSION: Developing assessment systems using artificial intelligence enables timely treatment and better resuscitation services for people injured in disasters. For future studies, we recommend designing intelligent triage systems to remove the obstacles in triaging children and disabled people in disasters.",
+      "authors": [
+        "Azadeh Tahernejad",
+        "Ali Sahebi",
+        "Ali Salehi Sahl Abadi",
+        "Mehdi Safari"
+      ],
+      "journal": "BMC public health",
+      "year": 2024,
+      "mesh_terms": [
+        "Triage",
+        "Humans",
+        "Artificial Intelligence",
+        "COVID-19",
+        "Disasters",
+        "Emergencies",
+        "Mass Casualty Incidents",
+        "SARS-CoV-2"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_39558305"
+    },
+    {
+      "pmid": "41027290",
+      "title": "Can Application of Artificial Intelligence Improve Emergency Department Triage Performance?",
+      "abstract": "BACKGROUND: Emergency department (ED) overcrowding and resulting delayed patient care is a rapidly growing worldwide problem leading to increased mortality and morbidity. Current ED triage systems have a suboptimal ability to differentiate critically ill patients due to subtle signs or symptoms often being difficult to recognize. In recent years, there is growing evidence to suggest that artificial intelligence-based ED-triage systems might enhance an ED clinician's ability to identify patients most in need of intensive ED resources. A systematic review was performed using the American Academy of Academic Medicine Clinical Practice Committee Statement on Protocols for the literature search/grading process to identify articles that could answer the following question: \"Can the application of artificial intelligence improve Emergency Department triage performance?\"\n\nMETHOD: A structured review was performed of the literature using PubMed. Inclusion criteria were limited to reports from the last 5 years involving human subjects, written in English, and containing the following keywords: Artificial Intelligence, Emergency Department, Triage.\n\nRESULTS: The search yielded 211 results in total, and after the first review, 62 articles were selected to be potentially relevant to our review. The abstract of each article was assessed independently by authors, with 38 selected as responsive for this position statement and reviewed in full.\n\nCONCLUSIONS: Based on multiple retrospective and few prospective studies, there is emerging evidence suggesting that Artificial Intelligence-based ED triage systems demonstrate cohort-specific superior performance in predicting adult and pediatric patients who are more likely to need critical care, operative procedures, and hospital admission.",
+      "authors": [
+        "Grzegorz Waligora",
+        "Robert Sherwin",
+        "Zachary Soucy"
+      ],
+      "journal": "The Journal of emergency medicine",
+      "year": 2025,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Emergency Service, Hospital",
+        "Triage"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_41027290"
+    },
+    {
+      "pmid": "31594798",
+      "title": "Artificial intelligence to diagnose ischemic stroke and identify large vessel occlusions: a systematic review.",
+      "abstract": "BACKGROUND AND PURPOSE: Acute stroke caused by large vessel occlusions (LVOs) requires emergent detection and treatment by endovascular thrombectomy. However, radiologic LVO detection and treatment is subject to variable delays and human expertise, resulting in morbidity. Imaging software using artificial intelligence (AI) and machine learning (ML), a branch of AI, may improve rapid frontline detection of LVO strokes. This report is a systematic review of AI in acute LVO stroke identification and triage, and characterizes LVO detection software.\n\nMETHODS: A systematic review of acute stroke diagnostic-focused AI studies from January 2014 to February 2019 in PubMed, Medline, and Embase using terms: 'artificial intelligence' or 'machine learning or deep learning' and 'ischemic stroke' or 'large vessel occlusion' was performed.\n\nRESULTS: Variations of AI, including ML methods of random forest learning (RFL) and convolutional neural networks (CNNs), are used to detect LVO strokes. Twenty studies were identified that use ML. Alberta Stroke Program Early CT Score (ASPECTS) commonly used RFL, while LVO detection typically used CNNs. Image feature detection had greater sensitivity with CNN than with RFL, 85% versus 68%. However, AI algorithm performance metrics use different standards, precluding ideal objective comparison. Four current software platforms incorporate ML: Brainomix (greatest validation of AI for ASPECTS, uses CNNs to automatically detect LVOs), General Electric, iSchemaView (largest number of perfusion study validations for thrombectomy), and Viz.ai (uses CNNs to automatically detect LVOs, then automatically activates emergency stroke treatment systems).\n\nCONCLUSIONS: AI may improve LVO stroke detection and rapid triage necessary for expedited treatment. Standardization of performance assessment is needed in future studies.",
+      "authors": [
+        "Nick M Murray",
+        "Mathias Unberath",
+        "Gregory D Hager",
+        "Ferdinand K Hui"
+      ],
+      "journal": "Journal of neurointerventional surgery",
+      "year": 2020,
+      "mesh_terms": [
+        "Arterial Occlusive Diseases",
+        "Artificial Intelligence",
+        "Brain Ischemia",
+        "Emergency Service, Hospital",
+        "Humans",
+        "Stroke",
+        "Thrombectomy",
+        "Triage"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_31594798"
+    },
+    {
+      "pmid": "39965433",
+      "title": "AI-driven triage in emergency departments: A review of benefits, challenges, and future directions.",
+      "abstract": "BACKGROUND: Emergency Departments (EDs) are critical in providing immediate care, often under pressure from overcrowding, resource constraints, and variability in patient prioritization. Traditional triage systems, while structured, rely on subjective assessments, which can lack consistency during peak hours or mass casualty events. AI-driven triage systems present a promising solution, automating patient prioritization by analyzing real-time data, such as vital signs, medical history, and presenting symptoms. This narrative review examines the key components, benefits, limitations, and future directions of AI-driven triage systems in EDs.\n\nMETHOD: This narrative review analyzed peer-reviewed articles published between 2015 and 2024, identified through searches in PubMed, Scopus, IEEE Xplore, and Google Scholar. Findings were synthesized to provide a comprehensive overview of their potential and limitations.\n\nRESULTS: The review identifies substantial benefits of AI-driven triage, including improved patient prioritization, reduced wait times, and optimized resource allocation. However, challenges such as data quality issues, algorithmic bias, clinician trust, and ethical concerns are significant barriers to widespread adoption. Future directions emphasize the need for algorithm refinement, integration with wearable technology, clinician education, and ethical framework development to address these challenges and ensure equitable implementation.\n\nCONCLUSION: AI-driven triage systems have the potential to transform ED operations by enhancing efficiency, improving patient outcomes, and supporting healthcare professionals in high-pressure environments. As healthcare demands continue to grow, these systems represent a vital innovation for advancing emergency care and addressing longstanding challenges in triage.",
+      "authors": [
+        "Adebayo Da'Costa",
+        "Jennifer Teke",
+        "Joseph E Origbo",
+        "Ayokunle Osonuga",
+        "Eghosasere Egbon"
+      ],
+      "journal": "International journal of medical informatics",
+      "year": 2025,
+      "mesh_terms": [
+        "Triage",
+        "Emergency Service, Hospital",
+        "Humans",
+        "Artificial Intelligence",
+        "Algorithms"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_39965433"
+    },
+    {
+      "pmid": "41795351",
+      "title": "Artificial intelligence applications in emergency triage for suspected acute coronary syndrome: a systematic review.",
+      "abstract": "BACKGROUND: Acute coronary syndromes (ACS) are time-critical conditions requiring rapid and accurate triage in the emergency department. Traditional triage may lead to delays, whereas artificial intelligence (AI) has the potential to enhance triage accuracy and efficiency.\n\nOBJECTIVE: This study aimed to synthesize and evaluate the effectiveness of AI applications in emergency triage or early clinical decision-making for suspected ACS, focusing on their impact on diagnostic accuracy, time to treatment, and operational outcomes.\n\nMETHODS: This systematic review followed PRISMA guidelines. PubMed, Scopus, CINAHL, and IEEE Xplore were searched for studies published between 2020 and 2025. Eligible articles examined AI applications for triage of suspected ACS in the emergency department. Data on study design, AI models, comparators, inputs, and outcomes were extracted, and study quality was assessed using the Mixed Methods Appraisal Tool (MMAT).\n\nRESULTS: Fifteen studies from multiple countries and study designs were included. Convolutional neural networks and ensemble learning methods were the most used models. AI models generally demonstrated high diagnostic performance (AUROC 0.82-0.99), were associated with reductions in treatment times such as door-to-balloon and catheterization intervals, and showed potential to improve operational outcomes, including resource utilization and patient flow. However, findings varied across studies depending on model type, data inputs, and study design.\n\nCONCLUSIONS: AI-assisted triage for suspected ACS shows promise in supporting clinical decision-making and improving workflow efficiency. However, substantial heterogeneity and limited prospective validation suggest that findings should be interpreted cautiously. Further research is needed to confirm clinical effectiveness, generalizability, and safe implementation.",
+      "authors": [
+        "Aekkachai Fatai",
+        "Chakrit Sattayarom"
+      ],
+      "journal": "International journal of medical informatics",
+      "year": 2026,
+      "mesh_terms": [
+        "Triage",
+        "Acute Coronary Syndrome",
+        "Humans",
+        "Artificial Intelligence",
+        "Emergency Service, Hospital"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_41795351"
+    },
+    {
+      "pmid": "36880782",
+      "title": "Artificial intelligence may enhance emergency triage and management.",
+      "abstract": "The entry of Artificial Intelligence (AI) into Intensive Care has become a reality. We think that only with robust validation studies accomplished by a multidisciplinary team the gap between clinical research and clinical practice can be bridged.",
+      "authors": [
+        "Michelangelo Craca",
+        "Federico Coccolini",
+        "Elena Bignami"
+      ],
+      "journal": "The journal of trauma and acute care surgery",
+      "year": 2023,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Triage",
+        "Emergency Service, Hospital"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_36880782"
+    },
+    {
+      "pmid": "31980099",
+      "title": "Clinical Decision Support Systems for Triage in the Emergency Department using Intelligent Systems: a Review.",
+      "abstract": "MOTIVATION: Emergency Departments' (ED) modern triage systems implemented worldwide are solely based upon medical knowledge and experience. This is a limitation of these systems, since there might be hidden patterns that can be explored in big volumes of clinical historical data. Intelligent techniques can be applied to these data to develop clinical decision support systems (CDSS) thereby providing the health professionals with objective criteria. Therefore, it is of foremost importance to identify what has been hampering the application of such systems for ED triage.\n\nOBJECTIVES: The objective of this paper is to assess how intelligent CDSS for triage have been contributing to the improvement of quality of care in the ED as well as to identify the challenges they have been facing regarding implementation.\n\nMETHODS: We applied a standard scoping review method with the manual search of 6 digital libraries, namely: ScienceDirect, IEEE Xplore, Google Scholar, Springer, MedlinePlus and Web of Knowledge. Search queries were created and customized for each digital library in order to acquire the information. The core search consisted of searching in the papers' title, abstract and key words for the topics \"triage\", \"emergency department\"/\"emergency room\" and concepts within the field of intelligent systems.\n\nRESULTS: From the review search, we found that logistic regression was the most frequently used technique for model design and the area under the receiver operating curve (AUC) the most frequently used performance measure. Beside triage priority, the most frequently used variables for modelling were patients' age, gender, vital signs and chief complaints. The main contributions of the selected papers consisted in the improvement of a patient's prioritization, prediction of need for critical care, hospital or Intensive Care Unit (ICU) admission, ED Length of Stay (LOS) and mortality from information available at the triage.\n\nCONCLUSIONS: In the papers where CDSS were validated in the ED, the authors found that there was an improvement in the health professionals' decision-making thereby leading to better clinical management and patients' outcomes. However, we found that more than half of the studies lacked this implementation phase. We concluded that for these studies, it is necessary to validate the CDSS and to define key performance measures in order to demonstrate the extent to which incorporation of CDSS at triage can actually improve care.",
+      "authors": [
+        "Marta Fernandes",
+        "Susana M Vieira",
+        "Francisca Leite",
+        "Carlos Palos",
+        "Stan Finkelstein"
+      ],
+      "journal": "Artificial intelligence in medicine",
+      "year": 2020,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Decision Support Systems, Clinical",
+        "Emergency Medical Services",
+        "Emergency Service, Hospital",
+        "Humans",
+        "Machine Learning",
+        "Triage"
+      ],
+      "domain": "ai_triage",
+      "doc_id": "pmid_31980099"
+    },
+    {
+      "pmid": "38589940",
+      "title": "Use of artificial intelligence in critical care: opportunities and obstacles.",
+      "abstract": "BACKGROUND: Perhaps nowhere else in the healthcare system than in the intensive care unit environment are the challenges to create useful models with direct time-critical clinical applications more relevant and the obstacles to achieving those goals more massive. Machine learning-based artificial intelligence (AI) techniques to define states and predict future events are commonplace activities of modern life. However, their penetration into acute care medicine has been slow, stuttering and uneven. Major obstacles to widespread effective application of AI approaches to the real-time care of the critically ill patient exist and need to be addressed.\n\nMAIN BODY: Clinical decision support systems (CDSSs) in acute and critical care environments support clinicians, not replace them at the bedside. As will be discussed in this review, the reasons are many and include the immaturity of AI-based systems to have situational awareness, the fundamental bias in many large databases that do not reflect the target population of patient being treated making fairness an important issue to address and technical barriers to the timely access to valid data and its display in a fashion useful for clinical workflow. The inherent \"black-box\" nature of many predictive algorithms and CDSS makes trustworthiness and acceptance by the medical community difficult. Logistically, collating and curating in real-time multidimensional data streams of various sources needed to inform the algorithms and ultimately display relevant clinical decisions support format that adapt to individual patient responses and signatures represent the efferent limb of these systems and is often ignored during initial validation efforts. Similarly, legal and commercial barriers to the access to many existing clinical databases limit studies to address fairness and generalizability of predictive models and management tools.\n\nCONCLUSIONS: AI-based CDSS are evolving and are here to stay. It is our obligation to be good shepherds of their use and further development.",
+      "authors": [
+        "Michael R Pinsky",
+        "Armando Bedoya",
+        "Azra Bihorac",
+        "Leo Celi",
+        "Matthew Churpek"
+      ],
+      "journal": "Critical care (London, England)",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Algorithms",
+        "Critical Care",
+        "Intensive Care Units",
+        "Delivery of Health Care"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_38589940"
+    },
+    {
+      "pmid": "34272911",
+      "title": "The role of artificial intelligence in enhancing clinical nursing care: A scoping review.",
+      "abstract": "AIM: To present an overview of how artificial intelligence has been used to improve clinical nursing care.\n\nBACKGROUND: Artificial intelligence has been reshaping the healthcare industry but little is known about its applicability in enhancing nursing care.\n\nEVALUATION: A scoping review was conducted. Seven electronic databases (CINAHL, Cochrane Library, EMBASE, IEEE Xplore, PubMed, Scopus, and Web of Science) were searched from 1 January 2010 till 20 December 2020. Grey literature and reference lists of included articles were also searched.\n\nKEY ISSUES: Thirty-seven studies encapsulating the use of artificial intelligence in improving clinical nursing care were included in this review. Six use cases were identified - documentation, formulating nursing diagnoses, formulating nursing care plans, patient monitoring, patient care prediction such as falls prediction (most common) and wound management. Various techniques of machine learning and classification were used for predictive analyses and to improve nurses' preparedness and management of patients' conditions CONCLUSION: This review highlighted the potential of artificial intelligence in improving the quality of nursing care. However, more randomized controlled trials in real-life healthcare settings should be conducted to enhance the rigor of evidence.\n\nIMPLICATIONS FOR NURSING MANAGEMENT: Education in the application of artificial intelligence should be promoted to empower nurses to lead technological transformations and not passively trail behind others.",
+      "authors": [
+        "Zi Qi Pamela Ng",
+        "Li Ying Janice Ling",
+        "Han Shi Jocelyn Chew",
+        "Ying Lau"
+      ],
+      "journal": "Journal of nursing management",
+      "year": 2022,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Documentation",
+        "Educational Status",
+        "Nursing Care",
+        "Nursing Diagnosis"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_34272911"
+    },
+    {
+      "pmid": "32325045",
+      "title": "Artificial Intelligence: The Future for Diabetes Care.",
+      "abstract": "Artificial intelligence (AI) is a fast-growing field and its applications to diabetes, a global pandemic, can reform the approach to diagnosis and management of this chronic condition. Principles of machine learning have been used to build algorithms to support predictive models for the risk of developing diabetes or its consequent complications. Digital therapeutics have proven to be an established intervention for lifestyle therapy in the management of diabetes. Patients are increasingly being empowered for self-management of diabetes, and both patients and health care professionals are benefitting from clinical decision support. AI allows a continuous and burden-free remote monitoring of the patient's symptoms and biomarkers. Further, social media and online communities enhance patient engagement in diabetes care. Technical advances have helped to optimize resource use in diabetes. Together, these intelligent technical reforms have produced better glycemic control with reductions in fasting and postprandial glucose levels, glucose excursions, and glycosylated hemoglobin. AI will introduce a paradigm shift in diabetes care from conventional management strategies to building targeted data-driven precision care.",
+      "authors": [
+        "Samer Ellahham"
+      ],
+      "journal": "The American journal of medicine",
+      "year": 2020,
+      "mesh_terms": [
+        "Algorithms",
+        "Artificial Intelligence",
+        "Decision Support Systems, Clinical",
+        "Deep Learning",
+        "Diabetes Mellitus",
+        "Diabetic Retinopathy",
+        "Diagnosis, Computer-Assisted",
+        "Genomics",
+        "Humans",
+        "Image Processing, Computer-Assisted",
+        "Machine Learning",
+        "Mobile Applications",
+        "Neural Networks, Computer",
+        "Risk Assessment",
+        "Self-Management",
+        "Support Vector Machine",
+        "Telemedicine"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_32325045"
+    },
+    {
+      "pmid": "35939288",
+      "title": "Patient-Centered Pain Care Using Artificial Intelligence and Mobile Health Tools: A Randomized Comparative Effectiveness Trial.",
+      "abstract": "IMPORTANCE: Cognitive behavioral therapy for chronic pain (CBT-CP) is a safe and effective alternative to opioid analgesics. Because CBT-CP requires multiple sessions and therapists are scarce, many patients have limited access or fail to complete treatment.\n\nOBJECTIVES: To determine if a CBT-CP program that personalizes patient treatment using reinforcement learning, a field of artificial intelligence (AI), and interactive voice response (IVR) calls is noninferior to standard telephone CBT-CP and saves therapist time.\n\nDESIGN, SETTING, AND PARTICIPANTS: This was a randomized noninferiority, comparative effectiveness trial including 278 patients with chronic back pain from the Department of Veterans Affairs health system (recruitment and data collection from July 11, 2017-April 9, 2020). More patients were randomized to the AI-CBT-CP group than to the control (1.4:1) to maximize the system's ability to learn from patient interactions.\n\nINTERVENTIONS: All patients received 10 weeks of CBT-CP. For the AI-CBT-CP group, patient feedback via daily IVR calls was used by the AI engine to make weekly recommendations for either a 45-minute or 15-minute therapist-delivered telephone session or an individualized IVR-delivered therapist message. Patients in the comparison group were offered 10 therapist-delivered telephone CBT-CP sessions (45 minutes/session).\n\nMAIN OUTCOMES AND MEASURES: The primary outcome was the Roland Morris Disability Questionnaire (RMDQ; range 0-24), measured at 3 months (primary end point) and 6 months. Secondary outcomes included pain intensity and pain interference. Consensus guidelines were used to identify clinically meaningful improvements for responder analyses (eg, a 30% improvement in RMDQ scores and pain intensity). Data analyses were performed from April 2021 to May 2022.\n\nRESULTS: The study population included 278 patients (mean [SD] age, 63.9 [12.2] years; 248 [89.2%] men; 225 [81.8%] White individuals). The 3-month mean RMDQ score difference between AI-CBT-CP and standard CBT-CP was -0.72 points (95% CI, -2.06 to 0.62) and the 6-month difference was -1.24 (95% CI, -2.48 to 0); noninferiority criterion were met at both the 3- and 6-month end points (P < .001 for both). A greater proportion of patients receiving AI-CBT-CP had clinically meaningful improvements at 6 months as indicated by RMDQ (37% vs 19%; P = .01) and pain intensity scores (29% vs 17%; P = .03). There were no significant differences in secondary outcomes. Pain therapy using AI-CBT-CP required less than half of the therapist time as standard CBT-CP.\n\nCONCLUSIONS AND RELEVANCE: The findings of this randomized comparative effectiveness trial indicated that AI-CBT-CP was noninferior to therapist-delivered telephone CBT-CP and required substantially less therapist time. Interventions like AI-CBT-CP could allow many more patients to be served effectively by CBT-CP programs using the same number of therapists.\n\nTRIAL REGISTRATION: ClinicalTrials.gov Identifier: NCT02464449.",
+      "authors": [
+        "John D Piette",
+        "Sean Newman",
+        "Sarah L Krein",
+        "Nicolle Marinec",
+        "Jenny Chen"
+      ],
+      "journal": "JAMA internal medicine",
+      "year": 2022,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Chronic Pain",
+        "Cognitive Behavioral Therapy",
+        "Female",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Patient-Centered Care",
+        "Telemedicine",
+        "Treatment Outcome"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_35939288"
+    },
+    {
+      "pmid": "40555203",
+      "title": "Artificial Intelligence in Hemophilia Management: Revolutionizing Patient Care and Future Directions.",
+      "abstract": "<p>Background: Recent advancements in artificial intelligence (AI) hold significant promise for transforming hemophilia care. Summary: This review explores the impact of AI on critical aspects of hemophilia management, including bleeding risk prediction, biomarker identification, personalized treatment strategies, and patient education. Key Messages: We discuss the application of machine learning models in predicting bleeding risks among children with hemophilia engaging in physical activities, the use of AI in analyzing factor VIII protein structures to determine disease severity, and the development of AI-powered chatbots and digital platforms for patient education and self-management, particularly in resource-limited settings. Furthermore, we address the challenges inherent in implementing AI technologies in clinical practice, such as data privacy concerns, model interpretability, and the need for robust validation. By highlighting current advancements and future directions, we underscore the potential of AI to enhance personalized care and improve outcomes for individuals with hemophilia. </p>.",
+      "authors": [
+        "Sarina Levy-Mendelovich",
+        "Benjamin S Glicksberg",
+        "Shelly Soffer",
+        "Moran Gendler",
+        "Orly Efros"
+      ],
+      "journal": "Acta haematologica",
+      "year": 2025,
+      "mesh_terms": [
+        "Humans",
+        "Hemophilia A",
+        "Artificial Intelligence",
+        "Patient Care",
+        "Precision Medicine",
+        "Disease Management",
+        "Machine Learning"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_40555203"
+    },
+    {
+      "pmid": "35908207",
+      "title": "Artificial intelligence in nursing and midwifery: A systematic review.",
+      "abstract": "BACKGROUND: Artificial Intelligence (AI) techniques are being applied in nursing and midwifery to improve decision-making, patient care and service delivery. However, an understanding of the real-world applications of AI across all domains of both professions is limited.\n\nOBJECTIVES: To synthesise literature on AI in nursing and midwifery.\n\nMETHODS: CINAHL, Embase, PubMed and Scopus were searched using relevant terms. Titles, abstracts and full texts were screened against eligibility criteria. Data were extracted, analysed, and findings were presented in a descriptive summary. The PRISMA checklist guided the review conduct and reporting.\n\nRESULTS: One hundred and forty articles were included. Nurses' and midwives' involvement in AI varied, with some taking an active role in testing, using or evaluating AI-based technologies; however, many studies did not include either profession. AI was mainly applied in clinical practice to direct patient care (n = 115, 82.14%), with fewer studies focusing on administration and management (n = 21, 15.00%), or education (n = 4, 2.85%). Benefits reported were primarily potential as most studies trained and tested AI algorithms. Only a handful (n = 8, 7.14%) reported actual benefits when AI techniques were applied in real-world settings. Risks and limitations included poor quality datasets that could introduce bias, the need for clinical interpretation of AI-based results, privacy and trust issues, and inadequate AI expertise among the professions.\n\nCONCLUSION: Digital health datasets should be put in place to support the testing, use, and evaluation of AI in nursing and midwifery. Curricula need to be developed to educate the professions about AI, so they can lead and participate in these digital initiatives in healthcare.\n\nRELEVANCE FOR CLINICAL PRACTICE: Adult, paediatric, mental health and learning disability nurses, along with midwives should have a more active role in rigorous, interdisciplinary research evaluating AI-based technologies in professional practice to determine their clinical efficacy as well as their ethical, legal and social implications in healthcare.",
+      "authors": [
+        "Siobhán O'Connor",
+        "Yongyang Yan",
+        "Friederike J S Thilo",
+        "Heike Felzmann",
+        "Dawn Dowding"
+      ],
+      "journal": "Journal of clinical nursing",
+      "year": 2023,
+      "mesh_terms": [
+        "Pregnancy",
+        "Adult",
+        "Humans",
+        "Child",
+        "Female",
+        "Midwifery",
+        "Artificial Intelligence",
+        "Delivery of Health Care",
+        "Curriculum"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_35908207"
+    },
+    {
+      "pmid": "36197712",
+      "title": "Artificial Intelligence Applications in Health Care Practice: Scoping Review.",
+      "abstract": "BACKGROUND: Artificial intelligence (AI) is often heralded as a potential disruptor that will transform the practice of medicine. The amount of data collected and available in health care, coupled with advances in computational power, has contributed to advances in AI and an exponential growth of publications. However, the development of AI applications does not guarantee their adoption into routine practice. There is a risk that despite the resources invested, benefits for patients, staff, and society will not be realized if AI implementation is not better understood.\n\nOBJECTIVE: The aim of this study was to explore how the implementation of AI in health care practice has been described and researched in the literature by answering 3 questions: What are the characteristics of research on implementation of AI in practice? What types and applications of AI systems are described? What characteristics of the implementation process for AI systems are discernible?\n\nMETHODS: A scoping review was conducted of MEDLINE (PubMed), Scopus, Web of Science, CINAHL, and PsycINFO databases to identify empirical studies of AI implementation in health care since 2011, in addition to snowball sampling of selected reference lists. Using Rayyan software, we screened titles and abstracts and selected full-text articles. Data from the included articles were charted and summarized.\n\nRESULTS: Of the 9218 records retrieved, 45 (0.49%) articles were included. The articles cover diverse clinical settings and disciplines; most (32/45, 71%) were published recently, were from high-income countries (33/45, 73%), and were intended for care providers (25/45, 56%). AI systems are predominantly intended for clinical care, particularly clinical care pertaining to patient-provider encounters. More than half (24/45, 53%) possess no action autonomy but rather support human decision-making. The focus of most research was on establishing the effectiveness of interventions (16/45, 35%) or related to technical and computational aspects of AI systems (11/45, 24%). Focus on the specifics of implementation processes does not yet seem to be a priority in research, and the use of frameworks to guide implementation is rare.\n\nCONCLUSIONS: Our current empirical knowledge derives from implementations of AI systems with low action autonomy and approaches common to implementations of other types of information systems. To develop a specific and empirically based implementation framework, further research is needed on the more disruptive types of AI systems being implemented in routine care and on aspects unique to AI implementation in health care, such as building trust, addressing transparency issues, developing explainable and interpretable solutions, and addressing ethical concerns around privacy and data protection.",
+      "authors": [
+        "Malvika Sharma",
+        "Carl Savage",
+        "Monika Nair",
+        "Ingrid Larsson",
+        "Petra Svedberg"
+      ],
+      "journal": "Journal of medical Internet research",
+      "year": 2022,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Delivery of Health Care",
+        "Humans",
+        "Income"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_36197712"
+    },
+    {
+      "pmid": "39405330",
+      "title": "FDA Perspective on the Regulation of Artificial Intelligence in Health Care and Biomedicine.",
+      "abstract": "IMPORTANCE: Advances in artificial intelligence (AI) must be matched by efforts to better understand and evaluate how AI performs across health care and biomedicine as well as develop appropriate regulatory frameworks. This Special Communication reviews the history of the US Food and Drug Administration's (FDA) regulation of AI; presents potential uses of AI in medical product development, clinical research, and clinical care; and presents concepts that merit consideration as the regulatory system adapts to AI's unique challenges.\n\nOBSERVATIONS: The FDA has authorized almost 1000 AI-enabled medical devices and has received hundreds of regulatory submissions for drugs that used AI in their discovery and development. Health AI regulation needs to be coordinated across all regulated industries, the US government, and with international organizations. Regulators will need to advance flexible mechanisms to keep up with the pace of change in AI across biomedicine and health care. Sponsors need to be transparent about and regulators need proficiency in evaluating the use of AI in premarket development. A life cycle management approach incorporating recurrent local postmarket performance monitoring should be central to health AI development. Special mechanisms to evaluate large language models and their uses are needed. Approaches are necessary to balance the needs of the entire spectrum of health ecosystem interests, from large firms to start-ups. The evaluation and regulatory system will need to focus on patient health outcomes to balance the use of AI for financial optimization for developers, payers, and health systems.\n\nCONCLUSIONS AND RELEVANCE: Strong oversight by the FDA protects the long-term success of industries by focusing on evaluation to advance regulated technologies that improve health. The FDA will continue to play a central role in ensuring safe, effective, and trustworthy AI tools to improve the lives of patients and clinicians alike. However, all involved entities will need to attend to AI with the rigor this transformative technology merits.",
+      "authors": [
+        "Haider J Warraich",
+        "Troy Tazbaz",
+        "Robert M Califf"
+      ],
+      "journal": "JAMA",
+      "year": 2025,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Delivery of Health Care",
+        "Device Approval",
+        "Government Regulation",
+        "United States",
+        "United States Food and Drug Administration",
+        "History, 20th Century",
+        "History, 21st Century"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_39405330"
+    },
+    {
+      "pmid": "40836587",
+      "title": "Artificial Intelligence Applications in Healthcare: A Systematic Review of Their Impact on Nursing Practice and Patient Outcomes.",
+      "abstract": "BACKGROUND: Artificial Intelligence is revolutionizing healthcare by addressing complex challenges and enhancing patient care. AI technologies, such as machine learning, natural language processing, and predictive analytics, offer significant potential to impact nursing practice and patient outcomes.\n\nAIMS: This systematic review aims to assess the impact of Artificial Intelligence applications in healthcare on nursing practice and patient outcomes. The goal is to evaluate the effectiveness of these technologies in improving nursing efficiency and patient care and to identify areas requiring further research.\n\nMETHODS: This review, conducted in August 2024, followed PRISMA guidelines. We searched PubMed, GOOGLE SCHOLAR, and Web of Science for studies published up to August 2024. The inclusion criteria were original research on AI in nursing and healthcare practice published in English. A two-stage screening process was used to select relevant studies, which were then analyzed for their impact on nursing practice and patient outcomes.\n\nRESULTS: A total of 5975 studies were surveyed from the previously mentioned databases, which met the inclusion criteria. Findings show that AI applications, including machine learning, robotic process automation, and natural language processing, have improved diagnostic accuracy, patient management, and operational efficiency. Machine learning enhanced disease detection, reduced administrative tasks for nurses, NLP improved documentation accuracy, and physical robots increased patient safety and comfort. Challenges identified include data privacy concerns, integration into existing workflows, and methodological variability.\n\nCONCLUSION: AI technologies have substantially improved nursing practice and patient outcomes. Addressing challenges related to data privacy and integration, as well as standardizing methodologies, is essential for optimizing AI's potential in healthcare. Further research is needed to explore the long-term impacts, cost-effectiveness, and ethical implications of Artificial Intelligence in this field.\n\nCLINICAL RELEVANCE: Artificial Intelligence (AI) is revolutionizing healthcare by enhancing nursing practices and improving patient outcomes. Tools such as Clinical Decision Support Systems (CDSS), predictive analytics, robotic process automation (RPA), and remote monitoring empower nurses to make informed decisions, optimize workflows, and monitor patients more effectively. AI enhances decision-making, boosts efficiency, and facilitates personalized care, while aiding in early detection and real-time data analysis. It also contributes to better nurse education and patient safety by minimizing errors and enabling remote consultations. However, for AI to be successfully integrated into healthcare, it is essential to tackle challenges related to training, ethical considerations, and data privacy to guarantee its effective implementation and positive impact on the quality and safety of healthcare.",
+      "authors": [
+        "Sahar A Abdelmohsen",
+        "Mohammed Musaed Al-Jabri"
+      ],
+      "journal": "Journal of nursing scholarship : an official publication of Sigma Theta Tau International Honor Society of Nursing",
+      "year": 2025,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Nursing Care",
+        "Natural Language Processing",
+        "Delivery of Health Care"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_40836587"
+    },
+    {
+      "pmid": "38049066",
+      "title": "Effectiveness of ChatGPT in clinical pharmacy and the role of artificial intelligence in medication therapy management.",
+      "abstract": "BACKGROUND: The use of artificial intelligence (AI) to optimize medication therapy management (MTM) in identifying drug interactions may potentially improve MTM efficiency. ChatGPT, an AI language model, may be applied to identify medication interventions by integrating patient and drug databases. ChatGPT has been shown to be effective in other areas of clinical medicine, from diagnosis to patient management. However, ChatGPT's ability to manage MTM related activities is little known.\n\nOBJECTIVES: To evaluate the effectiveness of ChatGPT in MTM services in simple, complex, and very complex cases to understand AI contributions in MTM.\n\nMETHODS: Two clinical pharmacists rated and validated the difficulty of patient cases from simple, complex, and very complex. ChatGPT's response to the cases was assessed based on 3 criteria: the ability to identify drug interactions, precision in recommending alternatives, and appropriateness in devising management plans. Two clinical pharmacists validated the accuracy of ChatGPT's responses and compared them to actual answers for each complexity level.\n\nRESULTS: ChatGPT 4.0 accurately solved 39 out of 39 (100 %) patient cases. ChatGPT successfully identified drug interactions, provided therapy recommendations and formulated general management plans, but it did not recommend specific dosages. Results suggest it can assist pharmacists in formulating MTM plans to improve overall efficiency.\n\nCONCLUSION: The application of ChatGPT in MTM has the potential to enhance patient safety and involvement, lower healthcare costs, and assist healthcare providers in medication management and identifying drug interactions. Future pharmacists can utilize AI models such as ChatGPT to improve patient care. The future of the pharmacy profession will depend on how the field responds to the changing need for patient care optimized by AI and automation.",
+      "authors": [
+        "Don Roosan",
+        "Pauline Padua",
+        "Raiyan Khan",
+        "Hasiba Khan",
+        "Claudia Verzosa"
+      ],
+      "journal": "Journal of the American Pharmacists Association : JAPhA",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Medication Therapy Management",
+        "Artificial Intelligence",
+        "Pharmacy Service, Hospital",
+        "Pharmacy",
+        "Pharmacists"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_38049066"
+    },
+    {
+      "pmid": "38920162",
+      "title": "Artificial intelligence in medicine: Ethical, social and legal perspectives.",
+      "abstract": "Artificial intelligence (AI) has permeated into every aspect of medicine and promises to provide accurate diagnosis, better management decision and improved outcome for patients and healthcare system. However, ethical, social and legal issues need to be resolved for successful implementation of AI tools in clinical practice. In order to gain trust and acceptance, AI algorithms should offer maximum explainability and inclusiveness. Robust evidence of benefit to patients and healthcare services has to be provided to gain justification of using these tools. Doctor-patient relationship needs to be maintained in order to gain trust and acceptance of users. Autonomy of decisions and dignity of patients need to be preserved while using machine in healthcare. Responsibility and accountability in the use of AI in medicine should be deliberated and defined before mishaps and damage occur. A new role of healthcare providers will emerge with the advancement of technology and changes are inevitable. This manuscript is based on the Gordon Arthur Ransome Lecture 2022 entitled \"Artificial Intelligence in Medicine: Ethical, Social and Legal Perspective\". It represents the opinion of the orator.",
+      "authors": [
+        "Joseph Sung"
+      ],
+      "journal": "Annals of the Academy of Medicine, Singapore",
+      "year": 2023,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Humans",
+        "Physician-Patient Relations",
+        "Ethics, Medical",
+        "Social Responsibility",
+        "Personal Autonomy",
+        "Delivery of Health Care"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_38920162"
+    },
+    {
+      "pmid": "38491544",
+      "title": "Generative AI in healthcare: an implementation science informed translational path on application, integration and governance.",
+      "abstract": "BACKGROUND: Artificial intelligence (AI), particularly generative AI, has emerged as a transformative tool in healthcare, with the potential to revolutionize clinical decision-making and improve health outcomes. Generative AI, capable of generating new data such as text and images, holds promise in enhancing patient care, revolutionizing disease diagnosis and expanding treatment options. However, the utility and impact of generative AI in healthcare remain poorly understood, with concerns around ethical and medico-legal implications, integration into healthcare service delivery and workforce utilisation. Also, there is not a clear pathway to implement and integrate generative AI in healthcare delivery.\n\nMETHODS: This article aims to provide a comprehensive overview of the use of generative AI in healthcare, focusing on the utility of the technology in healthcare and its translational application highlighting the need for careful planning, execution and management of expectations in adopting generative AI in clinical medicine. Key considerations include factors such as data privacy, security and the irreplaceable role of clinicians' expertise. Frameworks like the technology acceptance model (TAM) and the Non-Adoption, Abandonment, Scale-up, Spread and Sustainability (NASSS) model are considered to promote responsible integration. These frameworks allow anticipating and proactively addressing barriers to adoption, facilitating stakeholder participation and responsibly transitioning care systems to harness generative AI's potential.\n\nRESULTS: Generative AI has the potential to transform healthcare through automated systems, enhanced clinical decision-making and democratization of expertise with diagnostic support tools providing timely, personalized suggestions. Generative AI applications across billing, diagnosis, treatment and research can also make healthcare delivery more efficient, equitable and effective. However, integration of generative AI necessitates meticulous change management and risk mitigation strategies. Technological capabilities alone cannot shift complex care ecosystems overnight; rather, structured adoption programs grounded in implementation science are imperative.\n\nCONCLUSIONS: It is strongly argued in this article that generative AI can usher in tremendous healthcare progress, if introduced responsibly. Strategic adoption based on implementation science, incremental deployment and balanced messaging around opportunities versus limitations helps promote safe, ethical generative AI integration. Extensive real-world piloting and iteration aligned to clinical priorities should drive development. With conscientious governance centred on human wellbeing over technological novelty, generative AI can enhance accessibility, affordability and quality of care. As these models continue advancing rapidly, ongoing reassessment and transparent communication around their strengths and weaknesses remain vital to restoring trust, realizing positive potential and, most importantly, improving patient outcomes.",
+      "authors": [
+        "Sandeep Reddy"
+      ],
+      "journal": "Implementation science : IS",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Implementation Science",
+        "Artificial Intelligence",
+        "Ecosystem",
+        "Clinical Decision-Making",
+        "Delivery of Health Care"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_38491544"
+    },
+    {
+      "pmid": "40225559",
+      "title": "Artificial intelligence in chronic kidney disease management: a scoping review.",
+      "abstract": "Rationale: Chronic kidney disease (CKD) is a major public health problem worldwide associated with cardiovascular disease, renal failure, and mortality. To effectively address this growing burden, innovative solutions to management are urgently required. We conducted a scoping review to identify key use cases in which artificial intelligence (AI) could be leveraged for improving management of CKD. Additionally, we examined the challenges faced by AI in CKD management, proposed potential solutions to overcome these barriers. Methods: We reviewed 41 articles published between 2014-2024 which examined various AI techniques including machine learning (ML) and deep learning (DL), unsupervised clustering, digital twin, natural language processing (NLP) and large language models (LLMs) in CKD management. We focused on four areas: early detection, risk stratification and prediction, treatment recommendations and patient care and communication. Results: We identified 41 articles published between 2014-2024 that assessed image-based DL models for early detection (n = 6), ML models for risk stratification and prediction (n = 14) and treatment recommendations (n = 4), and NLP and LLMs for patient care and communication (n = 17). Key challenges in integrating AI models into healthcare include technical issues such as data quality and access, model accuracy, and interpretability, alongside adoption barriers like workflow integration, user training, and regulatory approval. Conclusions: There is tremendous potential of integrating AI into clinical care of CKD patients to enable early detection, prediction, and improved patient outcomes. Collaboration among healthcare providers, researchers, regulators, and industries is crucial to developing robust protocols that ensure compliance with legal standards, while minimizing risks and maintaining patient safety.",
+      "authors": [
+        "Charumathi Sabanayagam",
+        "Riswana Banu",
+        "Cynthia Lim",
+        "Yih Chung Tham",
+        "Ching-Yu Cheng"
+      ],
+      "journal": "Theranostics",
+      "year": 2025,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Deep Learning",
+        "Disease Management",
+        "Early Diagnosis",
+        "Machine Learning",
+        "Natural Language Processing",
+        "Renal Insufficiency, Chronic",
+        "Risk Assessment"
+      ],
+      "domain": "ai_care",
+      "doc_id": "pmid_40225559"
+    },
+    {
+      "pmid": "31383376",
+      "title": "Artificial Intelligence for Drug Toxicity and Safety.",
+      "abstract": "Interventional pharmacology is one of medicine's most potent weapons against disease. These drugs, however, can result in damaging side effects and must be closely monitored. Pharmacovigilance is the field of science that monitors, detects, and prevents adverse drug reactions (ADRs). Safety efforts begin during the development process, using in vivo and in vitro studies, continue through clinical trials, and extend to postmarketing surveillance of ADRs in real-world populations. Future toxicity and safety challenges, including increased polypharmacy and patient diversity, stress the limits of these traditional tools. Massive amounts of newly available data present an opportunity for using artificial intelligence (AI) and machine learning to improve drug safety science. Here, we explore recent advances as applied to preclinical drug safety and postmarketing surveillance with a specific focus on machine and deep learning (DL) approaches.",
+      "authors": [
+        "Anna O Basile",
+        "Alexandre Yahi",
+        "Nicholas P Tatonetti"
+      ],
+      "journal": "Trends in pharmacological sciences",
+      "year": 2019,
+      "mesh_terms": [
+        "Adverse Drug Reaction Reporting Systems",
+        "Animals",
+        "Artificial Intelligence",
+        "Drug Evaluation, Preclinical",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Humans",
+        "Machine Learning",
+        "Pharmacovigilance",
+        "Product Surveillance, Postmarketing",
+        "Quantitative Structure-Activity Relationship",
+        "Toxicity Tests"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_31383376"
+    },
+    {
+      "pmid": "39961738",
+      "title": "Artificial intelligence (AI) in pharmacovigilance: A systematic review on predicting adverse drug reactions (ADR) in hospitalized patients.",
+      "abstract": "INTRODUCTION: Adverse drug reactions (ADRs) significantly impact healthcare systems, leading to increased hospitalization rates and costs. With the growing adoption of artificial intelligence (AI) in healthcare, machine learning (ML) models offer promising solutions for ADR prediction. However, comprehensive evaluations of these models remain limited.\n\nMETHODS: This systematic review synthesized findings from 13 studies that utilized various ML algorithms (regression-based, flexible, and ensemble models) to predict ADRs using data such as patient demographics, laboratory values, and comorbidities. Meta-analysis was conducted to assess the pooled sensitivity and specificity of the models, and a co-authorship and keyword analysis was performed to examine collaborative networks within the field.\n\nRESULTS: The included studies primarily focused on model development (77 %), with only 23 % incorporating external validation, raising concerns about generalizability across clinical contexts. Meta-analysis showed pooled sensitivity and specificity of 78.1 % and 70.6 % for development-only studies, while studies with external validation achieved higher sensitivity (81.5 %) and specificity (79.5 %). Co-authorship analysis identified 67 contributors across eight collaboration clusters, indicating a specialized but emerging research field.\n\nDISCUSSION: The findings highlight the need for multifactorial models that integrate diverse predictors to improve the performance and reliability of ML-based ADR prediction. Addressing these limitations through rigorous model development and validation processes could enhance the clinical applicability of AI-driven pharmacovigilance, ultimately advancing patient safety and healthcare outcomes.",
+      "authors": [
+        "Viola Savy Dsouza",
+        "Lada Leyens",
+        "Jestina Rachel Kurian",
+        "Angela Brand",
+        "Helmut Brand"
+      ],
+      "journal": "Research in social & administrative pharmacy : RSAP",
+      "year": 2025,
+      "mesh_terms": [
+        "Humans",
+        "Pharmacovigilance",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Artificial Intelligence",
+        "Hospitalization",
+        "Machine Learning"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_39961738"
+    },
+    {
+      "pmid": "35904529",
+      "title": "The Use of Artificial Intelligence in Pharmacovigilance: A Systematic Review of the Literature.",
+      "abstract": "INTRODUCTION: Artificial intelligence through machine learning uses algorithms and prior learnings to make predictions. Recently, there has been interest to include more artificial intelligence in pharmacovigilance of products already in the market and pharmaceuticals in development.\n\nOBJECTIVE: The aim of this study was to identify and describe the uses of artificial intelligence in pharmacovigilance through a systematic literature review.\n\nMETHODS: Embase and MEDLINE database searches were conducted for articles published from January 1, 2015 to July 9, 2021 using search terms such as 'pharmacovigilance,' 'patient safety,' 'artificial intelligence,' and 'machine learning' in the title or abstract. Scientific articles that contained information on the use of artificial intelligence in all modalities of patient safety or pharmacovigilance were reviewed and synthesized using a pre-specified data extraction template. Articles with incomplete information and letters to editor, notes, and commentaries were excluded.\n\nRESULTS: Sixty-six articles were identified for evaluation. Most relevant articles on artificial intelligence focused on machine learning, and it was used in patient safety in the identification of adverse drug events (ADEs) and adverse drug reactions (ADRs) (57.6%), processing safety reports (21.2%), extraction of drug-drug interactions (7.6%), identification of populations at high risk for drug toxicity or guidance for personalized care (7.6%), prediction of side effects (3.0%), simulation of clinical trials (1.5%), and integration of prediction uncertainties into diagnostic classifiers to increase patient safety (1.5%). Artificial intelligence has been used to identify safety signals through automated processes and training with machine learning models; however, the findings may not be generalizable given that there were different types of data included in each source.\n\nCONCLUSION: Artificial intelligence allows for the processing and analysis of large amounts of data and can be applied to various disease states. The automation and machine learning models can optimize pharmacovigilance processes and provide a more efficient way to analyze information relevant to safety, although more research is needed to identify if this optimization has an impact on the quality of safety analyses. It is expected that its use will increase in the near future, particularly with its role in the prediction of side effects and ADRs.",
+      "authors": [
+        "Maribel Salas",
+        "Jan Petracek",
+        "Priyanka Yalamanchili",
+        "Omar Aimer",
+        "Dinesh Kasthuril"
+      ],
+      "journal": "Pharmaceutical medicine",
+      "year": 2022,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Humans",
+        "Machine Learning",
+        "Pharmaceutical Preparations",
+        "Pharmacovigilance"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_35904529"
+    },
+    {
+      "pmid": "39899688",
+      "title": "Machine Learning-Enabled Drug-Induced Toxicity Prediction.",
+      "abstract": "Unexpected toxicity has become a significant obstacle to drug candidate development, accounting for 30% of drug discovery failures. Traditional toxicity assessment through animal testing is costly and time-consuming. Big data and artificial intelligence (AI), especially machine learning (ML), are robustly contributing to innovation and progress in toxicology research. However, the optimal AI model for different types of toxicity usually varies, making it essential to conduct comparative analyses of AI methods across toxicity domains. The diverse data sources also pose challenges for researchers focusing on specific toxicity studies. In this review, 10 categories of drug-induced toxicity is examined, summarizing the characteristics and applicable ML models, including both predictive and interpretable algorithms, striking a balance between breadth and depth. Key databases and tools used in toxicity prediction are also highlighted, including toxicology, chemical, multi-omics, and benchmark databases, organized by their focus and function to clarify their roles in drug-induced toxicity prediction. Finally, strategies to turn challenges into opportunities are analyzed and discussed. This review may provide researchers with a valuable reference for understanding and utilizing the available resources to bridge prediction and mechanistic insights, and further advance the application of ML in drugs-induced toxicity prediction.",
+      "authors": [
+        "Changsen Bai",
+        "Lianlian Wu",
+        "Ruijiang Li",
+        "Yang Cao",
+        "Song He"
+      ],
+      "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+      "year": 2025,
+      "mesh_terms": [
+        "Machine Learning",
+        "Humans",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Animals",
+        "Databases, Factual"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_39899688"
+    },
+    {
+      "pmid": "40257538",
+      "title": "Artificial Intelligence: Applications in Pharmacovigilance Signal Management.",
+      "abstract": "Pharmacovigilance is the science of collection, detection, and assessment of adverse events associated with pharmaceutical products for the ongoing monitoring and understanding of those products' safety profiles. Part of this process, signal management, encompasses the activities of signal detection, signal validation/confirmation, signal evaluation, and ultimately, final assessment as to whether a safety signal constitutes a new causal adverse drug reaction. Artificial intelligence is a group of technologies including machine learning and natural language processing that are revolutionizing multiple industries through intelligent automation. Here, we present a critical evaluation of studies leveraging artificial intelligence in signal management to characterize the benefits and limitations of the technology, the level of transparency, and our perspective on best practices for the future. To this end, PubMed and Embase were searched cumulatively for terms pertaining to signal management and artificial intelligence, machine learning, or natural language processing. Information pertaining to the artificial intelligence model used, hyperparameter settings, training/testing data, performance, feature analysis, and more was extracted from included articles. Common signal detection methods included k-means, random forest, and gradient boosting machine. Machine learning algorithms generally outperformed traditional frequentist or Bayesian measures of disproportionality per various metrics, showing the potential utility of advanced machine learning technologies in signal detection. In signal validation and evaluation, natural language processing was typically applied. Overall, methodological transparency was mixed and only some studies leveraged \"gold standard\" publicly available positive and negative control datasets. Overall, innovation in pharmacovigilance signal management is being driven by machine learning and natural language processing models, particularly in signal detection, in part because of high-performing bagging methods such as random forest and gradient boosting machine. These technologies may be well poised to accelerate progress in this field when used transparently and ethically. Future research is needed to assess the applicability of these techniques across various therapeutic areas and drug classes in the broader pharmaceutical industry.",
+      "authors": [
+        "Jeffrey Warner",
+        "Anaclara Prada Jardim",
+        "Claudia Albera"
+      ],
+      "journal": "Pharmaceutical medicine",
+      "year": 2025,
+      "mesh_terms": [
+        "Pharmacovigilance",
+        "Humans",
+        "Artificial Intelligence",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Machine Learning",
+        "Adverse Drug Reaction Reporting Systems",
+        "Natural Language Processing"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_40257538"
+    },
+    {
+      "pmid": "35579816",
+      "title": "Validation of Artificial Intelligence to Support the Automatic Coding of Patient Adverse Drug Reaction Reports, Using Nationwide Pharmacovigilance Data.",
+      "abstract": "INTRODUCTION: Adverse drug reaction reports are usually manually assessed by pharmacovigilance experts to detect safety signals associated with drugs. With the recent extension of reporting to patients and the emergence of mass media-related sanitary crises, adverse drug reaction reports currently frequently overwhelm pharmacovigilance networks. Artificial intelligence could help support the work of pharmacovigilance experts during such crises, by automatically coding reports, allowing them to prioritise or accelerate their manual assessment. After a previous study showing first results, we developed and compared state-of-the-art machine learning models using a larger nationwide dataset, aiming to automatically pre-code patients' adverse drug reaction reports.\n\nOBJECTIVES: We aimed to determine the best artificial intelligence model identifying adverse drug reactions and assessing seriousness in patients reports from the French national pharmacovigilance web portal.\n\nMETHODS: Reports coded by 27 Pharmacovigilance Centres between March 2017 and December 2020 were selected (n = 11,633). For each report, the Portable Document Format form containing free-text information filled by the patient, and the corresponding encodings of adverse event symptoms (in Medical Dictionary for Regulatory Activities Preferred Terms) and seriousness were obtained. This encoding by experts was used as the reference to train and evaluate models, which contained input data processing and machine-learning natural language processing to learn and predict encodings. We developed and compared different approaches for data processing and classifiers. Performance was evaluated using receiver operating characteristic area under the curve (AUC), F-measure, sensitivity, specificity and positive predictive value. We used data from 26 Pharmacovigilance Centres for training and internal validation. External validation was performed using data from the remaining Pharmacovigilance Centres during the same period.\n\nRESULTS: Internal validation: for adverse drug reaction identification, Term Frequency-Inverse Document Frequency (TF-IDF) + Light Gradient Boosted Machine (LGBM) achieved an AUC of 0.97 and an F-measure of 0.80. The Cross-lingual Language Model (XLM) [transformer] obtained an AUC of 0.97 and an F-measure of 0.78. For seriousness assessment, FastText + LGBM achieved an AUC of 0.85 and an F-measure of 0.63. CamemBERT (transformer) + Light Gradient Boosted Machine obtained an AUC of 0.84 and an F-measure of 0.63. External validation for both adverse drug reaction identification and seriousness assessment tasks yielded consistent and robust results.\n\nCONCLUSIONS: Our artificial intelligence models showed promising performance to automatically code patient adverse drug reaction reports, with very similar results across approaches. Our system has been deployed by national health authorities in France since January 2021 to facilitate pharmacovigilance of COVID-19 vaccines. Further studies will be needed to validate the performance of the tool in real-life settings.",
+      "authors": [
+        "Guillaume L Martin",
+        "Julien Jouganous",
+        "Romain Savidan",
+        "Axel Bellec",
+        "Clément Goehrs"
+      ],
+      "journal": "Drug safety",
+      "year": 2022,
+      "mesh_terms": [
+        "Adverse Drug Reaction Reporting Systems",
+        "Artificial Intelligence",
+        "COVID-19",
+        "COVID-19 Vaccines",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Humans",
+        "Pharmacovigilance"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_35579816"
+    },
+    {
+      "pmid": "37458400",
+      "title": "Application of Artificial Intelligence in Drug-Drug Interactions Prediction: A Review.",
+      "abstract": "Drug-drug interactions (DDI) are a critical aspect of drug research that can have adverse effects on patients and can lead to serious consequences. Predicting these events accurately can significantly improve clinicians' ability to make better decisions and establish optimal treatment regimens. However, manually detecting these interactions is time-consuming and labor-intensive. Utilizing the advancements in Artificial Intelligence (AI) is essential for achieving accurate forecasts of DDIs. In this review, DDI prediction tasks are classified into three types according to the type of DDI prediction: undirected DDI prediction, DDI events prediction, and Asymmetric DDI prediction. The paper then reviews the progress of AI for each of these three prediction tasks in DDI and provides a summary of the data sets used as well as the representative methods used in these three prediction directions. In this review, we aim to provide a comprehensive overview of drug interaction prediction. The first section introduces commonly used databases and presents an overview of current research advancements and techniques across three domains of DDI. Additionally, we introduce classical machine learning techniques for predicting undirected drug interactions and provide a timeline for the progression of the predicted drug interaction events. At last, we debate the difficulties and prospects of AI approaches at predicting DDI, emphasizing their potential for improving clinical decision-making and patient outcomes.",
+      "authors": [
+        "Yuanyuan Zhang",
+        "Zengqian Deng",
+        "Xiaoyu Xu",
+        "Yinfei Feng",
+        "Shang Junliang"
+      ],
+      "journal": "Journal of chemical information and modeling",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Drug Interactions",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Machine Learning",
+        "Databases, Factual"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_37458400"
+    },
+    {
+      "pmid": "36732152",
+      "title": "Artificial Intelligence and Data Mining for the Pharmacovigilance of Drug-Drug Interactions.",
+      "abstract": "Despite increasing mechanistic understanding, undetected and underrecognized drug-drug interactions (DDIs) persist. This elusiveness relates to an interwoven complexity of increasing polypharmacy, multiplex mechanistic pathways, and human biological individuality. This persistent elusiveness motivates development of artificial intelligence (AI)-based approaches to enhancing DDI detection and prediction capabilities. The literature is vast and roughly divided into \"prediction\" and \"detection.\" The former relatively emphasizes biological and chemical knowledge bases, drug development, new drugs, and beneficial interactions, whereas the latter utilizes more traditional sources such as spontaneous reports, claims data, and electronic health records to detect novel adverse DDIs with authorized drugs. However, it is not a bright line, either nominally or in practice, and both are in scope for pharmacovigilance supporting signal detection but also signal refinement and evaluation, by providing data-based mechanistic arguments for/against DDI signals. The wide array of intricate and elegant methods has expanded the pharmacovigilance tool kit. How much they add to real prospective pharmacovigilance, reduce the public health impact of DDIs, and at what cost in terms of false alarms amplified by automation bias and its sequelae are open questions.",
+      "authors": [
+        "Manfred Hauben"
+      ],
+      "journal": "Clinical therapeutics",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Pharmacovigilance",
+        "Prospective Studies",
+        "Drug Interactions",
+        "Data Mining",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Adverse Drug Reaction Reporting Systems"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_36732152"
+    },
+    {
+      "pmid": "37081866",
+      "title": "Immune-related pulmonary toxicities of checkpoint inhibitors in non-small cell lung cancer: Diagnosis, mechanism, and treatment strategies.",
+      "abstract": "Immune checkpoint inhibitors (ICI) therapy based on programmed cell death-1 (PD-1) and programmed cell death ligand 1 (PD-L1) has changed the treatment paradigm of advanced non-small cell lung cancer (NSCLC) and improved the survival expectancy of patients. However, it also leads to immune-related adverse events (iRAEs), which result in multiple organ damage. Among them, the most common one with the highest mortality in NSCLC patients treated with ICI is checkpoint inhibitor pneumonitis (CIP). The respiratory signs of CIP are highly coincident and overlap with those in primary lung cancer, which causes difficulties in detecting, diagnosing, managing, and treating. In clinical management, patients with serious CIP should receive immunosuppressive treatment and even discontinue immunotherapy, which impairs the clinical benefits of ICIs and potentially results in tumor recrudesce. Therefore, accurate diagnosis, detailedly dissecting the pathogenesis, and developing reasonable treatment strategies for CIP are essential to prolong patient survival and expand the application of ICI. Herein, we first summarized the diagnosis strategies of CIP in NSCLC, including the classical radiology examination and the rising serological test, pathology test, and artificial intelligence aids. Then, we dissected the potential pathogenic mechanisms of CIP, including disordered T cell subsets, the increase of autoantibodies, cross-antigens reactivity, and the potential role of other immune cells. Moreover, we explored therapeutic approaches beyond first-line steroid therapy and future direction based on targeted signaling pathways. Finally, we discussed the current impediments, future trends, and challenges in fighting ICI-related pneumonitis.",
+      "authors": [
+        "Xinyu Guo",
+        "Shi Chen",
+        "Xueyan Wang",
+        "Xiaowei Liu"
+      ],
+      "journal": "Frontiers in immunology",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Carcinoma, Non-Small-Cell Lung",
+        "Lung Neoplasms",
+        "Artificial Intelligence",
+        "Immunotherapy",
+        "Pneumonia",
+        "Drug-Related Side Effects and Adverse Reactions"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_37081866"
+    },
+    {
+      "pmid": "33624324",
+      "title": "Root causes of adverse drug events in hospitals and artificial intelligence capabilities for prevention.",
+      "abstract": "AIMS: To identify and prioritize the root causes of adverse drug events (ADEs) in hospitals and to assess the ability of artificial intelligence (AI) capabilities to prevent ADEs.\n\nDESIGN: A mixed method design was used.\n\nMETHODS: A cross-sectional study for hospitals in Spain was carried out between February and April 2019 to identify and prioritize the root causes of ADEs. A nominal group technique was also used to assess the ability of AI capabilities to prevent ADEs.\n\nRESULTS: The main root cause of ADEs was a lack of adherence to safety protocols (64.8%), followed by identification errors (57.4%), and fragile and polymedicated patients (44.4%). An analysis of the AI capabilities to prevent the root causes of ADEs showed that identification and reading are two potentially useful capabilities.\n\nCONCLUSION: Identification error is one of the main root causes of drug adverse events and AI capabilities could potentially prevent drug adverse events.\n\nIMPACT: This study highlights the role of AI capabilities in safely identifying both patients and drugs, which is a crucial part of the medication administration process, and how this can prevent ADEs in hospitals.",
+      "authors": [
+        "Cristina Gordo",
+        "Jorge M Núñez-Córdoba",
+        "Ricardo Mateo"
+      ],
+      "journal": "Journal of advanced nursing",
+      "year": 2021,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Cross-Sectional Studies",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Hospitals",
+        "Humans",
+        "Medication Errors",
+        "Spain"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_33624324"
+    },
+    {
+      "pmid": "38072723",
+      "title": "Computational and artificial intelligence-based approaches for drug metabolism and transport prediction.",
+      "abstract": "Drug metabolism and transport, orchestrated by drug-metabolizing enzymes (DMEs) and drug transporters (DTs), are implicated in drug-drug interactions (DDIs) and adverse drug reactions (ADRs). Reliable and precise predictions of DDIs and ADRs are critical in the early stages of drug development to reduce the rate of drug candidate failure. A variety of experimental and computational technologies have been developed to predict DDIs and ADRs. Recent artificial intelligence (AI) approaches offer new opportunities for better predicting and understanding the complex processes related to drug metabolism and transport. We summarize the role of major DMEs and DTs, and provide an overview of current progress in computational approaches for the prediction of drug metabolism, transport, and DDIs, with an emphasis on AI including machine learning (ML) and deep learning (DL) modeling.",
+      "authors": [
+        "Balint Dudas",
+        "Maria A Miteva"
+      ],
+      "journal": "Trends in pharmacological sciences",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Drug Interactions",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Imidazoles",
+        "Organosilicon Compounds"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_38072723"
+    },
+    {
+      "pmid": "32356548",
+      "title": "QSAR without borders.",
+      "abstract": "Prediction of chemical bioactivity and physical properties has been one of the most important applications of statistical and more recently, machine learning and artificial intelligence methods in chemical sciences. This field of research, broadly known as quantitative structure-activity relationships (QSAR) modeling, has developed many important algorithms and has found a broad range of applications in physical organic and medicinal chemistry in the past 55+ years. This Perspective summarizes recent technological advances in QSAR modeling but it also highlights the applicability of algorithms, modeling methods, and validation practices developed in QSAR to a wide range of research areas outside of traditional QSAR boundaries including synthesis planning, nanotechnology, materials science, biomaterials, and clinical informatics. As modern research methods generate rapidly increasing amounts of data, the knowledge of robust data-driven modelling methods professed within the QSAR field can become essential for scientists working both within and outside of chemical research. We hope that this contribution highlighting the generalizable components of QSAR modeling will serve to address this challenge.",
+      "authors": [
+        "Eugene N Muratov",
+        "Jürgen Bajorath",
+        "Robert P Sheridan",
+        "Igor V Tetko",
+        "Dmitry Filimonov"
+      ],
+      "journal": "Chemical Society reviews",
+      "year": 2020,
+      "mesh_terms": [
+        "Algorithms",
+        "Animals",
+        "Artificial Intelligence",
+        "Chemistry, Pharmaceutical",
+        "Databases, Factual",
+        "Drug Design",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "History, 20th Century",
+        "History, 21st Century",
+        "Humans",
+        "Models, Molecular",
+        "Pharmaceutical Preparations",
+        "Quantitative Structure-Activity Relationship",
+        "Quantum Theory",
+        "Reproducibility of Results"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_32356548"
+    },
+    {
+      "pmid": "34836823",
+      "title": "Key use cases for artificial intelligence to reduce the frequency of adverse drug events: a scoping review.",
+      "abstract": "Adverse drug events (ADEs) represent one of the most prevalent types of health-care-related harm, and there is substantial room for improvement in the way that they are currently predicted and detected. We conducted a scoping review to identify key use cases in which artificial intelligence (AI) could be leveraged to reduce the frequency of ADEs. We focused on modern machine learning techniques and natural language processing. 78 articles were included in the scoping review. Studies were heterogeneous and applied various AI techniques covering a wide range of medications and ADEs. We identified several key use cases in which AI could contribute to reducing the frequency and consequences of ADEs, through prediction to prevent ADEs and early detection to mitigate the effects. Most studies (73 [94%] of 78) assessed technical algorithm performance, and few studies evaluated the use of AI in clinical settings. Most articles (58 [74%] of 78) were published within the past 5 years, highlighting an emerging area of study. Availability of new types of data, such as genetic information, and access to unstructured clinical notes might further advance the field.",
+      "authors": [
+        "Ania Syrowatka",
+        "Wenyu Song",
+        "Mary G Amato",
+        "Dinah Foer",
+        "Heba Edrees"
+      ],
+      "journal": "The Lancet. Digital health",
+      "year": 2022,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Drug-Related Side Effects and Adverse Reactions",
+        "Humans",
+        "Machine Learning"
+      ],
+      "domain": "ai_drug_safety",
+      "doc_id": "pmid_34836823"
+    },
+    {
+      "pmid": "34689880",
+      "title": "Optimization of Radiology Workflow with Artificial Intelligence.",
+      "abstract": "The potential of artificial intelligence (AI) in radiology goes far beyond image analysis. AI can be used to optimize all steps of the radiology workflow by supporting a variety of nondiagnostic tasks, including order entry support, patient scheduling, resource allocation, and improving the radiologist's workflow. This article discusses several principal directions of using AI algorithms to improve radiological operations and workflow management, with the intention of providing a broader understanding of the value of applying AI in the radiology department.",
+      "authors": [
+        "Erik Ranschaert",
+        "Laurens Topff",
+        "Oleg Pianykh"
+      ],
+      "journal": "Radiologic clinics of North America",
+      "year": 2021,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Diagnostic Imaging",
+        "Humans",
+        "Image Interpretation, Computer-Assisted",
+        "Radiology",
+        "Workflow"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_34689880"
+    },
+    {
+      "pmid": "36220072",
+      "title": "Artificial intelligence for multimodal data integration in oncology.",
+      "abstract": "In oncology, the patient state is characterized by a whole spectrum of modalities, ranging from radiology, histology, and genomics to electronic health records. Current artificial intelligence (AI) models operate mainly in the realm of a single modality, neglecting the broader clinical context, which inevitably diminishes their potential. Integration of different data modalities provides opportunities to increase robustness and accuracy of diagnostic and prognostic models, bringing AI closer to clinical practice. AI models are also capable of discovering novel patterns within and across modalities suitable for explaining differences in patient outcomes or treatment resistance. The insights gleaned from such models can guide exploration studies and contribute to the discovery of novel biomarkers and therapeutic targets. To support these advances, here we present a synopsis of AI methods and strategies for multimodal data fusion and association discovery. We outline approaches for AI interpretability and directions for AI-driven exploration through multimodal data interconnections. We examine challenges in clinical adoption and discuss emerging solutions.",
+      "authors": [
+        "Jana Lipkova",
+        "Richard J Chen",
+        "Bowen Chen",
+        "Ming Y Lu",
+        "Matteo Barbieri"
+      ],
+      "journal": "Cancer cell",
+      "year": 2022,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Electronic Health Records",
+        "Genomics",
+        "Humans",
+        "Medical Oncology",
+        "Radiology"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_36220072"
+    },
+    {
+      "pmid": "31481587",
+      "title": "Artificial Intelligence in Nuclear Medicine.",
+      "abstract": "Despite the great media attention for artificial intelligence (AI), for many health care professionals the term and the functioning of AI remain a \"black box,\" leading to exaggerated expectations on the one hand and unfounded fears on the other. In this review, we provide a conceptual classification and a brief summary of the technical fundamentals of AI. Possible applications are discussed on the basis of a typical work flow in medical imaging, grouped by planning, scanning, interpretation, and reporting. The main limitations of current AI techniques, such as issues with interpretability or the need for large amounts of annotated data, are briefly addressed. Finally, we highlight the possible impact of AI on the nuclear medicine profession, the associated challenges and, last but not least, the opportunities.",
+      "authors": [
+        "Felix Nensa",
+        "Aydin Demircioglu",
+        "Christoph Rischpler"
+      ],
+      "journal": "Journal of nuclear medicine : official publication, Society of Nuclear Medicine",
+      "year": 2019,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Deep Learning",
+        "Diagnostic Imaging",
+        "Humans",
+        "Machine Learning",
+        "Nuclear Medicine",
+        "Radionuclide Imaging"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_31481587"
+    },
+    {
+      "pmid": "37704183",
+      "title": "Recent advancements in artificial intelligence for breast cancer: Image augmentation, segmentation, diagnosis, and prognosis approaches.",
+      "abstract": "Breast cancer is a significant global health burden, with increasing morbidity and mortality worldwide. Early screening and accurate diagnosis are crucial for improving prognosis. Radiographic imaging modalities such as digital mammography (DM), digital breast tomosynthesis (DBT), magnetic resonance imaging (MRI), ultrasound (US), and nuclear medicine techniques, are commonly used for breast cancer assessment. And histopathology (HP) serves as the gold standard for confirming malignancy. Artificial intelligence (AI) technologies show great potential for quantitative representation of medical images to effectively assist in segmentation, diagnosis, and prognosis of breast cancer. In this review, we overview the recent advancements of AI technologies for breast cancer, including 1) improving image quality by data augmentation, 2) fast detection and segmentation of breast lesions and diagnosis of malignancy, 3) biological characterization of the cancer such as staging and subtyping by AI-based classification technologies, 4) prediction of clinical outcomes such as metastasis, treatment response, and survival by integrating multi-omics data. Then, we then summarize large-scale databases available to help train robust, generalizable, and reproducible deep learning models. Furthermore, we conclude the challenges faced by AI in real-world applications, including data curating, model interpretability, and practice regulations. Besides, we expect that clinical implementation of AI will provide important guidance for the patient-tailored management.",
+      "authors": [
+        "Jiadong Zhang",
+        "Jiaojiao Wu",
+        "Xiang Sean Zhou",
+        "Feng Shi",
+        "Dinggang Shen"
+      ],
+      "journal": "Seminars in cancer biology",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Female",
+        "Breast Neoplasms",
+        "Artificial Intelligence",
+        "Prognosis",
+        "Mammography",
+        "Multiomics",
+        "Breast"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_37704183"
+    },
+    {
+      "pmid": "37812965",
+      "title": "Improving radiology workflow using ChatGPT and artificial intelligence.",
+      "abstract": "Artificial Intelligence is a branch of computer science that aims to create intelligent machines capable of performing tasks that typically require human intelligence. One of the branches of artificial intelligence is natural language processing, which is dedicated to studying the interaction between computers and human language. ChatGPT is a sophisticated natural language processing tool that can understand and respond to complex questions and commands in natural language. Radiology is a vital aspect of modern medicine that involves the use of imaging technologies to diagnose and treat medical conditions artificial intelligence, including ChatGPT, can be integrated into radiology workflows to improve efficiency, accuracy, and patient care. ChatGPT can streamline various radiology workflow steps, including patient registration, scheduling, patient check-in, image acquisition, interpretation, and reporting. While ChatGPT has the potential to transform radiology workflows, there are limitations to the technology that must be addressed, such as the potential for bias in artificial intelligence algorithms and ethical concerns. As technology continues to advance, ChatGPT is likely to become an increasingly important tool in the field of radiology, and in healthcare more broadly.",
+      "authors": [
+        "Ismail Mese",
+        "Ceylan Altintas Taslicay",
+        "Ali Kemal Sivrioglu"
+      ],
+      "journal": "Clinical imaging",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Workflow",
+        "Radiography",
+        "Radiology",
+        "Algorithms"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_37812965"
+    },
+    {
+      "pmid": "31991454",
+      "title": "Artificial Intelligence in Radiology Residency Training.",
+      "abstract": "Artificial intelligence (AI) is an emerging technology that brings a wide array of new tools to the field of radiology. AI will certainly have an impact on the day-to-day work of radiologists in the coming decades, thus training programs must prepare radiology residents adequately for their future careers. Radiology training programs should aim to give residents an understanding of the fundamentals and types of AI in radiology, the broad areas AI can be applied in radiology, how to assess AI applications in radiology, and resources available to build their knowledge in IA applications in radiology.",
+      "authors": [
+        "Michael C Forney",
+        "Aaron F McBride"
+      ],
+      "journal": "Seminars in musculoskeletal radiology",
+      "year": 2020,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Diagnostic Imaging",
+        "Humans",
+        "Image Interpretation, Computer-Assisted",
+        "Internship and Residency",
+        "Radiology"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_31991454"
+    },
+    {
+      "pmid": "39473088",
+      "title": "Image-Based Generative Artificial Intelligence in Radiology: Comprehensive Updates.",
+      "abstract": "Generative artificial intelligence (AI) has been applied to images for image quality enhancement, domain transfer, and augmentation of training data for AI modeling in various medical fields. Image-generative AI can produce large amounts of unannotated imaging data, which facilitates multiple downstream deep-learning tasks. However, their evaluation methods and clinical utility have not been thoroughly reviewed. This article summarizes commonly used generative adversarial networks and diffusion models. In addition, it summarizes their utility in clinical tasks in the field of radiology, such as direct image utilization, lesion detection, segmentation, and diagnosis. This article aims to guide readers regarding radiology practice and research using image-generative AI by 1) reviewing basic theories of image-generative AI, 2) discussing the methods used to evaluate the generated images, 3) outlining the clinical and research utility of generated images, and 4) discussing the issue of hallucinations.",
+      "authors": [
+        "Ha Kyung Jung",
+        "Kiduk Kim",
+        "Ji Eun Park",
+        "Namkug Kim"
+      ],
+      "journal": "Korean journal of radiology",
+      "year": 2024,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Radiology",
+        "Deep Learning",
+        "Image Interpretation, Computer-Assisted"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_39473088"
+    },
+    {
+      "pmid": "37493248",
+      "title": "Interpretable artificial intelligence in radiology and radiation oncology.",
+      "abstract": "Artificial intelligence has been introduced to clinical practice, especially radiology and radiation oncology, from image segmentation, diagnosis, treatment planning and prognosis. It is not only crucial to have an accurate artificial intelligence model, but also to understand the internal logic and gain the trust of the experts. This review is intended to provide some insights into core concepts of the interpretability, the state-of-the-art methods for understanding the machine learning models, the evaluation of these methods, identifying some challenges and limits of them, and gives some examples of medical applications.",
+      "authors": [
+        "Sunan Cui",
+        "Alberto Traverso",
+        "Dipesh Niraula",
+        "Jiaren Zou",
+        "Yi Luo"
+      ],
+      "journal": "The British journal of radiology",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Radiation Oncology",
+        "Radiology",
+        "Machine Learning",
+        "Radiography"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_37493248"
+    },
+    {
+      "pmid": "35933269",
+      "title": "Artificial intelligence in emergency radiology: A review of applications and possibilities.",
+      "abstract": "Artificial intelligence (AI) applications in radiology have been rising exponentially in the last decade. Although AI has found usage in various areas of healthcare, its utilization in the emergency department (ED) as a tool for emergency radiologists shows great promise towards easing some of the challenges faced daily. There have been numerous reported studies examining the application of AI-based algorithms in identifying common ED conditions to ensure more rapid reporting and in turn quicker patient care. In addition to interpretive applications, AI assists with many of the non-interpretive tasks that are encountered every day by emergency radiologists. These include, but are not limited to, protocolling, image quality control and workflow prioritization. AI continues to face challenges such as physician uptake or costs, but is a long-term investment that shows great potential to relieve many difficulties faced by emergency radiologists and ultimately improve patient outcomes. This review sums up the current advances of AI in emergency radiology, including current diagnostic applications (interpretive) and applications that stretch beyond imaging (non-interpretive), analyzes current drawbacks of AI in emergency radiology and discusses future challenges.",
+      "authors": [
+        "Benjamin D Katzman",
+        "Christian B van der Pol",
+        "Philippe Soyer",
+        "Michael N Patlas"
+      ],
+      "journal": "Diagnostic and interventional imaging",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Radiology",
+        "Radiography",
+        "Algorithms",
+        "Radiologists"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_35933269"
+    },
+    {
+      "pmid": "37418025",
+      "title": "Cybersecurity considerations for radiology departments involved with artificial intelligence.",
+      "abstract": "Radiology artificial intelligence (AI) projects involve the integration of integrating numerous medical devices, wireless technologies, data warehouses, and social networks. While cybersecurity threats are not new to healthcare, their prevalence has increased with the rise of AI research for applications in radiology, making them one of the major healthcare risks of 2021. Radiologists have extensive experience with the interpretation of medical imaging data but radiologists may not have the required level of awareness or training related to AI-specific cybersecurity concerns. Healthcare providers and device manufacturers can learn from other industry sector industries that have already taken steps to improve their cybersecurity systems. This review aims to introduce cybersecurity concepts as it relates to medical imaging and to provide background information on general and healthcare-specific cybersecurity challenges. We discuss approaches to enhancing the level and effectiveness of security through detection and prevention techniques, as well as ways that technology can improve security while mitigating risks. We first review general cybersecurity concepts and regulatory issues before examining these topics in the context of radiology AI, with a specific focus on data, training, data, training, implementation, and auditability. Finally, we suggest potential risk mitigation strategies. By reading this review, healthcare providers, researchers, and device developers can gain a better understanding of the potential risks associated with radiology AI projects, as well as strategies to improve cybersecurity and reduce potential associated risks. CLINICAL RELEVANCE STATEMENT: This review can aid radiologists' and related professionals' understanding of the potential cybersecurity risks associated with radiology AI projects, as well as strategies to improve security. KEY POINTS: • Embarking on a radiology artificial intelligence (AI) project is complex and not without risk especially as cybersecurity threats have certainly become more abundant in the healthcare industry. • Fortunately healthcare providers and device manufacturers have the advantage of being able to take inspiration from other industry sectors who are leading the way in the field. • Herein we provide an introduction to cybersecurity as it pertains to radiology, a background to both general and healthcare-specific cybersecurity challenges; we outline general approaches to improving security through both detection and preventative techniques, and instances where technology can increase security while mitigating risks.",
+      "authors": [
+        "Brendan S Kelly",
+        "Conor Quinn",
+        "Niamh Belton",
+        "Aonghus Lawlor",
+        "Ronan P Killeen"
+      ],
+      "journal": "European radiology",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Radiology",
+        "Radiologists",
+        "Computer Security",
+        "Radiology Department, Hospital"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_37418025"
+    },
+    {
+      "pmid": "32941736",
+      "title": "Artificial intelligence in paediatric radiology: Future opportunities.",
+      "abstract": "Artificial intelligence (AI) has received widespread and growing interest in healthcare, as a method to save time, cost and improve efficiencies. The high-performance statistics and diagnostic accuracies reported by using AI algorithms (with respect to predefined reference standards), particularly from image pattern recognition studies, have resulted in extensive applications proposed for clinical radiology, especially for enhanced image interpretation. Whilst certain sub-speciality areas in radiology, such as those relating to cancer screening, have received wide-spread attention in the media and scientific community, children's imaging has been hitherto neglected.In this article, we discuss a variety of possible 'use cases' in paediatric radiology from a patient pathway perspective where AI has either been implemented or shown early-stage feasibility, while also taking inspiration from the adult literature to propose potential areas for future development. We aim to demonstrate how a 'future, enhanced paediatric radiology service' could operate and to stimulate further discussion with avenues for research.",
+      "authors": [
+        "Natasha Davendralingam",
+        "Neil J Sebire",
+        "Owen J Arthurs",
+        "Susan C Shelmerdine"
+      ],
+      "journal": "The British journal of radiology",
+      "year": 2021,
+      "mesh_terms": [
+        "Artificial Intelligence",
+        "Child",
+        "Clinical Decision-Making",
+        "Diagnostic Imaging",
+        "Humans",
+        "Image Interpretation, Computer-Assisted",
+        "Pediatrics",
+        "Radiology"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_32941736"
+    },
+    {
+      "pmid": "37099398",
+      "title": "Clinical applications of artificial intelligence in radiology.",
+      "abstract": "The rapid growth of medical imaging has placed increasing demands on radiologists. In this scenario, artificial intelligence (AI) has become an attractive partner, one that may complement case interpretation and may aid in various non-interpretive aspects of the work in the radiological clinic. In this review, we discuss interpretative and non-interpretative uses of AI in the clinical practice, as well as report on the barriers to AI's adoption in the clinic. We show that AI currently has a modest to moderate penetration in the clinical practice, with many radiologists still being unconvinced of its value and the return on its investment. Moreover, we discuss the radiologists' liabilities regarding the AI decisions, and explain how we currently do not have regulation to guide the implementation of explainable AI or of self-learning algorithms.",
+      "authors": [
+        "Claudia Mello-Thoms",
+        "Carlos A B Mello"
+      ],
+      "journal": "The British journal of radiology",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Radiology",
+        "Algorithms",
+        "Radiologists",
+        "Radiography"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_37099398"
+    },
+    {
+      "pmid": "37392983",
+      "title": "Appropriate Reliance on Artificial Intelligence in Radiology Education.",
+      "abstract": "Users of artificial intelligence (AI) can become overreliant on AI, negatively affecting the performance of human-AI teams. For a future in which radiologists use interpretive AI tools routinely in clinical practice, radiology education will need to evolve to provide radiologists with the skills to use AI appropriately and wisely. In this work, we examine how overreliance on AI may develop in radiology trainees and explore how this problem can be mitigated, including through the use of AI-augmented education. Radiology trainees will still need to develop the perceptual skills and mastery of knowledge fundamental to radiology to use AI safely. We propose a framework for radiology trainees to use AI tools with appropriate reliance, drawing on lessons from human-AI interactions research.",
+      "authors": [
+        "Matthew D Li",
+        "Brent P Little"
+      ],
+      "journal": "Journal of the American College of Radiology : JACR",
+      "year": 2023,
+      "mesh_terms": [
+        "Humans",
+        "Artificial Intelligence",
+        "Radiology",
+        "Radiologists",
+        "Forecasting"
+      ],
+      "domain": "ai_radiology_pathology",
+      "doc_id": "pmid_37392983"
+    }
+  ]
+}

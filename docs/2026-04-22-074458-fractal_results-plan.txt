@@ -1,0 +1,409 @@
+
+╭─── Claude Code v2.1.63 ──────────────────────────────────────────────────────╮
+│                                        │ Tips for getting started            │
+│           Welcome back Wayne!          │ ✔ Run /init to create a CLAUDE.md … │
+│                                        │ ─────────────────────────────────── │
+│                ▗ ▗   ▖ ▖               │ Recent activity                     │
+│                                        │ No recent activity                  │
+│                  ▘▘ ▝▝                 │                                     │
+│                                        │                                     │
+│   Opus 4.6 · Claude Max · Wayne Satz   │                                     │
+│       /Volumes/WS4TB/repofractL        │                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Plan to implement                                                            │
+│                                                                              │
+│ Plan: SQLite Persistence Layer for FractalRAG                                │
+│                                                                              │
+│ Context                                                                      │
+│                                                                              │
+│ FractalRAG currently stores all state in-memory (Python dicts/lists). The    │
+│ index must be rebuilt from scratch every session (~34s with BGE-M3 for 78    │
+│ docs). A SQLite persistence layer will allow save/load in under a second,    │
+│ enabling iterative use without re-embedding.                                 │
+│                                                                              │
+│ Approach                                                                     │
+│                                                                              │
+│ Single new file fractrag/storage.py with save() and load() functions.        │
+│ Full-replacement save strategy (not incremental delta). SQLite with numpy    │
+│ vectors as BLOBs.                                                            │
+│                                                                              │
+│ Files to Create/Modify                                                       │
+│                                                                              │
+│ ┌───────────────────────┬────────────────────────────────────────────┐       │
+│ │         File          │                   Action                   │       │
+│ ├───────────────────────┼────────────────────────────────────────────┤       │
+│ │ fractrag/storage.py   │ NEW — save(), load(), schema, exceptions   │       │
+│ ├───────────────────────┼────────────────────────────────────────────┤       │
+│ │ fractrag/__init__.py  │ MODIFY — add save/load to exports          │       │
+│ ├───────────────────────┼────────────────────────────────────────────┤       │
+│ │ tests/test_storage.py │ NEW — ~18 round-trip and validation tests  │       │
+│ ├───────────────────────┼────────────────────────────────────────────┤       │
+│ │ tests/conftest.py     │ MODIFY — add unified_engine_loaded fixture │       │
+│ └───────────────────────┴────────────────────────────────────────────┘       │
+│                                                                              │
+│ SQLite Schema (6 tables)                                                     │
+│                                                                              │
+│ metadata       (key TEXT PK, value TEXT)          -- embedding_dim,          │
+│ backend_type, adapter_strength, schema_version                               │
+│ documents      (doc_id TEXT PK, text TEXT)         -- original full text     │
+│ profiles       (doc_id TEXT PK, 8 columns)         -- DocumentProfile        │
+│ fields, likely_question_types as JSON array                                  │
+│ index_entries  (id TEXT PK, level INT, vec BLOB, text TEXT, parent TEXT)  -- │
+│  IndexEntry + CREATE INDEX on level                                          │
+│ derivatives    (entry_id TEXT PK, d1 BLOB, d2 BLOB) -- sentence-level        │
+│ derivative vectors                                                           │
+│ adapters       (doc_id TEXT PK, vec BLOB)          -- per-document adapter   │
+│ vectors                                                                      │
+│                                                                              │
+│ Vectors serialized as ndarray.astype(np.float32).tobytes(), deserialized     │
+│ with np.frombuffer(..., dtype=np.float32).copy().                            │
+│                                                                              │
+│ Public API                                                                   │
+│                                                                              │
+│ from fractrag.storage import save, load                                      │
+│                                                                              │
+│ # Save entire index to disk                                                  │
+│ save("my_index.db", rag)                                                     │
+│                                                                              │
+│ # Load (user provides backend, dim validated against stored)                 │
+│ rag2 = load("my_index.db",                                                   │
+│ backend=SentenceTransformerEmbedding("BAAI/bge-m3"))                         │
+│                                                                              │
+│ # Incremental: add docs to loaded engine, save again                         │
+│ rag2.add_document("new_doc", "New text...")                                  │
+│ save("my_index.db", rag2)                                                    │
+│                                                                              │
+│ - save(path, rag) — drops and recreates all tables (full replacement),       │
+│ single transaction                                                           │
+│ - load(path, backend) — validates dim match, reconstructs FractalRAG with    │
+│ all state                                                                    │
+│ - Raises DimensionMismatchError if backend.dim ≠ stored dim                  │
+│ - Raises FileNotFoundError if path doesn't exist                             │
+│ - No changes to engine.py — storage is a separate concern                    │
+│                                                                              │
+│ Key Design Decisions                                                         │
+│                                                                              │
+│ 1. Full replacement on save — no delta logic, no orphan detection. Correct   │
+│ and simple.                                                                  │
+│ 2. Backend NOT serialized — user provides it on load, dim validated. Allows  │
+│ swapping backends of same dim.                                               │
+│ 3. ORDER BY level, rowid on load — preserves insertion order for             │
+│ deterministic retrieval.                                                     │
+│ 4. .copy() on np.frombuffer — avoids read-only array errors in downstream    │
+│ operations.                                                                  │
+│ 5. No new dependencies — sqlite3 and json are stdlib, numpy already          │
+│ required.                                                                    │
+│                                                                              │
+│ Test Strategy (tests/test_storage.py)                                        │
+│                                                                              │
+│ - Round-trip: save/load with HashEmbedding(dim=64), verify all state matches │
+│ - Retrieval equivalence: run                                                 │
+│ retrieve/retrieve_reranked/retrieve_adaptive/retrieve_flat before and after  │
+│ round-trip, assert identical results                                         │
+│ - Incremental add: load, add_document, save, load again — verify all docs    │
+│ present                                                                      │
+│ - Dim mismatch: save with dim=64, load with dim=128 → DimensionMismatchError │
+│ - Edge cases: empty engine, docs without profiles, unicode text, overwrite   │
+│ existing file                                                                │
+│                                                                              │
+│ Verification                                                                 │
+│                                                                              │
+│ # Run storage tests                                                          │
+│ pytest tests/test_storage.py -v                                              │
+│                                                                              │
+│ # Run full test suite to verify no regressions                               │
+│ pytest tests/ -v                                                             │
+│                                                                              │
+│ # Manual verification: save benchmark index, load it, re-run retrieval       │
+│ python -c "                                                                  │
+│ from fractrag import FractalRAG, SentenceTransformerEmbedding                │
+│ from fractrag.storage import save, load                                      │
+│ import json, time                                                            │
+│ from pathlib import Path                                                     │
+│                                                                              │
+│ backend = SentenceTransformerEmbedding('BAAI/bge-m3')                        │
+│ rag = FractalRAG(backend=backend)                                            │
+│ corpus = json.loads(Path('corpus/medical_corpus.json').read_text())          │
+│ for doc in corpus['documents']:                                              │
+│     rag.add_document(doc['doc_id'], doc['abstract'])                         │
+│                                                                              │
+│ t0 = time.time()                                                             │
+│ save('corpus/index.db', rag)                                                 │
+│ print(f'Saved in {time.time()-t0:.2f}s')                                     │
+│                                                                              │
+│ t0 = time.time()                                                             │
+│ rag2 = load('corpus/index.db', backend)                                      │
+│ print(f'Loaded in {time.time()-t0:.2f}s')                                    │
+│ print(f'Stats match: {rag.stats() == rag2.stats()}')                         │
+│ "                                                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+⏺ I'll implement the SQLite persistence layer. Let me start by reading the key
+  files I need to understand.
+
+⏺ Read 4 files (ctrl+o to expand)
+
+⏺ Now let me check the existing test infrastructure.
+
+⏺ Searched for 2 patterns, read 1 file (ctrl+o to expand)
+
+⏺ Now I have a complete understanding of the codebase. Let me create the task
+  list and implement.
+
+⏺ Write(fractrag/storage.py)
+  ⎿  Wrote 274 lines to fractrag/storage.py
+       1 """
+       2 SQLite persistence for FractalRAG indexes.
+       3 
+       4 Saves/loads the entire FractalRAG state (documents, profiles, in
+         dex entries,
+       5 derivatives, adapters) to a SQLite database for fast reload with
+         out re-embedding.
+       6 
+       7 Usage:
+       8     from fractrag.storage import save, load
+       9 
+      10     save("my_index.db", rag)
+     … +264 lines (ctrl+o to expand)
+
+⏺ Update(fractrag/__init__.py)
+  ⎿  Added 4 lines
+      17  from .engine import FractalRAG, IndexEntry
+      18  from .profile import DocumentProfile
+      19  from .query import classify_query_type, get_type_weights
+      20 +from .storage import save, load, DimensionMismatchError        
+      21  
+      22  __all__ = [
+      23      "FractalRAG",
+     ...
+      29      "classify_query_type",
+      30      "get_type_weights",
+      31      "normalize",
+      32 +    "save",                                                    
+      33 +    "load",                                                    
+      34 +    "DimensionMismatchError",                                  
+      35  ]
+
+⏺ Update(tests/conftest.py)
+  ⎿  Added 10 lines
+      144  
+      145  
+      146  @pytest.fixture
+      147 +def unified_engine_loaded():                                  
+      148 +    """Return a FractalRAG (unified) engine preloaded with the
+          + 3 sample docs."""                                            
+      149 +    from fractrag import FractalRAG, HashEmbedding            
+      150 +    rag = FractalRAG(backend=HashEmbedding(dim=64))           
+      151 +    for doc_id, text in SAMPLE_DOCS.items():                  
+      152 +        rag.add_document(doc_id, text)                        
+      153 +    return rag                                                
+      154 +                                                              
+      155 +                                                              
+      156 +@pytest.fixture                                               
+      157  def doctronic_engine():
+      158      """Return a fresh DoctronicPrimaryCareEngine."""
+      159      from doctronic_primary_care_ownership import DoctronicPrim
+           aryCareEngine
+
+⏺ Write(tests/test_storage.py)
+  ⎿  Wrote 399 lines to tests/test_storage.py
+      1 """
+      2 Tests for fractrag.storage — SQLite persistence layer.
+      3 
+      4 All tests use real HashEmbedding computations. No mocks.
+      5 """
+      6 
+      7 import os
+      8 import numpy as np
+      9 import pytest
+     … +389 lines (ctrl+o to expand)
+
+⏺ Bash(python -m pytest tests/test_storage.py -v 2>&1)
+  ⎿  /Users/o2satz/miniforge3/envs/py313/lib/python3.13/site-packages/pytes
+     t_asyncio/plugin.py:247: PytestDeprecationWarning: The configuration o
+     ption "asyncio_default_fixture_loop_scope" is unset.
+     … +47 lines (ctrl+o to expand)
+
+⏺ 21/21 passed. Now run the full test suite to check for regressions.
+
+⏺ Bash(python -m pytest tests/ -v 2>&1)
+  ⎿  /Users/o2satz/miniforge3/envs/py313/lib/python3.13/site-packages/pytes
+     t_asyncio/plugin.py:247: PytestDeprecationWarning: The configuration o
+     ption "asyncio_default_fixture_loop_scope" is unset.
+     … +426 lines (ctrl+o to expand)
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ 308 passed, 0 failed. All existing 287 tests + 21 new storage tests pass. No
+  regressions.
+
+⏺ Summary
+
+  All 5 tasks complete. Here's what was implemented:
+
+  New files:
+  - fractrag/storage.py — save() and load() functions with 6-table SQLite
+  schema, DimensionMismatchError exception
+  - tests/test_storage.py — 21 tests across 6 test classes
+
+  Modified files:
+  - fractrag/__init__.py — added save, load, DimensionMismatchError to exports
+  - tests/conftest.py — added unified_engine_loaded fixture
+
+  Results: 308/308 tests pass (21 new + 287 existing, zero regressions)
+
+  The persistence layer stores vectors as float32 BLOBs, profiles as rows with
+  JSON for list fields, and uses full-replacement saves in a single transaction.
+   No new dependencies — only stdlib sqlite3 and json plus existing numpy.
+
+✻ Cogitated for 3m 13s
+
+❯ explain results to a novice, what is viable what is not, and are ther     
+  potential niche use cases                                                 
+
+⏺ Let me review the actual benchmark results and project state to give you a
+  grounded explanation.
+
+⏺ Read 2 files (ctrl+o to expand)
+
+⏺ Now let me read the remaining benchmark configs and the verdict.
+
+⏺ Searched for 2 patterns, read 1 file (ctrl+o to expand)
+
+⏺ Now I have the full picture. Here's the plain-English breakdown:
+
+  ---
+  FractalRAG Results Explained for a Novice
+
+  What was tested
+
+  A search system called "FractalRAG" that tries to find the right document when
+   you ask a question. It was tested against 78 real medical research papers
+  using 40 hand-crafted questions, with a real embedding model (BGE-M3).
+
+  The idea: instead of just searching whole documents (the normal "flat"
+  approach), FractalRAG breaks each document into 3 layers — individual
+  sentences, paragraphs, and the full document — then combines signals from all
+  layers to rank results.
+
+  What the numbers mean
+
+  ┌────────────────────┬────────────────────────────────────────────────────┐
+  │       Metric       │                   Plain English                    │
+  ├────────────────────┼────────────────────────────────────────────────────┤
+  │ MRR (Mean          │ "How high does the correct answer appear?" 1.0 =   │
+  │ Reciprocal Rank)   │ always first, 0.5 = average rank 2nd               │
+  ├────────────────────┼────────────────────────────────────────────────────┤
+  │ P@1 (Precision at  │ "Is the top result correct?" Percentage of times   │
+  │ 1)                 │ the #1 result was right                            │
+  ├────────────────────┼────────────────────────────────────────────────────┤
+  │ R@10 (Recall at    │ "In the top 10 results, did we find all the right  │
+  │ 10)                │ answers?"                                          │
+  └────────────────────┴────────────────────────────────────────────────────┘
+
+  The scoreboard
+
+  ┌────────────────────────────────────┬───────┬───────┬───────┐
+  │               Config               │  MRR  │  P@1  │ R@10  │
+  ├────────────────────────────────────┼───────┼───────┼───────┤
+  │ FLAT (baseline)                    │ 0.752 │ 65%   │ 70.8% │
+  ├────────────────────────────────────┼───────┼───────┼───────┤
+  │ MULTI-SCALE (naive fractal)        │ 0.691 │ 55%   │ 75.8% │
+  ├────────────────────────────────────┼───────┼───────┼───────┤
+  │ FULL FRACTAL (all features, naive) │ 0.584 │ 42.5% │ 70.8% │
+  ├────────────────────────────────────┼───────┼───────┼───────┤
+  │ OPTIMAL FRACTAL (tuned reranking)  │ 0.788 │ 70%   │ 78.3% │
+  └────────────────────────────────────┴───────┴───────┴───────┘
+
+  What is viable
+
+  The reranked/adaptive fractal approach works. The OPTIMAL FRACTAL config beats
+   flat on every metric: +4.8% MRR, +7.7% P@1, +10.6% R@10. That's a real
+  improvement, especially on recall.
+
+  Where it shines most (by query type):
+
+  ┌───────────────────────────────┬─────────┬───────────┬──────────────────┐
+  │          Query type           │  Flat   │ Fractal   │   Improvement    │
+  │                               │   MRR   │    MRR    │                  │
+  ├───────────────────────────────┼─────────┼───────────┼──────────────────┤
+  │ Summary ("Give me an overview │ 0.703   │ 0.825     │ +17.3%           │
+  │  of...")                      │         │           │                  │
+  ├───────────────────────────────┼─────────┼───────────┼──────────────────┤
+  │ Synthesis ("Compare X and Y   │ 0.620   │ 0.667     │ +7.5%            │
+  │ across...")                   │         │           │                  │
+  ├───────────────────────────────┼─────────┼───────────┼──────────────────┤
+  │ Logic ("Why does X cause Y?") │ 0.925   │ 0.933     │ +0.9% (near      │
+  │                               │         │           │ parity)          │
+  └───────────────────────────────┴─────────┴───────────┴──────────────────┘
+
+  What is NOT viable
+
+  1. Naive multi-scale search hurts badly. Just throwing
+  sentence/paragraph/document results into the same pool drops MRR from 0.752 to
+   0.691 (MULTI-SCALE) or 0.584 (FULL FRACTAL). Irrelevant sentences outrank
+  correct documents. This was the biggest finding — raw fractal retrieval is
+  worse than flat.
+  2. Specification queries get worse. "What is the exact date of X?" — flat
+  scores 0.758 MRR, fractal drops to 0.725. For precise fact-lookup, the extra
+  signals add noise. The adaptive mode handles this by routing spec queries to
+  flat, but it's a workaround, not a win.
+  3. The improvement is below the project's own 10% MRR threshold. The benchmark
+   script's go/no-go criterion was >=10% MRR improvement for "GO." At +4.76%,
+  the automated verdict was actually "PIVOT" (not even "CONDITIONAL"). The
+  CLAUDE.md says "CONDITIONAL GO" but the raw data says the system itself
+  flagged this as insufficient.
+  4. Small corpus, possible overfitting. 78 documents, 40 queries. The boost
+  parameters (para_boost=0.05, sent_boost=0.20, deriv_boost=0.03) were tuned by
+  sweeping all combinations against these same 40 queries. There's no held-out
+  test set or cross-validation, so these tuned numbers may not generalize.
+
+  Potential niche use cases
+
+  Where fractal retrieval has a genuine edge:
+
+  1. Medical literature review / systematic reviews — Summary and synthesis
+  queries are exactly what researchers do: "What does the evidence say about X
+  across multiple studies?" The +17.3% MRR on summary queries and +33.3% R@10 on
+   summary queries (0.50 -> 0.67) is meaningful. Finding more relevant papers in
+   the top 10 saves hours of manual screening.
+  2. Legal discovery / contract analysis — When you need to find clauses
+  scattered across multiple documents that relate to a theme ("What are all the
+  indemnification provisions across these contracts?"), the multi-scale approach
+   can surface paragraph-level matches that pure document-level search misses.
+  3. Technical documentation search — Large manuals, specifications, or
+  knowledge bases where a user asks "how do these subsystems interact?" The
+  sentence-level derivative signal (knowledge velocity) can detect conceptual
+  transitions within documents that flat search ignores.
+  4. Clinical decision support with multi-source evidence — A clinician asking
+  "What are the drug interactions and contraindications for this combination?"
+  needs evidence assembled from multiple papers. The recall advantage (+10.6%
+  R@10) means fewer relevant sources get missed.
+  5. Research corpus exploration — Domains where the user doesn't know exactly
+  what they're looking for but wants to understand a topic across sources. The
+  fractal approach finds more relevant documents in the top 10, which matters
+  more than whether result #1 is perfect.
+
+  Where it's NOT worth the complexity:
+
+  - Simple fact lookup ("What is X?") — flat is equal or better
+  - Small document collections (<50 docs) — not enough for the multi-scale
+  signals to matter
+  - Real-time / latency-sensitive applications — the indexing overhead (34s for
+  78 docs) and reranking cost may not justify single-digit-percent gains
+  - Any scenario where you'd just use a commercial vector database with BM25
+  hybrid search — those are more mature and battle-tested
+
+  Bottom line
+
+  FractalRAG is a research-grade improvement for multi-document reasoning
+  queries (summary, synthesis), not a general-purpose replacement for flat
+  search. The niche is narrow but real: if your users are asking questions that
+  span multiple documents and you care about recall (finding everything
+  relevant), the fractal approach delivers measurably better results. For
+  everything else, flat search with a good embedding model is simpler and
+  equally effective.
+
+✻ Sautéed for 1m 11s
