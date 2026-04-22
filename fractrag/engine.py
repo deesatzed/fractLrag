@@ -49,6 +49,7 @@ class FractalRAG:
         self.index: Dict[int, List[IndexEntry]] = {0: [], 1: [], 2: []}
         self.derivatives: Dict[str, Dict[str, np.ndarray]] = {}
         self.doc_metadata: Dict[str, Dict] = {}
+        self.doc_titles: Dict[str, Optional[str]] = {}
 
     @property
     def dim(self) -> int:
@@ -64,13 +65,20 @@ class FractalRAG:
         profile: Optional[DocumentProfile] = None,
         learn_adapter: bool = True,
         metadata: Optional[Dict] = None,
+        title: Optional[str] = None,
     ) -> None:
-        """Index a document at all fractal scales with optional profile-driven config."""
+        """Index a document at all fractal scales with optional profile-driven config.
+
+        Args:
+            title: Optional document title. When provided, prepended to L0/L1
+                   embeddings as "{title}: {text}" for contextual enrichment.
+        """
         self.docs[doc_id] = text
         if profile:
             self.profiles[doc_id] = profile
         if metadata is not None:
             self.doc_metadata[doc_id] = metadata
+        self.doc_titles[doc_id] = title
 
         config = profile.to_config() if profile else None
         strength = config["adapter_strength"] if config else self._adapter_strength
@@ -100,7 +108,8 @@ class FractalRAG:
         adapter = self.adapters.get(doc_id, np.zeros(self.dim))
         para_mean = np.zeros(self.dim)
         for i, para in enumerate(paragraphs):
-            pvec = normalize(self._embed(para) + adapter * 0.8)
+            embed_text = f"{title}: {para}" if title else para
+            pvec = normalize(self._embed(embed_text) + adapter * 0.8)
             self.index[1].append(IndexEntry(
                 id=f"{doc_id}_p{i}", level=1, vec=pvec,
                 text=para[:160] if len(para) > 160 else para,
@@ -112,7 +121,8 @@ class FractalRAG:
         # Level 0: Sentences + Derivatives
         sent_list = sentences[:max_sentences] if max_sentences else sentences
         for i, sent in enumerate(sent_list):
-            svec = normalize(self._embed(sent) + adapter * 0.6)
+            embed_text = f"{title}: {sent}" if title else sent
+            svec = normalize(self._embed(embed_text) + adapter * 0.6)
             sid = f"{doc_id}_s{i}"
             self.index[0].append(IndexEntry(
                 id=sid, level=0, vec=svec, text=sent, parent=doc_id,
@@ -447,6 +457,7 @@ class FractalRAG:
         focus_doc: Optional[str] = None,
         metadata_filters: Optional[Dict] = None,
         metadata_boost: Optional[Dict] = None,
+        use_rrf: bool = False,
     ) -> Tuple[Dict[int, List[Tuple[IndexEntry, float]]], str]:
         """Adaptive fractal retrieval: uses flat for specification, reranked for other types.
 
@@ -454,6 +465,11 @@ class FractalRAG:
         and selects the optimal strategy:
         - Specification queries: flat doc-level (precise, no noise from sub-doc)
         - Summary/Logic/Synthesis: reranked fractal (doc-primary + sub-doc boosts)
+
+        Args:
+            use_rrf: When True, routes non-specification queries to retrieve_rrf()
+                     instead of retrieve_reranked(). RRF uses rank-based fusion
+                     which is more robust to score scale differences.
         """
         qtype = query_type or classify_query_type(query, profile)
         boosts = self._TYPE_BOOSTS.get(qtype, self._TYPE_BOOSTS["synthesis"])
@@ -466,6 +482,13 @@ class FractalRAG:
                 use_derivatives=False, use_level_weights=False,
                 metadata_filters=metadata_filters,
             )
+        elif use_rrf:
+            return self.retrieve_rrf(
+                query, k=k,
+                use_derivatives=(boosts["deriv_boost"] > 0),
+                metadata_filters=metadata_filters,
+                metadata_boost=metadata_boost,
+            )
         else:
             return self.retrieve_reranked(
                 query, k=k,
@@ -475,6 +498,86 @@ class FractalRAG:
                 metadata_boost=metadata_boost,
                 **boosts,
             )
+
+    def retrieve_rrf(
+        self,
+        query: str,
+        k: int = 10,
+        rrf_k: int = 60,
+        levels: Optional[List[int]] = None,
+        use_derivatives: bool = True,
+        metadata_filters: Optional[Dict] = None,
+        metadata_boost: Optional[Dict] = None,
+    ) -> Tuple[Dict[int, List[Tuple[IndexEntry, float]]], str]:
+        """Reciprocal Rank Fusion across fractal levels.
+
+        Score = SUM over levels of 1/(rrf_k + rank_in_level)
+
+        More robust than linear boost combination — uses rank position
+        instead of raw cosine similarity scores.
+
+        Args:
+            rrf_k: RRF constant (default 60, from Cormack et al.).
+        """
+        qtype = classify_query_type(query)
+        qvec = self._embed(query)
+
+        if levels is None:
+            levels = [2, 1, 0]
+
+        # Get per-level rankings (best score per doc)
+        level_rankings: Dict[int, List[Tuple[str, float]]] = {}
+        # Track best entries per doc per level for result building
+        level_best_entries: Dict[int, Dict[str, Tuple[IndexEntry, float]]] = {}
+
+        for lvl in levels:
+            candidates = self.index[lvl]
+            if metadata_filters:
+                candidates = [c for c in candidates
+                              if self._filter_by_metadata(self._get_doc_id(c), metadata_filters)]
+
+            doc_best: Dict[str, float] = {}
+            doc_best_entry: Dict[str, Tuple[IndexEntry, float]] = {}
+            for item in candidates:
+                doc_id = self._get_doc_id(item)
+                sim = float(np.dot(qvec, item.vec))
+
+                # Add derivative bonus for L0 entries
+                if use_derivatives and item.id in self.derivatives:
+                    d = self.derivatives[item.id]
+                    sim += (float(np.dot(qvec, d["d1"])) * BASE_DERIV_WEIGHT +
+                            float(np.dot(qvec, d["d2"])) * BASE_DERIV_WEIGHT * 0.6)
+
+                if doc_id not in doc_best or sim > doc_best[doc_id]:
+                    doc_best[doc_id] = sim
+                    doc_best_entry[doc_id] = (item, sim)
+
+            ranked = sorted(doc_best.items(), key=lambda x: x[1], reverse=True)
+            level_rankings[lvl] = ranked
+            level_best_entries[lvl] = doc_best_entry
+
+        # RRF fusion
+        rrf_scores: Dict[str, float] = {}
+        for lvl, ranked in level_rankings.items():
+            for rank, (doc_id, _) in enumerate(ranked, 1):
+                rrf_scores[doc_id] = rrf_scores.get(doc_id, 0.0) + 1.0 / (rrf_k + rank)
+
+        # Add metadata boost
+        if metadata_boost:
+            for doc_id in rrf_scores:
+                rrf_scores[doc_id] += self._compute_metadata_boost(doc_id, metadata_boost)
+
+        # Sort and build results
+        sorted_docs = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)[:k]
+
+        results: Dict[int, List[Tuple[IndexEntry, float]]] = {lvl: [] for lvl in levels}
+        for doc_id, rrf_score in sorted_docs:
+            for lvl in levels:
+                if doc_id in level_best_entries[lvl]:
+                    entry, sim = level_best_entries[lvl][doc_id]
+                    results[lvl].append((entry, rrf_score))
+
+        return results, qtype
 
     def retrieve_flat(
         self,

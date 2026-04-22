@@ -91,4 +91,17 @@ def chunk_fractal(text: str) -> Tuple[List[str], List[str], str]:
         sentences = [text] if text.strip() else []
 
     paragraphs = [p.strip() for p in text.split('\n\n') if p.strip()] or [text]
+
+    # Virtual paragraph chunking for single-paragraph docs
+    # When \n\n split produces only 1 paragraph but the doc has 4+ sentences,
+    # group sentences into virtual paragraphs of ~3 sentences each.
+    # This prevents L1 from being degenerate (identical to L2).
+    if len(paragraphs) == 1 and len(sentences) >= 4:
+        chunk_size = 3
+        virtual_paras = []
+        for i in range(0, len(sentences), chunk_size):
+            group = sentences[i:i + chunk_size]
+            virtual_paras.append(' '.join(group))
+        paragraphs = virtual_paras
+
     return sentences, paragraphs, text

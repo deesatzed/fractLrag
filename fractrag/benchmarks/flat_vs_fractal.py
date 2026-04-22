@@ -45,12 +45,22 @@ def load_corpus() -> Tuple[List[Dict], List[Dict]]:
 
 
 def build_index(documents: List[Dict], backend: EmbeddingBackend) -> FractalRAG:
-    """Build a FractalRAG index from the corpus."""
+    """Build a FractalRAG index from the corpus with metadata and title-prefix."""
     rag = FractalRAG(backend=backend)
     for doc in documents:
-        # Use abstract as the main text (multi-paragraph structure)
         text = doc["abstract"]
-        rag.add_document(doc["doc_id"], text)
+        metadata = {
+            "domain": doc.get("domain"),
+            "year": doc.get("year"),
+            "mesh_terms": doc.get("mesh_terms", []),
+            "journal": doc.get("journal"),
+            "title": doc.get("title"),
+        }
+        rag.add_document(
+            doc["doc_id"], text,
+            metadata=metadata,
+            title=doc.get("title"),
+        )
     return rag
 
 
@@ -398,6 +408,43 @@ def main():
             adaptive_results["by_type"][qtype][metric] = round(np.mean(vals), 4) if vals else 0.0
     print(f"  Done in {time.time()-t0:.1f}s — MRR={adaptive_results['overall']['mrr']:.4f}")
     configs.append(adaptive_results)
+
+    # --- RRF FRACTAL: reciprocal rank fusion across levels ---
+    print("Running RRF FRACTAL (rank-based fusion across 3 levels)...")
+    t0 = time.time()
+    rrf_results = {
+        "config": "RRF FRACTAL",
+        "overall": {"mrr": [], "precision_at_1": [], "precision_at_3": [], "recall_at_10": []},
+        "by_type": {},
+    }
+    for query in queries:
+        qtext = query["query_text"]
+        relevant = query["relevant_pmids"]
+        qtype = query["query_type"]
+        if qtype not in rrf_results["by_type"]:
+            rrf_results["by_type"][qtype] = {"mrr": [], "precision_at_1": [], "precision_at_3": [], "recall_at_10": []}
+        retrieved, _ = rag.retrieve_rrf(qtext, k=10)
+        mrr = compute_mrr(retrieved, relevant)
+        p1 = compute_precision_at_k(retrieved, relevant, k=1)
+        p3 = compute_precision_at_k(retrieved, relevant, k=3)
+        r10 = compute_recall_at_k(retrieved, relevant, k=10)
+        rrf_results["overall"]["mrr"].append(mrr)
+        rrf_results["overall"]["precision_at_1"].append(p1)
+        rrf_results["overall"]["precision_at_3"].append(p3)
+        rrf_results["overall"]["recall_at_10"].append(r10)
+        rrf_results["by_type"][qtype]["mrr"].append(mrr)
+        rrf_results["by_type"][qtype]["precision_at_1"].append(p1)
+        rrf_results["by_type"][qtype]["precision_at_3"].append(p3)
+        rrf_results["by_type"][qtype]["recall_at_10"].append(r10)
+    for metric in rrf_results["overall"]:
+        vals = rrf_results["overall"][metric]
+        rrf_results["overall"][metric] = round(np.mean(vals), 4) if vals else 0.0
+    for qtype in rrf_results["by_type"]:
+        for metric in rrf_results["by_type"][qtype]:
+            vals = rrf_results["by_type"][qtype][metric]
+            rrf_results["by_type"][qtype][metric] = round(np.mean(vals), 4) if vals else 0.0
+    print(f"  Done in {time.time()-t0:.1f}s — MRR={rrf_results['overall']['mrr']:.4f}")
+    configs.append(rrf_results)
 
     # --- RERANKED FRACTAL: doc-primary with sub-doc boosts ---
     print("Running RERANKED FRACTAL (doc-primary + sub-doc boosts, k=10)...")

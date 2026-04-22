@@ -46,6 +46,7 @@ def _create_tables(cur: sqlite3.Cursor) -> None:
     cur.execute("DROP TABLE IF EXISTS derivatives")
     cur.execute("DROP TABLE IF EXISTS adapters")
     cur.execute("DROP TABLE IF EXISTS doc_metadata")
+    cur.execute("DROP TABLE IF EXISTS doc_titles")
 
     cur.execute("""
         CREATE TABLE metadata (
@@ -99,6 +100,12 @@ def _create_tables(cur: sqlite3.Cursor) -> None:
         CREATE TABLE doc_metadata (
             doc_id TEXT PRIMARY KEY,
             metadata_json TEXT NOT NULL
+        )
+    """)
+    cur.execute("""
+        CREATE TABLE doc_titles (
+            doc_id TEXT PRIMARY KEY,
+            title TEXT
         )
     """)
 
@@ -191,6 +198,14 @@ def save(path: Union[str, Path], rag: FractalRAG) -> None:
                 "INSERT INTO doc_metadata (doc_id, metadata_json) VALUES (?, ?)",
                 (doc_id, json.dumps(meta, ensure_ascii=False)),
             )
+
+        # Document titles
+        for doc_id, title in rag.doc_titles.items():
+            if title is not None:
+                cur.execute(
+                    "INSERT INTO doc_titles (doc_id, title) VALUES (?, ?)",
+                    (doc_id, title),
+                )
 
         conn.commit()
     finally:
@@ -289,6 +304,15 @@ def load(path: Union[str, Path], backend: EmbeddingBackend) -> FractalRAG:
                 "SELECT doc_id, metadata_json FROM doc_metadata"
             ):
                 rag.doc_metadata[doc_id] = json.loads(meta_json)
+        except sqlite3.OperationalError:
+            pass  # Table doesn't exist in old schema — that's fine
+
+        # Document titles (backward-compatible)
+        try:
+            for doc_id, title in cur.execute(
+                "SELECT doc_id, title FROM doc_titles"
+            ):
+                rag.doc_titles[doc_id] = title
         except sqlite3.OperationalError:
             pass  # Table doesn't exist in old schema — that's fine
 
