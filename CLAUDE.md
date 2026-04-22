@@ -28,7 +28,7 @@ corpus/                     # Real medical corpus (78 PubMed papers on AI in med
 ├── fetch_pubmed.py         # PubMed E-utilities fetcher
 └── build_grounded_queries.py  # Content-grounded query generator
 
-tests/                      # 433 tests
+tests/                      # 470 tests
 legacy/                     # Historical PoC scripts (v1-v3, doctronic, xAI demos)
 ```
 
@@ -64,19 +64,19 @@ legacy/                     # Historical PoC scripts (v1-v3, doctronic, xAI demo
 
 78 PubMed papers, 40 content-grounded queries, BGE-M3 embeddings.
 
-### Cross-Validated (5-fold stratified CV, Phase 3A, 2026-04-22)
+### Cross-Validated (5-fold stratified CV, Phase 3B, 2026-04-22)
 
 Parameters tuned on training folds only, evaluated on held-out folds.
 
 | Metric | Flat | Fractal (CV) | Delta |
 |--------|------|-------------|-------|
-| MRR | 0.7517 | 0.8100 | +7.8% |
-| p-value | — | 0.1395 | not significant |
-| 95% CI | — | [-0.011, +0.139] | contains zero |
+| MRR | 0.7517 | 0.8300 | **+10.4%** |
+| p-value | — | **0.0362** | **significant (p<0.05)** |
+| 95% CI | — | [+0.017, +0.153] | **excludes zero** |
 
-Per-type: spec +14.2%, logic +7.5%, summary +2.2%, synthesis -0.5%
+Per-type: spec +14.2%, logic +7.5%, summary +7.2%, synthesis +2.5%
 
-Pre-3A baseline was +4.1% (p=0.060). Phase 3A nearly doubled the improvement.
+Phase 3B achieved statistical significance. Progression: +4.1% (pre-3A) → +7.8% (3A) → **+10.4% (3B)**.
 
 ### Non-CV (same-set, for reference only)
 
@@ -85,9 +85,9 @@ Pre-3A baseline was +4.1% (p=0.060). Phase 3A nearly doubled the improvement.
 | FLAT | 0.7517 | 0.6500 | 0.7083 |
 | RERANKED FRACTAL | 0.8067 | 0.7250 | 0.7833 |
 | RRF FRACTAL | 0.7705 | 0.6750 | 0.7833 |
-| OPTIMAL FRACTAL | 0.8412 | 0.7750 | 0.7917 |
+| OPTIMAL FRACTAL | 0.8425 | 0.7750 | 0.7917 |
 
-The +11.9% non-CV number is inflated due to tuning on the evaluation set. The honest CV number is +7.8%.
+The +12.1% non-CV number is inflated due to tuning on the evaluation set. The honest CV number is +10.4%.
 
 ## Running
 
@@ -95,10 +95,10 @@ The +11.9% non-CV number is inflated due to tuning on the evaluation set. The ho
 # Install
 pip install numpy sentence-transformers
 
-# Run tests (403 tests)
+# Run tests (470 tests)
 pytest tests/ -v
 
-# Run CV benchmark (BGE-M3, ~2 min)
+# Run CV benchmark (BGE-M3, ~17 min with 150-combo grid)
 python -m fractrag.benchmarks.cross_validation
 
 # Run full ablation benchmark (~5 min)
@@ -115,6 +115,11 @@ python -m fractrag.benchmarks.flat_vs_fractal
 
 ## Key Design Decisions
 
+- Phase 3B achieved statistical significance: p=0.036, CI excludes zero
+- Domain-based diversity scoring fixed synthesis R@10 (+46.2%)
+- Weighted paragraph pooling sharpens derivatives for short docs
+- Domain-aware query routing auto-detects 6 medical domain categories
+- Per-type boosts: spec/logic→flat, summary→sent_boost, synthesis→deriv+diversity
 - Virtual paragraph chunking restored non-degenerate L1 for 54% of corpus (single-paragraph docs)
 - Title-prefix embeddings absorbed the sentence-boost signal (sent_boost dropped from 0.20 to 0.00 in CV)
 - Derivative boost increased in importance post-3A (optimal shifted to deriv_boost=0.10)
